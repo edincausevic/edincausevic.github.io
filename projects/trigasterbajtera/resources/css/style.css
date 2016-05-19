@@ -1,0 +1,364 @@
+/*font-family: 'Fjalla One', sans-serif;*/
+
+html, body { 
+   font-family: 'Archivo Narrow', sans-serif!important;
+}
+
+i {
+    padding-right: 5px;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 57px!important;
+}
+
+h2 {
+    margin-top: 10px!important;
+}
+
+p {
+    font-family: 'Average', serif;
+    font-size: 20px;
+}
+
+header {
+    background-color: #F3F4EF;
+}
+
+.logo {
+    position: absolute;
+    width: 183px;
+    height: 41px;
+    margin-top: 14px;
+}
+
+.menu-dugme {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    width: 46px;
+    height: 38px;
+}
+
+.menu-dugme {
+    cursor: pointer;
+}
+
+/* pocetna */
+
+.navbar {
+    margin-bottom: 0px!important;
+    height: 70px!important;
+}
+
+.nav {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.navbar-brand {
+    padding: 23px 15px!important;
+}
+
+.navbar-nav > li > a {
+    margin-top: 10px;
+}
+
+.pocetna {
+    padding-top: 120px;
+    padding-bottom: 50px;
+    margin-bottom: 0px!important;
+}
+
+.head-slika {
+    float: right;
+}
+
+.btn-primary {
+    background-color: #66AB5B!important;
+    border-color: #5FAD53!important;
+}
+
+.hero-text {
+    margin-top: 50px;
+}
+
+.head-info {
+    padding-right: 60px;
+}
+
+.head-dugme-1,.head-dugme-2 {
+    padding-left: 15px;
+    display: inline-block;
+    font-family: 'Archivo Narrow', sans-serif;
+}
+
+.btn-primary:hover {
+    background-color: #A42E29!important;
+    border-color: #982824!important;
+}
+
+
+/* Plakat */
+
+.plakat {
+    background-image: url(img/back1.jpg);
+    background-position: center;
+    height: 661px;
+    width: 100%;
+    color: #fff;
+}
+
+.book-quote {
+    margin-top: 240px;
+    margin-left: 20px;
+}
+
+
+/* AUTOR */
+
+.autor {
+    background-color: #F3F4EF;
+    padding: 80px 0px;
+}
+
+.autor-slika {
+    float: right;
+}
+
+.autor h2 {
+    color: #66AB5B;
+    font-family: 'Archivo Narrow', sans-serif!important;
+}
+
+.autor-text {
+    padding-top: 100px;
+}
+
+
+/* KUPI */
+
+
+.kupi {
+    padding-top: 90px!important;
+    margin-bottom: 0px!important;
+    background-image: url(img/back2.jpg);
+    height: 646px;
+    background-position: center;
+}
+
+.kupi-container {
+    margin-top: 90px;
+    padding: 0px 10px;
+    color: #fff;
+    text-align: center;
+}
+
+.kupi-container .head-dugme-1 {
+    margin-top: 30px;
+}
+
+
+/* MOB_MENU */
+
+.mob-menu {
+    display: none;
+    position: absolute;
+    background-color: #F8F8F8;
+    list-style: none;
+    right: 0px;
+    top: 70px;
+    padding: 0px;
+    margin: 0px;
+    -webkit-box-shadow: -3px 3px 7px 2px rgba(0,0,0,0.06);
+    -moz-box-shadow: -3px 3px 7px 2px rgba(0,0,0,0.06);
+    box-shadow: -3px 3px 7px 2px rgba(0,0,0,0.06);
+}
+
+.mob-menu li {
+    text-transform: uppercase!important;
+    font-weight: bold!important;
+    padding: 15px 70px;
+    border: 1px solid #E7E7E7;
+}
+
+.mob-menu a {
+    color: #777777!important;
+}
+
+.mob-menu a:hover {
+    text-decoration: none;
+}
+.mob-menu li:active {
+    background-color: #66AB5B;
+}
+
+
+
+
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+    h1 {
+        font-size: 320%!important;
+    }
+    h2 {
+        font-size: 190%!important;
+        padding: 0px 0px;
+    }
+    .pocetna-sadrzaj {
+        margin-top: 40px;
+    }
+    .hero-text {
+        margin-top: 40px;
+    }
+    .hero-text h1 {
+        margin-top: 0px;
+    }
+    .hero-text p{
+        padding-right: 260px;
+    }
+    .dugmadi p{
+        padding-right: 0px!important;
+    }
+    
+    .book-quote p{
+        padding-right: 120px;
+    }
+    
+    .autor {
+        height: 100%;
+        padding: 60px 0px;
+    }
+    .autor img {
+        padding-top: 0px!important;
+    }
+    .autor-text {
+        padding-top: 10px;
+    } 
+    .kupi-container {
+        margin-top: 50px!important;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .logo {
+        margin-left: 30px;
+    }
+    .menu-dugme {
+        display: inline-block!important;
+    }
+    .pocetna-sadrzaj {
+        margin-top: 0px;
+    }
+    
+    .head-slika {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+     h1 {
+        font-size: 320%!important;
+    }
+    h2 {
+        font-size: 190%!important;
+        padding: 0px 0px;
+    }
+    .head-info {
+        padding-right: 0px;
+        padding-bottom: 10px;
+    }
+    .book-quote {
+        margin-top: 230px;
+    }
+    .autor-slika {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 30px;
+    }
+    .autor {
+        padding: 60px 0px;
+    }
+    .autor-text {
+        padding-top: 20px;
+    }    
+    .kupi-container {
+        margin-top: 40px;
+    }
+    .kupi-container h2{
+        display: none;
+    }
+    
+}
+
+
+@media screen and (min-width: 200px) and (max-width: 479px) { 
+    .menu-dugme {
+        display: inline-block!important;
+    }
+    .logo {
+        margin-left: 15px;
+    }
+    .pocetna-sadrzaj {
+        margin-top: 0px;
+    }
+    
+    .head-slika {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+     h1 {
+        font-size: 320%!important;
+    }
+    h2 {
+        font-size: 190%!important;
+        padding: 0px 0px;
+    }
+    .head-info {
+        padding-right: 0px;
+        padding-bottom: 10px;
+    }
+    .book-quote {
+        margin-top: 180px;
+    }
+    .autor-slika {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 30px;
+    }
+    .autor {
+        padding: 60px 0px;
+    }
+    .autor-text {
+        padding-top: 0px;
+    } 
+    .kupi {
+        padding: 60px 0px!important;
+    }    
+    .kupi-container {
+        margin-top: 0px;
+    }
+    .kupi-container h2{
+        display: none;
+    }
+}
+
+
+

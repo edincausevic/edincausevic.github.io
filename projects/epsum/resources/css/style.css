@@ -1,0 +1,389 @@
+
+
+/* KAD BUDES STAVLJO REKLAMU CEKIRA LINIJU 143 i promjeni header botom-margin na 20px */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-image: url(img/epsum-background.png);
+    color: #404040;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+.container { 
+    width: 840px;
+    margin: 0 auto;
+}
+
+.content-container {
+    margin: 40px;
+}
+
+.pf-title {
+    font-family: 'Gentium Book Basic', serif;
+    font-weight: normal;
+    font-size: 220%;
+    margin-bottom: 25px;
+}
+
+.pf-subtitle {
+    margin-bottom: 60px;
+    font-size: 130%;
+    font-family: 'Gentium Book Basic', serif;
+}
+
+.pf-subtitle p:nth-child(1) {
+    margin-bottom: 10px;
+}
+
+a:hover { opacity: 0.7; }
+
+.hover-img:hover { 
+    opacity: 0.3; 
+    transition: 1.2s;
+}
+
+a { color: #256279; }
+
+h1 { margin: 0; }
+
+h3 {
+    font-size: 110%;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 200%;
+    font-weight: normal;
+    font-family: 'Gentium Book Basic', serif;
+}
+
+.space { 
+    margin-left: 25px;
+}
+
+.text p, .text h6, 
+.html p, .html h6,
+.css p, .css h6 { font-size: 98%;}
+ 
+.html p, .html h6,
+.css p, .css h6 { letter-spacing: 1px; }
+
+.text p { letter-spacing: 0.2px; }
+
+.button-up {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 50px;
+    height: 20px;
+    color: #fff;
+    border: none;
+    background-color: #E4E4E4;
+}
+
+.button-up i {
+    position: absolute;
+    font-size: 80%;
+    padding-left: 20px;
+    padding-top: 4px;
+}
+
+.clear {
+    clear: both;
+    display: table;
+}
+
+
+/* HEADER */
+
+header { margin-bottom: 50px;}
+
+.reklama {
+    display: inline-block;
+    width: 50%;
+    height: 42px;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.reklama a { color: #404040; text-decoration: none;}
+.reklama p { text-decoration: underline; }
+
+.share {
+    display: inline-block;
+    width: 49%;
+    height: 50px;
+    position: relative;
+}
+
+.share ul { list-style: none; }
+.share ul li { 
+    display: inline-block;
+    right: 0;
+    top: 28px;
+    margin-left: 20px;
+    font-size: 25px;
+    position: relative;
+    float: right;
+}
+.share ul li a { color: #404040; text-decoration: none; }
+
+
+
+
+/* TITLE */
+
+
+.logo,
+.sub-title {
+    font-weight: 400;
+    font-family: 'Gentium Book Basic', serif;
+    font-style: italic;
+    text-align: center;
+}
+
+.logo { 
+    font-size: 550%; 
+    margin-bottom: 25px;
+    margin-top: 70px;
+}
+
+.sub-title {
+    margin-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 150%;
+    width: 680px;
+}
+
+
+/* NAVIGATION TOP */
+
+.main-nav {
+    position: relative;
+}
+
+.menu-container {
+    height: 67px;
+    width: 100%;
+    background-color: #fff;
+    border: 3px solid #e4e4e4;
+    border-radius: 10px;
+}
+
+.active-mb { background-color: #e4e4e4; }
+
+
+.menu-top {
+    position: absolute;
+    top: -20px
+}
+
+.menu-top ul { 
+    list-style: none;
+    margin: 21px 0 0 20px;
+    font-family: 'Gentium Book Basic', serif;
+    font-size: 130%;
+}
+
+.menu-top li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu-top li a {
+    text-decoration: none;
+    color: #404040;
+    cursor: pointer;
+}
+
+.active {  border-bottom: 1px solid #404040; }
+
+
+/* NAVIGATION BOTTOM */
+
+.menu-bottom ul { 
+    list-style: none; 
+    margin-left: 20px;
+}
+
+.menu-bottom ul li {
+    display: inline-block;
+    padding: 2px 25px 1px 25px;
+    margin-top: 42px;
+    cursor: pointer;
+}
+
+.menu-bottom ul li:hover { background-color: #f7f7f7; -webkit-transition: background-color 0.2s; transition: background-color 0.2s; }
+.menu-bottom ul li a:hover { opacity: 1; }
+
+
+
+
+
+/* AD */
+
+
+/* MAIN CONTENT */
+
+.main-content-container {
+    min-height: 700px;
+    width: 100%;
+    background-color: #fff;
+    border: 3px solid #e4e4e4;
+    border-radius: 10px;
+ /* margin-top: 20px; KAD BUDES STAVLJO REKLAMU UPALI OVO */
+    padding: 20px 10px 5px 5px;
+    position: relative;
+}
+
+.content-menu-container {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.btn1, .btn2, .btn3 {
+    height: 51px;
+    width: 75px;
+    display: inline-block;
+    position: relative;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    font-size: 90%;
+}
+
+.btn1 p, .btn2 p, .btn3 p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.btn-active {
+    border-top: 1px solid #e4e4e4;
+    border-left: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    border-bottom: 2px solid #fff;
+}
+
+btn-active-a {
+    border-top: 1px solid #e4e4e4;
+    border-left: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    border-bottom: 2px solid #fff;
+}
+
+.btn1:hover, .btn2:hover, .btn3:hover { background-color: #f7f7f7; -webkit-transition: background-color 0.2s; transition: background-color 0.2s; } 
+
+.info { 
+    display: inline-block; 
+    position: absolute;
+    right: 30px;
+    top: 37px;
+}
+
+.info p:hover { opacity: 0.7; cursor: pointer; }
+
+.info-img {
+    position: absolute;
+    right: 30px;
+    top: -280px;
+    display: none;
+}
+
+.main-content-box {
+    padding: 20px 5px;
+    width: 100%;
+}
+
+.html-box {
+    background-color: #404040;
+    color: #ffe795;
+    border-radius: 5px;
+    padding: 0 10px;
+    min-width: 100%;
+}
+
+.html-box img, .css-box img {
+    position: absolute;
+    right: 22px;
+    top: 95px;
+}
+
+.css-box {
+    background-color: #404040;
+    color: #ff9595;
+    border-radius: 5px;
+    padding: 0 10px;
+    min-width: 100%;
+}
+
+xmp { overflow-x: hidden; position: relative; }
+
+
+
+
+/* FOOTER */
+
+.foot-manu {
+    width: 70%;
+    display: inline-block;
+}
+
+.foot-manu ul { 
+    list-style: none;
+    margin: 20px 0;
+}
+
+.foot-manu ul li { 
+    display: inline-block; 
+    margin-right: 10px;
+}
+
+.foot-manu ul li a {
+    color: #404040;
+    text-decoration: none;
+    font-size: 90%;
+}
+
+.copy-right {
+    display: inline-block;
+    width: 29%;
+    font-size: 90%;
+}
+
+.copy-right p { float: right; }
+
+
+/* JS */
+
+.js--html, 
+.js--css { display: none; }
+
+.classical-b,
+.classical-c,
+.classical-d,
+.classical-e,
+.classical-f,
+.classical-g,
+.classical-h,
+.classical-i { display: none; }
+
+
+/* TEXT SELECT FIX */
+
+.right-empty { height: 700px; width: 1px; float: right;}
+.left-side {float: left; width: 839px;}

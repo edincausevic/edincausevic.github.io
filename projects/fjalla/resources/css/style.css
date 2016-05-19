@@ -1,0 +1,322 @@
+/*color: #e74c3c   */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    color: #555;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+.clear-fix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*--------------------------------------*/
+/*         REUSABLE COMPONENTS          */
+/*--------------------------------------*/
+
+
+.row { padding: 0px 30px; }
+
+*:focus { outline: none; }
+
+input {
+    width: 270px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    color: #555;
+}
+
+.btn {
+    width: 80px;
+    height: 44px;
+    text-transform: uppercase;
+    margin-left: 10px;
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+}
+
+
+.btn-send { 
+    border: 0;
+    border-radius: 5px;
+    height: 44px;
+    width: 100px!important;
+    text-transform: uppercase;
+}
+
+
+.ion-paper-airplane { 
+    margin-left: 5px;
+    
+}
+
+.btn:hover,
+.btn-send:hover {
+    opacity: 0.9;
+}
+
+h1 {
+    margin: 0;
+    font-size: 390%;
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 330%;
+    margin: 80px 0 25px 0;
+}
+
+h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 150%;
+    margin-top: 60px;
+}
+
+h4 {  margin-bottom: 2px; }
+
+h5 { 
+    font-size: 95%;
+    font-family: 'Average', serif;
+    padding: 10px;
+}
+
+h1, h2, h3, h4, h5 { font-weight: 400; }
+
+p {
+    font-family: 'Average', serif;
+    margin-bottom: 20px;
+}
+
+
+
+/*--------------------------------------*/
+/*                HEADER                */
+/*--------------------------------------*/
+
+
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+}
+
+.logo { margin-top: 30px; }
+.logo-middle { display: none; margin-top: 30px; }
+
+.hero-text-box {
+    position: absolute;
+    top: 37%;
+    color: #fff;
+}
+
+.social-media {
+    position: absolute;
+    bottom: 0;
+}
+
+.social-media ul { list-style: none; }
+.social-media ul li a:link,
+.social-media ul li a:visited { color: #fff; }
+
+.social-media ul li {
+    display: inline-block;
+    font-size: 150%;
+    margin-right: 15px;
+}
+
+.ion-social-facebook:hover { color: #3b5998; }
+.ion-social-twitter:hover { color: #00aced; }
+.ion-social-googleplus:hover { color: #dd4b39; }
+.ion-social-linkedin:hover { color: #007bb6; }
+.ion-social-youtube:hover { color: #bb0000; }
+.ion-social-vimeo:hover { color: #4Ebbff; }
+
+.h-foot {
+    margin: 5px 0 7px 0;
+    font-size: 95%;
+}
+
+
+
+/*--------------------------------------*/
+/*               CONTENT                */
+/*--------------------------------------*/
+
+/*---- CONTENT HEADER ----*/
+
+.content {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.content-header { 
+    background-color: #c9c9c9;
+    padding: 10px 0;
+    opacity: 0.9;
+}
+
+.content-header-box p{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 80%;
+    margin-bottom: 1px;
+}
+
+.content-header-box:nth-child(2n) { padding-left: 8%; }
+.content-header-box:last-child { padding-left: 13%; }
+
+/*---- COUNTER ----*/
+
+#timer { 
+    width: 533px;
+    margin: 0 auto; 
+}
+
+.timer_box { 
+    width: 130px;
+    height: 85px;
+    display: inline-block; 
+    font-size: 400%;
+    border-right: 3px dashed #555;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.timer_box:last-child {
+    border: 0;
+}
+
+hr {
+    border: 1px solid;
+    width: 100px;
+    margin: 30px auto;
+}
+
+
+/*---- GALLERY ----*/
+
+figure { margin: 0; }
+
+.gallery {
+    list-style: none;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.gallery li {
+    display: block;
+    float: left;
+    width: 20%;
+}
+
+.gall-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.gall-photo img {
+    opacity: 0.8;
+    width: 100%;
+    height: auto;
+    transform: scale(1.15);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.gall-photo img:hover {
+    transform: scale(1.10);
+    opacity: 1;
+}
+
+
+
+/*---- CONTANT INFO ----*/
+
+.contact-icon {
+    font-size: 300%;
+    display: block;
+    text-align: center;
+}
+
+.contact-info  h4 {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.contact-info h4:last-child  {
+    padding-left: 5%;
+}
+
+.contact-info p{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 80%;
+    margin-bottom: 1px;
+    text-align: center;
+}
+
+.contact-info-box {
+    margin: 10px 0 60px 0;
+}
+
+
+
+/*---- MAP ----*/
+
+.map {
+    width: 100%;
+    height: 300px;
+}
+
+
+/*---- CONTACT FORM ----*/
+
+.con-form .row { padding: 0;}
+
+.contact-form { 
+    width: 80%;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea { width: 100%;!Important }
+
+textarea {
+    height: 150px;
+    padding: 9px 9px;
+    border-radius: 5px;
+}
+
+
+/*---- FOOTER ----*/
+
+footer {
+    text-align: right;
+    background-color: #C9C9C9;
+    opacity: 0.9;
+    margin-top: 40px;
+}

@@ -1,0 +1,240 @@
+/* {border: 1px solid black;}*/
+
+
+.b-photo1{
+     position: fixed;
+     top: 0;
+     left :0;
+     width: 100%;
+     height: 100%;
+     background: url(../img/bg1.jpg) no-repeat center center fixed;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+ }
+
+.b-photo2{
+    position: fixed;
+    top: 0;
+    left :0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/bg2.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: none;
+}
+
+.b-photo3{
+    position: fixed;
+    top: 0;
+    left :0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/bg3.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: none;
+}
+
+#promjenipozadinu {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    font-family: 'Lobster', cursive;
+}
+
+div.overlay-content{
+    position: fixed;
+    top: 0;
+    left :0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/d.png) repeat top left;
+    pointer-events:none; /* To be able to click through */
+}
+
+.center {
+  text-align: center;
+}
+
+
+.overlay-content {
+    width: 100%;
+    height: 100%;
+    background: url(../img/linije.png);
+}
+
+#cs {
+  font-family: 'Lobster', cursive;
+  color: #f0eded;
+  font-size: 79px;
+  text-align: center;
+  font-style: italic;
+  margin-top: 0.50%;
+  margin-bottom: 4%;
+  text-shadow: 0 0px 0px black;
+}
+
+header {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.main p {
+    background-color: red;
+}
+
+.sharemenu {
+    position: fixed;
+    right: 30px;
+    bottom: 60px;
+    background-color: #ffffff;
+    height: 50px;
+    border-radius: 5px;
+    opacity: 0.8;
+    display: none;
+}
+
+.sharewrap {
+    padding-top: 10px;
+}
+.sharewrap ul {
+    list-style: none;
+    padding-left: 25px;
+    padding-right: 15px;
+}
+.sharewrap ul li{
+    display: inline-block;
+    padding-right: 7px;
+    cursor: pointer;
+}
+.sharewrap ul li:hover{
+    opacity: 0.8;
+}
+
+p {
+  text-align: center;
+  color: #f0eded;
+  font-family: 'EB Garamond', serif;
+  font-size: 20px;
+  font-style: italic;
+  text-shadow: 0 0px 0 black;
+}
+
+
+hr {
+  margin: auto;
+  width: 50%;
+}
+
+.notme {
+    cursor: pointer;
+    text-decoration: underline;
+}
+span a {
+    text-decoration: none!important;
+    color: white!important;
+}
+
+span a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+/********************************/
+/*Timer
+/********************************/
+#timer{
+    margin-top: 1px;
+    position: relative;
+}
+.timer_box{
+    margin: 30px 20px;
+    display: inline-block;
+    padding: 25px 12px 0px 12px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0);
+    height: 120px;
+    width: 120px;
+    border: 2px solid white;
+    /* -webkit-box-shadow: 0px 0px 5px white inset;
+    box-shadow: 0px 2px 0px white inset;
+    -moz-box-shadow: 0px 0px 10px white inset;
+    -o-box-shadow: 0px 0px 10px black white inset;
+    -ms-box-shadow: 0px 0px 10px black white inset;
+    -webkit-border-radius:24px;
+    -moz-border-radius: 24px;
+    -o-border-radius: 24px; */ 
+    border-radius: 100%;
+}
+.timer_box strong{
+     font-size: 48px;
+     color: white;
+    /*text-shadow: 0 2px 0 #232323;*/
+}
+.timer_box p{
+    border-top: solid 1px rgba(209, 209, 209, 0.1);
+    margin-top: 40px;
+    padding-top: 0px;
+    opacity: 0.6;
+}
+.launch_day{
+    position: absolute;
+    right: -124px;
+    top: -68px;
+}
+
+.section {
+  position: relative;
+  display: inline-block;
+}
+
+/********************************/
+/*   NOTIFY ME
+/********************************/
+
+.modal-dialog {
+    padding-top: 200px!important;
+}
+
+.modal-content {
+    opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+}
+
+.modal-header {
+    padding-top: 7px!important;
+    padding-bottom: 7px!important;
+    font-size: 20px;
+}
+
+.modal-title {
+    font-size: 30px;
+}
+
+.form-control {
+    height: 50px !important;
+}
+
+.yes-btn {
+    height: 50px !important;
+    font-family: 'Lobster', cursive;
+    font-size: 16px!important;
+    color: #1d1c1c;
+}
+
+.m-title {
+    color: #1d1c1c;
+    font-family: 'Lobster', cursive;
+}
+
+.form-control:focus {
+    box-shadow: none!important;
+    border-color: #28a4c9!important;
+}

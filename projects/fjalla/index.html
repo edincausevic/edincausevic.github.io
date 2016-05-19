@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="FjallaOne is a responsive site with a fully functiona Subscribe and contact script">
+        
+        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/queries.css">
+        <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Average' rel='stylesheet' type='text/css'>
+        <title>FjalaOne</title>
+        
+        <!--  THEME COLOR  -->
+        <style>
+            .back-color-red { background-color: #e74c3c; color: #fff; }
+            .color-red { color: #e74c3c; }
+        </style>
+        
+        <!--  MAPS  -->
+        <script>
+            $(document).ready(function(){
+            var map = new GMaps({
+              div: '.map',
+              lat: 40.7240011,
+              lng: -73.9939289,
+              zoom: 12
+            });
+
+            map.addMarker({
+              lat: 40.7240011,
+              lng: -73.9939289,
+              infoWindow: {
+                  content: '<p>FjallaOne</p>'
+                }
+            });
+
+        });
+        </script>
+    </head>
+    <body>
+        
+        <header>
+            <div class="row">
+                <img class="logo" src="resources/img/logo.png" alt="Logo">
+                <img class="logo-middle" src="resources/img/logo-middle.png" alt="Logo">
+                <div class="hero-text-box">
+                    <h1>FjallaOne</h1>
+                    <p>We working hard to launch a new site that's <br/> going to revolutionize the way you do business.</p>
+                    <p><span class="back-color-red">Subscribe</span> now and stay tuned!</p>
+                    <form method="post" action="#" class="subscribe-form">
+                        <input type="email" name="email" id="sub-male" placeholder="Enter your email here">
+                        <button type="submit" value="Do it" class="btn back-color-red">do it<i class="ion-paper-airplane"></i></button>
+                    </form>
+                </div>
+                <div class="social-media">
+                    <ul>
+                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                        <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                        <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                        <li><a href="#"><i class="ion-social-youtube"></i></a></li>
+                        <li><a href="#"><i class="ion-social-vimeo"></i></a></li>
+                    </ul>
+                    <p class="h-foot">Avelable on iOS, Android and Windows phone.</p>
+                </div>
+            </div>
+        </header>
+        <section class="content">
+            <div class="content-header">
+                <div class="row">
+                    <div class="col span-1-of-3 content-header-box">
+                        <h4><span class="color-red">R</span>ussell <span class="color-red">B</span>rooks</h4>
+                        <p>General Menager</p>
+                        <p>dakrtsoet@gmail.com</p>
+                    </div>
+                    <div class="col span-1-of-3 content-header-box">
+                        <h4><span class="color-red">H</span>eidi <span class="color-red">P</span>ena</h4>
+                        <p>Deputi Manager</p>
+                        <p>mw.tare@gmail.com</p>
+                    </div>
+                    <div class="col span-1-of-3 content-header-box">
+                        <h4><span class="color-red">C</span>ourtney <span class="color-red">N</span>eal</h4>
+                        <p>Deputi Manager</p>
+                        <p>krat.sa@gmail.com</p>
+                    </div>
+                </div>    
+            </div>
+            <h2><span class="color-red">C</span>oming <span class="color-red">s</span>oon</h2>
+            <div class="row">
+                <div id="timer">
+                    <div id="days" class="timer_box"></div>
+                    <div id="hours" class="timer_box"></div>
+                    <div id="minutes" class="timer_box"></div>
+                    <div id="seconds" class="timer_box"></div>
+                </div>
+                <hr class="color-red">
+                <p>There are many <span class="back-color-red">variations</span> of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly <span class="back-color-red">believable</span>. If you are going to use a passage of Lorem Ipsum.</p>
+            </div>
+   
+            <ul class="gallery">
+                <li>
+                    <figure class="gall-photo">
+                        <img src="resources/img/gallery1.jpg" alt="Carla Hicks" />
+                    </figure>
+                </li>
+                <li>
+                    <figure class="gall-photo">
+                        <img src="resources/img/gallery2.jpg" alt="Kirk Cook" />
+                    </figure>
+                </li>
+                <li>
+                    <figure class="gall-photo">
+                        <img src="resources/img/gallery3.jpg" alt="Heidi Pena" />
+                    </figure>
+                </li>
+                <li>
+                    <figure class="gall-photo">
+                        <img src="resources/img/gallery4.jpg" alt="Connor Harris" />
+                    </figure>
+                </li>
+                <li>
+                    <figure class="gall-photo">
+                        <img src="resources/img/gallery5.jpg" alt="Ethel Gibson" />
+                    </figure>
+                </li>
+            </ul>
+               
+            <div class="clear-fix"></div>
+            <div class="row">
+                <article>
+                        <h3>Little Bit About Us</h3>
+                        <hr class="color-red">
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" </p>
+                </article>
+            </div>
+            
+            <div class="row contact-info-box">
+                    <div class="col span-1-of-3 contact-info">
+                        <i class="ion-ios-telephone contact-icon color-red"></i>
+                        <h4>Phone</h4>
+                        <p>Fax: (000) 555 0101</p>
+                        <p>Phone: (000) 555 1212</p>
+                        <p>Mobile: (000) 555 0100</p>
+                        
+                    </div>
+                    <div class="col span-1-of-3 contact-info">
+                        <i class="ion-ios-email  contact-icon color-red"></i>
+                        <h4>Email</h4>
+                        <p>templates@gmail.com</p>
+                        <p>osrekt@hotmail.com</p>
+                    </div>
+                    <div class="col span-1-of-3 contact-info">
+                        <i class="ion-location  contact-icon color-red"></i>
+                        <h4>Address</h4>
+                        <p>123 Some Street, </p>
+                        <p>Aslarem to remata</p>
+                        <p>Some City, AA 12345</p>
+                    </div>
+                </div> 
+            
+            <div class="map"></div>
+            <div class="row">
+                <h3>We're happy to hear from you</h3>
+                <hr class="color-red"></div>
+            <div class="row contact-form">
+                <form method="post" action="#" class="con-form">
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Name</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="name" id="name" placeholder="Your name" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Email</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="email" name="email" id="email" placeholder="Your email" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Drop us a line</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <textarea name="message" placeholder="Your message"></textarea>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col span-1-of-3">
+                            <label class="empty">&nbsp;</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <button type="submit" value="Send it!" class="btn-send back-color-red">Send it! <i class="ion-paper-airplane"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <footer>
+                <h5> 2015 FjallaOne</h5>
+            </footer>
+        </section>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+        <script src="resources/js/respond.js"></script>
+        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script src="vendors/js/gmaps.js"></script>
+        <script type="text/javascript" src="vendors/js/countdown.js"></script>
+    </body>
+</html>

@@ -1,0 +1,646 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+html, body {
+	height: 100%;
+	min-height: 100% !important;
+}
+
+html, p, h1, h5 {
+	font-family: sans-serif, Arial;
+	color: #5d5d5c;
+}
+
+img { max-width: 100%; }
+
+.container {
+	max-width: 850px;
+	margin: 0px auto;
+	position:relative;
+	min-height: 100%;
+}
+.marg-up {
+	margin-top: 30px;
+}
+
+.i-b {
+	display: inline-block;
+}
+
+.clear {
+	clear: both;
+}
+
+
+/*
+	     HEADER
+-------------------------*/
+
+.menu {
+	margin-top: 40px;
+}
+.menu li{
+	display: inline-block;
+	padding-right: 15px;
+	text-transform: uppercase;
+	font-size: 15px;
+}
+.menu li a {
+	text-decoration: none;
+	color: #5d5d5c;
+}
+.menu li a:hover {
+	color: #57b3d3;
+}
+.active {
+	color: #57b3d3!important;
+}
+.tipka {
+	width: 54px;
+	height: 49px;
+	right: 0px;
+	margin-top: 1.5%;
+	position: absolute;
+	background-image: url(../img/tipka-off.png);
+}
+
+/*
+	      MAIN
+-------------------------*/
+
+.sec-left {
+	float: left;
+	width: 40%;
+}
+
+.sec-right {
+	float: right;
+	width: 56%;
+	margin-left: 4%;
+}
+
+ul.skills-list {
+	font-family: 'Libre Baskerville', serif;
+	text-align: center;
+	line-height: 1.5;
+}
+
+.helo {
+	font-size: 80px;
+	font-weight: bold;
+}
+
+.pod-naslov {
+	font-size: 40px;
+}
+.more {
+	text-align: right;
+}
+.more a{
+	text-decoration: none;
+	color: #b4b4b4;
+}
+.more a:hover {
+	opacity: 0.6;
+}
+.more a::after{
+	content: url(../img/more-strelica.png);
+}
+
+/*
+	HOME CIRCE LINKS
+-------------------------*/
+
+.circle {
+	border-radius: 50%;
+    behavior: url(PIE.htc);
+    width: 115px;
+    height: 115px;
+    text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-right: 10px;
+	display: inline-block;
+}	
+.circle p {
+	margin-top: 43%;
+}
+.my-resume {
+	border:2px solid #ffa800;
+}
+.my-resume-h {
+	border:2px solid #ffa800;
+	background-color: #ffa800;
+} 
+.my-resume p {
+	color: #ffa800;
+}
+.res-title:before {
+    content: url("../img/resume.png") no-repeat;
+    margin-right: 8px;
+}
+.pro-title:before {
+	content: url("../img/prijects.png")no-repeat;
+	margin-right: 8px;
+}
+.skil-title:before {
+    content: url("../img/skills.png") no-repeat;
+    margin-right: 8px;
+}
+.my-work {
+	border:2px solid #dc3131;
+}
+.my-work p {
+	color: #dc3131;
+}
+.my-work-h {
+	background-color: #dc3131;
+}
+.my-skills {
+	border:2px solid #33447c;
+}
+.my-skills {
+	color: #33447c;
+}
+.my-skills-h {
+	background-color: #33447c;
+}
+.big-title {
+	font-size: 45px;
+	padding-top: 100px;
+	font-weight: normal;
+	text-transform: uppercase; 
+}
+.res-left {
+	width: 70%;
+	float: left;
+}
+.res-right {
+	height: 1000px;
+	width: 18%;
+	float: right;
+	margin-left: 3%;
+}
+.res-right li {
+	list-style-type: circle!important;
+	text-align: left;
+}
+.res-artic {
+	width: 100%;
+	border-top: 1px solid #5d5d5c;
+	display: inline-block;
+}
+.res-krug {
+	width: 122px;
+	float: left;
+	margin-top: 30px;
+}
+.res-sadrzaj {
+	width: 75%;
+	margin: 50px 0 50px 0; 
+	float: right;
+}
+.res-sadrzaj-copy {
+	margin-top: 30px;
+}
+.res-sadrzaj h3{
+	font-size: 25px;
+	padding: 10px 0 10px 0;
+}
+.godine-rada {
+	font-style: italic;
+	padding: 0 0 10px 0;
+}
+.res-right li {
+	padding-bottom: 5px;
+	font-family: 'Libre Baskerville', serif;
+	font-size: 14px;
+} 
+.res-right h3 {
+	padding-bottom: 15px;
+}
+.res-right h3:nth-child(3n) {
+	margin-top: 20px;
+}
+.res-right h3:nth-child(5n) {
+	margin-top: 20px;
+}
+.crna-tran {
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	position: absolute;
+	opacity: 0.3;
+	display: none;
+}
+.websitename {
+	width: 100%;
+	height: 50px;
+	bottom: 0;
+	background-color: white;
+	position: absolute;
+	opacity: 0.8;
+	display: none;
+}
+.websitename p{
+	text-transform: uppercase;
+	font-weight: bold;
+	margin: 15px 0 0 20px;
+}
+.lupo {
+	position: absolute;
+	padding: 17% 0 0 40%;
+	display: none;
+}
+.pro-slika {
+	width: 53%;
+	float: left;
+	margin-top: 50px;
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
+}
+.pro-sadrzaj {
+	width: 40%;
+	float: right;
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+.projects span {
+	font-size: 50px;
+	color: #57b3d3;
+	padding-top: 30px;
+}
+.projects hr {
+	border-bottom: 0;
+	border-color: #5d5d5c;
+}
+.por-cont {
+	border-top: 1px solid #5d5d5c;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 50px;
+}
+#contact-section h2 {
+	font-weight: normal;
+}
+.con-left {
+	width: 55%;
+	float: left;
+}
+.con-right {
+	width: 40%;
+	float: right;
+}
+.row {
+	margin-bottom: 10px;
+}
+#message {
+	min-height: 150px;
+}
+
+#submit_button {
+	padding: 7px 15px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #57B3D3;
+	float: right;
+	margin-top: 10px;
+	border: 0;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+#submit_button:hover { opacity: 0.9;}
+
+.input {
+	width: 99%;
+	height: 30px;
+}
+
+*:focus {  outline: none; }
+
+.con-share img{
+	padding: 10px 10px 20px 0;
+	cursor: pointer;
+}
+.con-share img:hover{
+	opacity: 0.8;
+}
+.con-share p {
+	padding: 7px 0 0 5px;
+	font-size: 18px;
+}
+
+
+/*
+		  FOOTER
+-------------------------*/
+
+.foot {
+	width: 100%;
+	background-color: #424242;
+	position: relative;
+	margin-top: 60px;
+}
+.call {
+	width: 24%;
+	height: 115px;
+}
+.foot-title {
+	position: absolute;
+	margin:35px 0 0 60px;
+	font-size: 13px;
+	font-weight: bold;
+	color: white;
+}
+.foot-img {
+	position: absolute;
+	margin: 35px 0 0 0;
+}
+.foot-text {
+	position: absolute;
+	margin:60px 0 0 60px;
+	font-size: 13px;
+	color: white;
+}
+.foot-text a{
+	color: white;
+}
+.contact {
+	width: 24%;
+	height: 115px;
+	margin-left: 2%;
+}
+.follow {
+	width: 24%;
+	height: 115px;
+	margin-left: 3.5%;
+}
+.follow a:hover{
+	opacity: 0.6;
+}
+.facebook {
+	position: absolute;	
+	margin:60px 0 0 60px;	
+}
+.linkedin {
+	position: absolute;
+	margin:63px 0 0 83px;
+}
+.google {
+	position: absolute;
+	margin:63px 0 0 110px;
+}
+.cv {
+	width: 20%;
+	height: 115px;
+}
+/*
+		  MOB MENU
+-------------------------*/
+.mob-menu {
+	position: absolute;
+	top:91px;
+	right: 28px;
+	text-align: left;
+	opacity: 0.9;
+	display: none;
+}
+.activ {
+	color: #5d5d5c!important;
+	text-decoration: none;
+	font-weight: bold;
+	background-color: white!important;
+}
+.mob-menu li {
+	padding: 15px 200px 15px 10px;
+	background-color: #5d5d5c;
+	border: 2px solid white;
+	text-transform: uppercase;
+}
+.mob-menu a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/*
+		 404
+-------------------------*/
+
+#a404 {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	/* bring your own prefixes */
+	transform: translate(-50%, -50%);
+	width: 500px;
+	height: 527px;
+	background-image: url(../img/404.png);
+	position: relative;
+}
+.b404 {
+	position: absolute;
+	bottom: 30px;
+	left: 25%;
+	padding: 15px 100px;
+	border-radius: 10px;
+	background-color: #6aba45;
+	border: none;
+	cursor: pointer;
+	font-weight: bold;
+	color: white;
+	font-size: 16px;
+}
+.b404:hover {
+	opacity: 0.9;
+}
+/* iPads (portrait and landscape) ----------- */
+@media screen and (max-width : 768px) {
+	.container {
+		width: 100%;
+	}
+	.tipka {
+		margin-right: 30px;
+		cursor: pointer;
+	}
+	.tipka-img {
+		display: none;
+	}
+	#logo {
+		padding-left: 30px;
+	}
+	#logo-xs {
+		padding-left: 30px;
+	}
+	#menu {
+		display: none;
+	}
+	.section {
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+	.sec-right {
+		display: none;
+	}
+	.sec-left {
+		width: 100%;
+	}
+	.helo-header-mob h1, .helo-header-mob h5{
+		text-align: center;
+	}
+	#krugovi-mob {
+		width: 387px;
+		margin: 20px auto;
+	}
+	.edo {
+		display: block;
+    	margin-left: auto;
+    	margin-right: auto;
+    	max-width: 60%;
+	}
+	.call {
+	width: 30%;
+	margin-left: 15%;
+	}
+	.contact {
+	width: 30%;
+	margin-left: 10%;
+	}
+	.follow {
+	width: 25%;
+	margin-left: 15%;
+	}
+	.cv {
+		margin-left: 15%;
+	}
+	.res-right {
+		display: none;
+	}
+	.res-left {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width : 600px) {
+	.res-krug {
+		width: 122px;
+		float: left;
+		margin-top: 30px;
+		padding-right: 15px;
+		padding-bottom: 15px;
+	}
+	.res-sadrzaj {
+		width: 100%;
+		margin: none; 
+		float: none;
+	}
+	.pro-slika {
+		width: 53%;
+		float: left;
+		margin-top: 30px;
+		margin-bottom: 50px;
+	}
+	.pro-sadrzaj {
+		width: 100%;
+		margin-top: 5px;
+	}
+	.con-right {
+		display: none;
+	}
+	.con-left {
+		width: 70%;
+	}
+}
+
+
+@media screen and (max-width : 480px) { 
+	.helo {
+		font-size: 60px;
+	}
+	.pod-naslov {
+		font-size: 30px;
+	}
+	.circle {
+		border-radius: 50%;
+	    behavior: url(PIE.htc);
+	    width: 80px;
+	    height: 80px;
+	    text-align: center;
+		vertical-align: middle;
+		text-decoration: none;
+		text-transform: uppercase;
+		margin-right: 10px;
+		display: inline-block;
+	}
+	.my-resume {
+		background-color: #ffa800;
+	}
+	.my-resume p {
+		color: white;
+	}
+	.my-work {
+		background-color: #dc3131;
+	}
+	.my-work p {
+		color: white;
+	}
+	.my-skills {
+		background-color: #33447c;
+	}
+	.my-skills p {
+		color: white;
+	}
+	.circle p {
+		font-size: 12px;
+	}
+	#krugovi-mob {
+		width: 285px;
+	}
+	.edo {
+		max-width: 70%;
+	}
+	ul.skills-list {
+		font-size: 15px;
+	}
+	.call {
+		display: block;
+		width: 45%;
+		height: 100px;
+	}
+	.contact {
+		display: block;
+		margin-left: 15%;
+		width: 45%;
+		height: 100px;
+	}
+	.follow {
+		display: block;
+		width: 45%;
+		height: 100px;
+	}
+	.cv {
+		width: 45%;
+		height: 100px;
+		margin-bottom: 15px;
+	}
+	.res-krug {
+		width: 100%;
+	}
+	.pro-slika {
+		width: 100%;
+	}
+	.con-left {
+		width: 100%;
+	}
+	.mob-menu li {
+		padding: 15px 130px 15px 10px;
+		background-color: #5d5d5c;
+		border: 2px solid white;
+		text-transform: uppercase;
+	}
+}

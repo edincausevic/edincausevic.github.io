@@ -962,13 +962,38 @@ footer {
     background-color: #c0392b;
 }
 
+.mail-title {
+    padding: 30px 0 10px 0;
+    font-size: 157%;
+}
 
+.mail-text {
+    width: 73%;
+    height: 150px;
+    color: #474747;
+    display: block;
+    padding-left: 7px;
+    border-radius: 5px;
+    border: 2px solid #b14436;
+    margin: 15px auto 0 auto;
+    font-size: 150%;
+    background-color: #e1dddd;
+    resize: none;
+}
 
+.mail-popup {
+    width: 637px;
+}
 
+#send-mail {
+    padding: 11px 0px;
+    width: 140px;
+    margin-top: 15px;
+}
 
-
-
-
+#email input:first-child {
+    margin-bottom: 15px;
+}
 
 
 /*-----------------------------------------------------------------*/

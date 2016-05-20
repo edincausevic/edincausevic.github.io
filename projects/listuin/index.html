@@ -39,10 +39,6 @@
         <meta name="msapplication-TileImage" content="img/favicons/mstile-144x144.png">
         <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
-
-        <script type="text/javascript">var switchTo5x=true;</script>
-		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-		<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
 	</head>
 
 	<body id="main-page">
@@ -292,13 +288,21 @@
                         <li><a href="js.html">Javascript</a></li>
                         <li><a href="development.html">Development</a></li>
                     </ul>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="6T3N4G9TT2MBQ">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
                 </aside>
             </div>
         </section>
 <!--Footer-->
         <footer>
             <div class="container">
-                <div class="section"></div>
+                <div class="section">
+                    <p><a href="#" id="email">Email</a></p>
+                </div>
                 <div class="section"></div>
                 <div class="section"></div>
             </div>
@@ -324,6 +328,19 @@
                 </div>
             </div>
         </div>
+<!--send mail--> 
+        <div id="show-mail" class="bg-trans popup-container hide-popup">
+            <div class="centar acc-pop mail-popup">
+                <i class="fa fa-times" id="close-mail"></i>
+                <h3 class="mail-title">Send us a message</h3>
+                    <form id="email">
+                        <input type="text" placeholder="title" class="inputs ext-input" id="e-title" >
+                        <input type="text" placeholder="mail" class="inputs ext-input" id="e-email" >
+                        <textarea class="mail-text" id="e-text" placeholder="text"></textarea>
+                        <input type="submit" value="Send" class="btn green" id="send-mail"></input>
+                    </form>
+            </div>
+        </div>        
 <!--POPPUP--> 
         <div id="pin-this-tem" class="popup-container  hide-popup">
             <div class="centar text-container" id="remove-list-question">
@@ -352,7 +369,6 @@
         <script>
             var $randomNumber = Math.random();  
             var $header = $('#mob-header');
-                console.log($randomNumber);
             if ($randomNumber < 0.25) {
                 $header.removeClass();
                 $header.addClass('background-image1');
@@ -368,10 +384,5 @@
             }    
         </script>
         <script src="js/respond.js"></script> 
-        <script type="text/javascript">stLight.options({publisher: "27f83aae-d1ed-4cf6-84b5-574352e0367a", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-		<script>
-		var options={ "publisher": "27f83aae-d1ed-4cf6-84b5-574352e0367a", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "googleplus", "reddit", "tumblr"]}};
-		var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
-		</script>
 	</body>
 </html>

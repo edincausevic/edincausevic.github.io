@@ -161,21 +161,23 @@ $('#save-create-list').on('click', function(e){
     }
 }); 
 
-//CHECK IF THE MAIN PAGE IS LOADES AND SAVE THE LIST BY ENTER
+//CHECK IF THE MAIN PAGE IS LOADEd AND SAVE THE LIST BY ENTER
 //(SO THIS CODE WILL WORK ONLY ON INDEX PAGE)
 if ($('body').is('#main-page')) {
-$(document).on('keypress', function(e){
-    if (e.which == 13) {
-            var $title = $('#title-cr-list').val();
-            if ($title === '') {
-            $('#list-create-error').html('Please enter a title');
-            e.preventDefault();
-        }else{
-            createMyProfile();
-            e.preventDefault();
-        }
-    }
-});
+    $(document).on('keypress', function(e){
+        if ( $('#show-create-popup').is(':visible') ) {
+            if (e.which == 13) {
+                    var $title = $('#title-cr-list').val();
+                    if ($title === '') {
+                        $('#list-create-error').html('Please enter a title');
+                        e.preventDefault();
+                    }else{
+                        createMyProfile();
+                        e.preventDefault();
+                    }
+            }
+        }    
+    });
 }
 
 // CREATE THE PROFILE
@@ -557,6 +559,15 @@ function countItems() {
 }    
 countItems();
     
+/*************************************************************** EMAIL ***********/    
+    
+$('#email').on('click', function(e){
+    var $mail = $('#show-mail');
+    $mail.fadeIn('300');
+    e.preventDefault();
+});    
+    
+    
     
 /*************************************************************** CLOSE POUPS *****/
 
@@ -564,6 +575,11 @@ countItems();
 $('#close').on('click', function(){
     closePopup();
 });
+ 
+// CLOSE MAIL    
+$('#close-mail').on('click', function(){
+    $(this).closest('#show-mail').fadeOut('300');
+});    
 
 // CANCLE CLOSE
 $('.cancle').on('click', function(e){
@@ -582,7 +598,20 @@ function closePopup() {
     $popup.fadeOut('300');
 }
 
+// CLOSE POPUPS WHEN CLICKED OUTSIDE THE DIV
+$('.bg-trans').on('click', function(e){
+        if ( e.target !== this) {
+            return;
+        }else {
+            if ( $('#show-create-popup').is(':visible') ) {
+                $("#create-list").show();
+            }
+            $(this).fadeOut('300');
+            
+        }
 
+    
+});
 
 /************************************************************ FIX POSIBLES ERRORS *********/
 

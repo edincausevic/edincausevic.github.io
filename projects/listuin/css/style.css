@@ -181,7 +181,7 @@ header {
 /* video header */
 
 header video {
-    max-width: 100%;
+    width: 100%;
 }
 .video-back {
     position: absolute;

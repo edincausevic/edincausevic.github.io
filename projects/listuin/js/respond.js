@@ -612,6 +612,33 @@ $('.bg-trans').on('click', function(e){
 
     
 });
+    
+    
+/************************************************************ SIDE SHARE ANIMATION *********/
+    
+var $headerPosition = $('.sub-header').offset().top;       
+var $windowWidth = $(window).width();
+    
+//  SHOW AND HIDE SIDE SHARE ON SCROLL AND
+//  HIDE IT IF THE WINDOW WIDTH IS LESS THAN 1200PX    
+$(window).on('scroll resize', function() {
+    
+    var $windowScroll = $(window).scrollTop();
+    var $windowWidth = $(window).width();
+    
+     if ( $windowWidth <= 1200 ) {
+         $('.side-share').hide();
+    } else {
+        if ( $windowScroll >= $headerPosition) {
+        $('.side-share').fadeIn(300);
+        }else {
+            $('.side-share').fadeOut(100);
+        }
+    }      
+});
+    
+  
+    
 
 /************************************************************ FIX POSIBLES ERRORS *********/
 

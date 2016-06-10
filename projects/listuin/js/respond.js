@@ -143,7 +143,7 @@ var $photoNumber = 2;
 $('#create-img').on('click', function(){
     $(this).attr('src', 'img/my-list/' + $photoNumber + '.png');
     $photoNumber++;
-    if ($photoNumber > 7) {
+    if ($photoNumber > 11) {
         $photoNumber = 1;
     }
 });

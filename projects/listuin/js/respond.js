@@ -7,10 +7,16 @@ var $randomNumber = Math.random();
 //COMMENTS SECTION
 
 var $commentBox = $('.coment-box');
-
-var comment1 = '<img src="img/testimonial1.jpg" /><blockquote><p class="testimonial">“ Before I discoverd this website I literely had fifthine tabs reserved for web designecontant, now I have one. Thank you :) “</p></blockquote>';
-var comment2 = '<img src="img/testimonial2.jpg" /><blockquote><p class="testimonial">“ Thank you so much for this website! The content quality is incredible and almost everything is very useful to me. “</p></blockquote>';
-var comment3 = '<img src="img/testimonial3.jpg" /><blockquote><p class="testimonial">“ Great website, content is very useful and it helps me alot in my work. You guys have made my life easier. “</p></blockquote>';
+    
+if ( $('.header-title').is(':visible') ) {
+    var comment1 = '<img src="img/testimonial1.jpg" /><blockquote><p class="testimonial">“ Before I discoverd this website I literely had fifthine tabs reserved for web designecontant, now I have one. Thank you :) “</p></blockquote>';
+    var comment2 = '<img src="img/testimonial2.jpg" /><blockquote><p class="testimonial">“ Thank you so much for this website! The content quality is incredible and almost everything is very useful to me. “</p></blockquote>';
+    var comment3 = '<img src="img/testimonial3.jpg" /><blockquote><p class="testimonial">“ Great website, content is very useful and it helps me alot in my work. You guys have made my life easier. “</p></blockquote>';
+}else {
+    var comment1 = '<img src="../img/testimonial1.jpg" /><blockquote><p class="testimonial">“ Before I discoverd this website I literely had fifthine tabs reserved for web designecontant, now I have one. Thank you :) “</p></blockquote>';
+    var comment2 = '<img src="../img/testimonial2.jpg" /><blockquote><p class="testimonial">“ Thank you so much for this website! The content quality is incredible and almost everything is very useful to me. “</p></blockquote>';
+    var comment3 = '<img src="../img/testimonial3.jpg" /><blockquote><p class="testimonial">“ Great website, content is very useful and it helps me alot in my work. You guys have made my life easier. “</p></blockquote>';
+}    
 
 if ($randomNumber <= 0.30) {
     $commentBox.empty();

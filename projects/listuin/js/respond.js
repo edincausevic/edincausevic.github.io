@@ -144,14 +144,22 @@ $titleInput.keyup(function(){
 });
 
 //CHOSE PHOTO
-var $photoNumber = 2;
+var $photoNumber = 1;
 
-$('#create-img').on('click', function(){
-    $(this).attr('src', 'img/my-list/' + $photoNumber + '.png');
+$('#create-img').on('click', function(){   
     $photoNumber++;
-    if ($photoNumber > 11) {
+    if ($photoNumber === 12) {
         $photoNumber = 1;
     }
+    $(this).attr('src', 'img/my-list/' + $photoNumber + '.png');
+});
+$('#create-img').contextmenu(function(e) {
+    e.preventDefault();
+    if ($photoNumber == 1) {
+        $photoNumber = 12;
+    }
+    $photoNumber--;
+    $(this).attr('src', 'img/my-list/' + $photoNumber + '.png');
 });
 
 

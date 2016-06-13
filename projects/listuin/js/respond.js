@@ -88,18 +88,21 @@ var interval = setInterval(function() {
 
 if(localStorage.redCover == 'hideRedCover'){ $('#create-list').hide(); }
 if(localStorage.myPageLinks == 'show') { $('#my-list-link').show(); }  
-$('#link-list').append(localStorage.myList);
-if($('#link-list li').length === 0 ) { $('#empty-list-msg').show();}    
-  
+$('#link-list').append(localStorage.myList);   
+    
 $('#title-of-list').html(localStorage.createListName);
 $('#profile-photo').attr('src', localStorage.profileImage);
 
-// HIDE EXTERNAL LIST ITME IF LIST IS FULL
-if ($('#link-list li').length >= 20) {
-    $('#external-list').hide();
-}    
    
-
+//check for the list length. show and hise yellow emty list link    
+function checkListLength() {
+    if($('#link-list li').length === 0 ) { 
+    $('#empty-list-msg').show();
+    }else {
+        $('#empty-list-msg').hide();
+    }    
+} 
+checkListLength();    
 /********************************************************************** CREATE MY LIST *****/ 
 
 
@@ -251,6 +254,13 @@ $('.pin').on('click', function(e){
     var $couter = $count++;
     localStorage.setItem('listCount', $count);
     
+    //check the size of the list
+    for(var x in localStorage) {
+        if ( x === 'myList' ) {
+            var $myListSize = (((localStorage[x].length * 2)/1024/1024).toFixed(2));
+        }
+    } 
+    
     var $listEmpty = $(this).next();
     
     if(!localStorage.profileImage) {
@@ -260,7 +270,7 @@ $('.pin').on('click', function(e){
             $listEmpty.fadeOut('200');
         }, 1000);
         e.stopPropagation();
-    }else if($couter >= 20) {
+    }else if($myListSize == 1.25) {
             $listEmpty.html('Your list is full!').fadeIn('200');
 
             setTimeout(function(){
@@ -307,6 +317,13 @@ $('.pin-list').on('click', function(e){
     var $couter = $count++;
     localStorage.setItem('listCount', $count);
     
+    //check the size of the list
+    for(var x in localStorage) {
+        if ( x === 'myList' ) {
+            var $myListSize = (((localStorage[x].length * 2)/1024/1024).toFixed(2));
+        }
+    } 
+       console.log($myListSize);
     var $listEmpty = $(this).next();
 
     if(!localStorage.profileImage) {
@@ -316,7 +333,7 @@ $('.pin-list').on('click', function(e){
             $listEmpty.fadeOut('200');
         }, 1000);
         e.stopPropagation();
-    }else if($couter >= 20) {
+    }else if($myListSize == 1.25) {
             $listEmpty.html('Your list is full!').fadeIn('200');
 
             setTimeout(function(){
@@ -349,6 +366,7 @@ $('.pin-list').on('click', function(e){
             }
 
             appendToStorage('myList', $link); 
+            
         }
 });    
 
@@ -371,7 +389,8 @@ $('#remove-li').on('click', function(e){
     
     removeThisLink();
     saveList();
-    countItems();
+    checkListSize();
+    checkListLength();
     e.preventDefault();
 });
 
@@ -445,8 +464,8 @@ $('#yes').on('click', function(){
     $('#link-list li').remove();
     $('#remove-all-links span').hide();
     saveList();
-    $('#list-num-of-items').html('0');
-    $('#empty-list-msg').show();
+    checkListSize();
+    checkListLength();
     $('#addExternal').show();
     //reset counter
     localStorage.setItem('listCount', 0);
@@ -471,11 +490,17 @@ $('#add-external-link').on('click', function(e){
     var $couter = $count++;
     localStorage.setItem('listCount', $count);
 
-    if($couter >= 20) {
+    //check the size of the list
+    for(var x in localStorage) {
+        if ( x === 'myList' ) {
+            var $myListSize = (((localStorage[x].length * 2)/1024/1024).toFixed(2));
+        }
+    } 
+    
+    if($myListSize == 1.25) {
         e.preventDefault();
         localStorage.setItem('listCount', 20);
     }else {
-
         $('.add-external-popup').fadeIn('300');
         //empty error messages
         $('#error-external-title').html('&nbsp;');
@@ -500,8 +525,15 @@ $('#add-external-url').on('click', function(e){
     var $counterStr = localStorage.listCount;
     var $couter = parseInt($counterStr);
 
+    // check for the size of the list
+    for(var x in localStorage) {
+        if ( x === 'myList' ) {
+            var $myListSize = (((localStorage[x].length * 2)/1024/1024).toFixed(2));
+        }
+    }  
+
     //change counter
-    if ( $couter == 20) {
+    if ( $myListSize == 1.25) {
         e.preventDefault();
     }else {
 
@@ -528,7 +560,10 @@ $('#add-external-url').on('click', function(e){
     $('#link-list').append($link);
     
     saveList();   
-    countItems();
+        
+    // add list size info
+    checkListSize();   
+    checkListLength();    
     e.preventDefault();
     }    
 });    
@@ -548,7 +583,7 @@ function saveList() {
     
     
 /*************************************************** COUNT ITEMS IN THE LIST *****/    
-    
+/*    
 //LIST ITEM COUNT    
 function countItems() {
     var $listLength = parseInt($('#link-list li').length);
@@ -572,7 +607,7 @@ function countItems() {
     
 }    
 countItems();
-    
+*/    
 /*************************************************************** EMAIL ***********/    
     
 $('#email').on('click', function(e){
@@ -651,9 +686,23 @@ $(window).on('scroll resize', function() {
     }      
 });
     
-  
-    
+/******************************************************** CALCULATE LOCAL STORAGE *********/    
 
+function checkListSize() {
+    for(var x in localStorage) {
+        if ( x === 'myList' ) {
+            var $myListSize = (((localStorage[x].length * 2)/1024/1024).toFixed(2));
+                $('#list-num-of-items').html($myListSize);
+            console.log(x);
+        }
+    }    
+    // HIDE EXTERNAL LIST ITME IF LIST IS FULL    
+    if ($myListSize == 1.25) {
+        $('#addExternal').hide();
+    }
+    console.log($myListSize);
+}    
+checkListSize();
 /************************************************************ FIX POSIBLES ERRORS *********/
 
 

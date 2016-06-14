@@ -108,9 +108,9 @@ checkListLength();
 
 // CREATE LIST - zamjeni s ajaxom kad skontas
 $('#create-list').on('click', function(){
-        resetCreateMenu();
-        $(this).fadeOut('300');
-        $('#show-create-popup').fadeIn('300');  
+    resetCreateMenu();
+    $(this).fadeOut('300');
+    $('#show-create-popup').fadeIn('300');
 });
     
 // RESET CREATE MENU
@@ -220,8 +220,6 @@ function createMyProfile() {
     $('#my-list-link').show();
     localStorage.myPageLinks = 'show';
     
-    //conuter
-    localStorage.listCount = 0;
 }
     
 // REMOVE MY LIST
@@ -248,12 +246,6 @@ $('#yes-remove-list').on('click', function(e){
 $('.pin').on('click', function(e){
     var $this = $(this);
     
-    //change counter
-    var $listCount = localStorage.listCount;
-    var $count = parseInt($listCount);
-    var $couter = $count++;
-    localStorage.setItem('listCount', $count);
-    
     //check the size of the list
     for(var x in localStorage) {
         if ( x === 'myList' ) {
@@ -276,7 +268,6 @@ $('.pin').on('click', function(e){
             setTimeout(function(){
                 $listEmpty.fadeOut('200');
             }, 1000);
-            localStorage.setItem('listCount', 20);
             e.stopPropagation();
         }else {
 
@@ -311,12 +302,6 @@ $('.pin').on('click', function(e){
 $('.pin-list').on('click', function(e){
      var $this = $(this);
     
-    //change counter
-    var $listCount = localStorage.listCount;
-    var $count = parseInt($listCount);
-    var $couter = $count++;
-    localStorage.setItem('listCount', $count);
-    
     //check the size of the list
     for(var x in localStorage) {
         if ( x === 'myList' ) {
@@ -339,7 +324,6 @@ $('.pin-list').on('click', function(e){
             setTimeout(function(){
                 $listEmpty.fadeOut('200');
             }, 1000);
-            localStorage.setItem('listCount', 20);
             e.stopPropagation();
         }else {
 
@@ -381,12 +365,6 @@ $(document).on('click', '.remove-list-i', function(){
 });
 
 $('#remove-li').on('click', function(e){
-    //change counter
-    var $listCount = localStorage.listCount;
-    var $count = parseInt($listCount);
-    var $counter = $count - 1;
-    localStorage.setItem('listCount', $counter);
-    
     removeThisLink();
     saveList();
     checkListSize();
@@ -423,7 +401,7 @@ $(document).on('click', '.change-color', function(){
     $(this).closest('li').find('.bc-bolor p').attr('class', '');
     $(this).closest('li').find('.bc-bolor p').addClass('color' + $colorCounter);
     $colorCounter++;
-    if ($colorCounter > 6) {
+    if ($colorCounter > 9) {
         $colorCounter = 1;
     }   
     
@@ -467,8 +445,6 @@ $('#yes').on('click', function(){
     checkListSize();
     checkListLength();
     $('#addExternal').show();
-    //reset counter
-    localStorage.setItem('listCount', 0);
 });    
 
 $('#no').on('click', function(){
@@ -484,11 +460,6 @@ $('#no').on('click', function(){
 //EXTERNAL POPUP    
 $('#add-external-link').on('click', function(e){
     e.preventDefault();
-    //change counter
-    var $listCount = localStorage.listCount;
-    var $count = parseInt($listCount);
-    var $couter = $count++;
-    localStorage.setItem('listCount', $count);
 
     //check the size of the list
     for(var x in localStorage) {
@@ -499,7 +470,6 @@ $('#add-external-link').on('click', function(e){
     
     if($myListSize == 1.25) {
         e.preventDefault();
-        localStorage.setItem('listCount', 20);
     }else {
         $('.add-external-popup').fadeIn('300');
         //empty error messages
@@ -510,20 +480,33 @@ $('#add-external-link').on('click', function(e){
         $('#external-title').val(''); 
         $('#external-url').val('');
     }
+    
+    $('#external-title').focus();
 });
  
 
 
 //ADD EXTENRAL LINK
 $('#add-external-url').on('click', function(e){
+    e.preventDefault();
+    makeExternalLink();
+});    
+
     
-    var $title = $('#external-title').val();
+//ADD EXTERNAL LINK WITH ENTER
+if ($('body').is('.my-list')) {
+    $(document).on('keypress', function(e) {
+        if ( e.which == 13 ) {
+            makeExternalLink();
+        }
+    });
+}
+
+function makeExternalLink() {
+     var $title = $('#external-title').val();
     var $url = $('#external-url').val();
     var $errorExternalTitle = $('#error-external-title');
     var $errorExternalUrl = $('#error-external-url'); 
-
-    var $counterStr = localStorage.listCount;
-    var $couter = parseInt($counterStr);
 
     // check for the size of the list
     for(var x in localStorage) {
@@ -536,42 +519,38 @@ $('#add-external-url').on('click', function(e){
     if ( $myListSize == 1.25) {
         e.preventDefault();
     }else {
+            
+            if($title.length > 0 && $url.length > 0) {
 
-    if($title.length > 0 && $url.length > 0) {
-        
-        var $link = '<li class="my-list-item"><i class="fa fa-times-circle list-itme-icons remove-list-i"></i><i class="fa fa-paint-brush list-itme-icons change-color"></i><i class="fa fa-font list-itme-icons a-chage-text"></i><input type="text" maxlength="25" class="change-title-ln" size="70"><a href="' +$url + '" class="bc-bolor" target="_blank"><p class="color1"><i class="fa fa-share-square-o"></i><span class="l-title">' +$title+ '</span></p></a></li>';
 
-        $('.add-external-popup').fadeOut('300');
-    }else {
-         if($title.length === 0){
-            $errorExternalTitle.html('Please enter a title'); 
-             
-        }else {
-            $errorExternalTitle.html('&nbsp;'); 
-        } 
+            var $link = '<li class="my-list-item"><i class="fa fa-times-circle list-itme-icons remove-list-i"></i><i class="fa fa-paint-brush list-itme-icons change-color"></i><i class="fa fa-font list-itme-icons a-chage-text"></i><input type="text" maxlength="25" class="change-title-ln" size="70"><a href="' +$url + '" class="bc-bolor" target="_blank"><p class="color1"><i class="fa fa-share-square-o"></i><span class="l-title">' +$title+ '</span></p></a></li>';
 
-        if($url.length === 0) {
-            $errorExternalUrl.html('Please enter a url'); 
-        }else {
-             $errorExternalUrl.html('&nbsp;');
+            $('.add-external-popup').fadeOut('300');
+            }else {
+                 if($title.length === 0){
+                    $errorExternalTitle.html('Please enter a title'); 
+
+                }else {
+                    $errorExternalTitle.html('&nbsp;'); 
+                } 
+
+                if($url.length === 0) {
+                    $errorExternalUrl.html('Please enter a url'); 
+                }else {
+                     $errorExternalUrl.html('&nbsp;');
+                    }
             }
-    }
-    //add link
-    $('#link-list').append($link);
-    
-    saveList();   
-        
-    // add list size info
-    checkListSize();   
-    checkListLength();    
-    e.preventDefault();
-    }    
-});    
+            //add link
+            $('#link-list').append($link);
 
+            saveList();   
+
+            // add list size info
+            checkListSize();   
+            checkListLength();    
+    }    
+}    
     
-//ADD EXTERNAL LINK WITH ENTER
-//dodati
-  
     
 /************************************************************** SAVE MY LIST *****/
     

@@ -180,9 +180,6 @@ header {
 
 /* video header */
 
-header video {
-    width: 100%;
-}
 .video-back {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.3);
@@ -729,6 +726,19 @@ header[data-header="small"] {
     background-color: #d35400;
 }
 
+.color7 {
+    background-color: #1abc9c;
+}
+
+.color8 {
+    background-color: #33ce74;
+}
+
+.color9 {
+    background-color: #e67e22;
+}
+
+
 
 /*--------------------------------------*/
 /*              SIDE MENU               */
@@ -1124,7 +1134,7 @@ footer {
 }
 
 /* video header repear  */
-@media only screen and (max-width: 591px) {
+@media only screen and (max-width: 600px) {
     header video {
         max-height: 100%;
         max-width: none;

@@ -188,6 +188,9 @@ header {
     top: 0;
     left: 0;
 }
+header video {
+    max-width: 100%;
+}
 
 .background-image-video {
     background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url(../css/img/videos/video-back.png);

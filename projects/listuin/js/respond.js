@@ -168,6 +168,7 @@ $('#create-img').contextmenu(function(e) {
 
 // SAVE THE LIST BY CLICK
 $('#save-create-list').on('click', function(e){
+    if ( localStorage.length !== 0 ) { localStorage.clear(); }
     var $title = $('#title-cr-list').val();
     if ($title === '') {
         $('#list-create-error').html('Please enter a title');
@@ -231,6 +232,8 @@ $('#yes-remove-list').on('click', function(e){
     closePopup();  
     localStorage.clear();
     $("#create-list").show();
+    $('#title-of-list').html('My list');
+    $('#profile-photo').attr('src', 'img/my-list/1.png');
     e.preventDefault();
 });
 
@@ -308,7 +311,7 @@ $('.pin-list').on('click', function(e){
             var $myListSize = (((localStorage[x].length * 2)/1024/1024).toFixed(2));
         }
     } 
-       console.log($myListSize);
+
     var $listEmpty = $(this).next();
 
     if(!localStorage.profileImage) {

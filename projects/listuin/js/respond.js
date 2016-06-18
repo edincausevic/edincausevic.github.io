@@ -332,6 +332,7 @@ $('.pin-list').on('click', function(e){
 
             // store the title and href
             var $url = $(this).next().next().attr('href');
+            console.log($url);
             var $title = $(this).closest('li').find('h4').html();
             
             // show the msg
@@ -343,7 +344,7 @@ $('.pin-list').on('click', function(e){
             $('#pin-this-tem').slideDown('slow').fadeOut('300');
 
             //clone
-            var $link = '<li class="my-list-item"><i class="fa fa-times-circle list-itme-icons remove-list-i"></i><i class="fa fa-paint-brush list-itme-icons change-color"></i><i class="fa fa-font list-itme-icons a-chage-text"></i><input type="text" maxlength="25" class="change-title-ln" size="70"><a href="' +$url + '" class="bc-bolor" target="_blank"><p class="color1"><i class="fa fa-share-square-o"></i><span class="l-title">' +$title+ '</span></p></a></li>';
+            var $link = '<li class="my-list-item"><i class="fa fa-times-circle list-itme-icons remove-list-i"></i><i class="fa fa-paint-brush list-itme-icons change-color"></i><i class="fa fa-font list-itme-icons a-chage-text"></i><input type="text" maxlength="25" class="change-title-ln" size="70"><a href="../' +$url + '" class="bc-bolor" target="_blank"><p class="color1"><i class="fa fa-share-square-o"></i><span class="l-title">' +$title+ '</span></p></a></li>';
 
             //save in my list
             function appendToStorage(name, data){
@@ -397,19 +398,28 @@ $('#link-list').on('mouseup', 'li', function(){
 });    
     
     
-//CHANGE COLOR OF THE ITEMS
+//SHOW COLOR PALAT
 var $colorCounter = 2;
 
 $(document).on('click', '.change-color', function(){
-    $(this).closest('li').find('.bc-bolor p').attr('class', '');
-    $(this).closest('li').find('.bc-bolor p').addClass('color' + $colorCounter);
-    $colorCounter++;
-    if ($colorCounter > 9) {
-        $colorCounter = 1;
-    }   
+    var colorPalat = '<div class="color-palat"><i class="fa fa-times-circle list-itme-icons close-color-palat"></i><i class="fa fa-tint" aria-hidden="true"></i><ul><li><div class="color1"></div><li><li><div class="color2"></div><li><li><div class="color3"></div><li><li><div class="color4"></div><li><li class="h-exx-s"><div class="color5"></div><li><li class="h-exx-s"><div class="color6"></div><li><li class="h-exx-s"><div class="color7"></div><li><li class="h-on-s"><div class="color8"></div><li><li class="h-on-s"><div class="color9"></div><li></ul></div>';
     
-    saveList();
+    $(this).closest('li').append(colorPalat);
 });
+    
+// CHANGE THE COLOR
+$(document).on('click', '.color-palat div', function() {
+    var $color = $(this).attr('class');
+    console.log($color);
+    console.log($(this).closest('.my-list-item').find('a').find('p').attr('class',$color));
+    $('.color-palat').remove();
+  
+});    
+    
+// HIDE COLOR PALAT
+$(document).on('click', '.close-color-palat', function(){
+    $(this).closest('div').remove();
+});    
 
 //CHANGE THE TITLE
 $(document).on('click', '.a-chage-text', function(){
@@ -675,14 +685,12 @@ function checkListSize() {
         if ( x === 'myList' ) {
             var $myListSize = (((localStorage[x].length * 2)/1024/1024).toFixed(2));
                 $('#list-num-of-items').html($myListSize);
-            console.log(x);
         }
     }    
     // HIDE EXTERNAL LIST ITME IF LIST IS FULL    
     if ($myListSize == 1.25) {
         $('#addExternal').hide();
     }
-    console.log($myListSize);
 }    
 checkListSize();
 /************************************************************ FIX POSIBLES ERRORS *********/

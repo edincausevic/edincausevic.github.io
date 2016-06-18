@@ -707,6 +707,41 @@ header[data-header="small"] {
     color: #474747;
 }
 
+.color-palat {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    background-color: #ebebeb;
+    border: 1px solid #f7f7f7;
+    z-index: 2;
+}
+
+.fa-tint {
+    font-size: 183%;
+    margin: 19px 0 0 18px;
+}
+.fa-tint, .close-color-palat {
+    color: #cecaca!important;
+}
+
+.color-palat li {
+    display: inline-block;
+    padding-right: 8px;
+}
+
+.color-palat div {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.color-palat ul {
+    margin: -32px 0px 0 64px;
+}
+
 /* CHANGE COLORS */
 
 .color1 {
@@ -1124,6 +1159,9 @@ footer {
     .m-small-p { padding: 0 25px; }
     .message { font-size: 150%; }
     .my-list-items-note { margin: 0 25px; } 
+    .color-palat ul { margin: -27px 0px 0 64px; }
+    .color-palat div { width: 25px; height: 25px; }
+    .h-on-s { display: none!important;}
     .ext-input { width: 370px; }
     .btn {
         padding: 12px 0px;
@@ -1167,6 +1205,8 @@ footer {
     .acc-pop { width: 100%; }
     .acc-pop img { width: 150px; }
     .my-list-items-note { margin: 0 10px; }
+    .color-palat ul { margin: -26px 0px 0 64px; }
+    .close-color-palat { margin-top: 3px;}
     .pin-style {
         top: 25px;
         padding: 25px 15px;

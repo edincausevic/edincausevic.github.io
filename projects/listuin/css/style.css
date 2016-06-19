@@ -448,7 +448,6 @@ header[data-header="small"] {
 .back-link {
     font-family: 'Open Sans', sans-serif;
     position: absolute;
-    left: 0px;
     top: -40px;
 }
 
@@ -742,6 +741,14 @@ header[data-header="small"] {
     margin: -32px 0px 0 64px;
 }
 
+.my-list-mob-link {
+    color: #dd4b39!important;
+    margin-top: 2px;
+    float: right;
+    display: none;
+}
+#rig { right: 0; }
+
 /* CHANGE COLORS */
 
 .color1 {
@@ -815,6 +822,10 @@ header[data-header="small"] {
 .side-menu ul li:hover {
     background-color: #D8D8D8;
     cursor: pointer;
+}
+
+.side-menu .fa-link {
+    color: #d8d8d8;
 }
 
 .my-list-link {

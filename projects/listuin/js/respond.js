@@ -87,7 +87,8 @@ var interval = setInterval(function() {
 /********************************************** LOAD LOCAL SOTRAGET AND ALL THE CHANGES ***/
 
 if(localStorage.redCover == 'hideRedCover'){ $('#create-list').hide(); }
-if(localStorage.myPageLinks == 'show') { $('#my-list-link').show(); }  
+if(localStorage.myPageLinks == 'show') { $('#my-list-link').show(); }    
+if($(window).width() <= 1002 && localStorage.myPageLinks == 'show') { $('.my-list-mob-link').show(); }    
 $('#link-list').append(localStorage.myList);   
     
 $('#title-of-list').html(localStorage.createListName);
@@ -236,13 +237,19 @@ $('#yes-remove-list').on('click', function(e){
     $('#profile-photo').attr('src', 'img/my-list/1.png');
     e.preventDefault();
 });
-
-
-/*************************************************************** ADD AND REMOVE ITEMS ****/ 
-
-
+  
+// hide my list link if window size in below 1002px and 
+// if there is no my list profile    
+$(window).on('resize', function() {
+    if (localStorage.myPageLinks == 'show') {
+        var $link = $('.my-list-mob-link');
+        var myListTextLink = $(window).width() <= 1002 ? $link.show() : $link.hide(); 
+    }
+});    
     
-
+    
+    
+/*************************************************************** ADD AND REMOVE ITEMS ****/ 
     
     
 // PIN ITEM

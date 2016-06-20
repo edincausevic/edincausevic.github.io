@@ -294,7 +294,7 @@ $('.pin').on('click', function(e){
             $('#pin-this-tem').slideDown('slow').fadeOut('300');
 
             //clone
-            var $link = '<li class="my-list-item"><i class="fa fa-times-circle list-itme-icons remove-list-i"></i><i class="fa fa-paint-brush list-itme-icons change-color"></i><i class="fa fa-font list-itme-icons a-chage-text"></i><input type="text" maxlength="25" class="change-title-ln" size="70"><a href="' +$url + '" class="bc-bolor" target="_blank"><p class="color1"><i class="fa fa-share-square-o"></i><span class="l-title">' +$title+ '</span></p></a></li>';
+            var $link = '<li class="my-list-item"><i class="fa fa-times-circle list-itme-icons remove-list-i"></i><i class="fa fa-paint-brush list-itme-icons change-color"></i><i class="fa fa-font list-itme-icons a-chage-text"></i><input type="text" maxlength="25" class="change-title-ln"><a href="' +$url + '" class="bc-bolor" target="_blank"><p class="color1"><i class="fa fa-share-square-o"></i><span class="l-title">' +$title+ '</span></p></a></li>';
 
             //save in my list
             function appendToStorage(name, data){
@@ -351,7 +351,7 @@ $('.pin-list').on('click', function(e){
             $('#pin-this-tem').slideDown('slow').fadeOut('300');
 
             //clone
-            var $link = '<li class="my-list-item"><i class="fa fa-times-circle list-itme-icons remove-list-i"></i><i class="fa fa-paint-brush list-itme-icons change-color"></i><i class="fa fa-font list-itme-icons a-chage-text"></i><input type="text" maxlength="25" class="change-title-ln" size="70"><a href="../' +$url + '" class="bc-bolor" target="_blank"><p class="color1"><i class="fa fa-share-square-o"></i><span class="l-title">' +$title+ '</span></p></a></li>';
+            var $link = '<li class="my-list-item"><i class="fa fa-times-circle list-itme-icons remove-list-i"></i><i class="fa fa-paint-brush list-itme-icons change-color"></i><i class="fa fa-font list-itme-icons a-chage-text"></i><input type="text" maxlength="25" class="change-title-ln"><a href="../' +$url + '" class="bc-bolor" target="_blank"><p class="color1"><i class="fa fa-share-square-o"></i><span class="l-title">' +$title+ '</span></p></a></li>';
 
             //save in my list
             function appendToStorage(name, data){
@@ -380,6 +380,7 @@ $('#remove-li').on('click', function(e){
     saveList();
     checkListSize();
     checkListLength();
+    showNumberOfLinksInList();
     e.preventDefault();
 });
 
@@ -409,6 +410,7 @@ $('#link-list').on('mouseup', 'li', function(){
 var $colorCounter = 2;
 
 $(document).on('click', '.change-color', function(){
+    $('.color-palat').remove(); 
     var colorPalat = '<div class="color-palat"><i class="fa fa-times-circle list-itme-icons close-color-palat"></i><i class="fa fa-tint" aria-hidden="true"></i><ul><li><div class="color1"></div><li><li><div class="color2"></div><li><li><div class="color3"></div><li><li><div class="color4"></div><li><li class="h-exx-s"><div class="color5"></div><li><li class="h-exx-s"><div class="color6"></div><li><li class="h-exx-s"><div class="color7"></div><li><li class="h-on-s"><div class="color8"></div><li><li class="h-on-s"><div class="color9"></div><li></ul></div>';
     
     $(this).closest('li').append(colorPalat);
@@ -429,11 +431,35 @@ $(document).on('click', '.close-color-palat', function(){
 });    
 
 //CHANGE THE TITLE
-$(document).on('click', '.a-chage-text', function(){
-    $(this).closest('li').find('.l-title').empty();
-    $(this).closest('li').find('.change-title-ln').show().focus();
+$(document).on('click', '.a-chage-text', function(e){
+    var $this = $(this);
+    var $backgroundColor = $this.closest('li').find('p[class^="color"]').css('background-color');
+    $('.change-title-ln').css('background-color', $backgroundColor);
+    $('.change-title-ln').hide();
+    var title = $this.closest('li').find('.l-title').html();
+    $this.closest('li').find('.change-title-ln').show().focus();
+    $this.closest('li').find('.change-title-ln').val(title).select();
 });
 
+// hide input with click on document    
+$(document).on('click', function(event) {
+    var changeColorBtn = $('.a-chage-text').attr('class');
+    var $target = $(event.target).attr('class');
+    
+    // check if the click is on A - chage text btn
+    if ( $target == changeColorBtn ) {
+        return;
+    }else {
+        if ( $('.change-title-ln').is(':visible') ) {
+           $('.change-title-ln').hide();
+        }
+    }
+});
+
+
+
+               
+               
 //CHANGE THE TITLE ON BLUR AND ENTER
 $(document).on('keypress', '.change-title-ln', function(e){
     var $input = $(this).closest('li').find('.change-title-ln').val();
@@ -447,14 +473,12 @@ $(document).on('keypress', '.change-title-ln', function(e){
         saveList();
     }
     
-});    
+});  
     
-// dodaj save na blur <------------------------
-    
-    
+
 //REMOVE ALL LINKS IN MY LIST   
 $('#remove-all-links a').on('click', function(e){
-    $('#remove-all-links span').show();
+    $('#remove-all-links span').toggle();
     e.preventDefault();
 });    
 //REMOVE ALL ITEMS - YES
@@ -465,6 +489,7 @@ $('#yes').on('click', function(){
     checkListSize();
     checkListLength();
     $('#addExternal').show();
+    showNumberOfLinksInList();
 });    
 
 $('#no').on('click', function(){
@@ -510,6 +535,7 @@ $('#add-external-link').on('click', function(e){
 $('#add-external-url').on('click', function(e){
     e.preventDefault();
     makeExternalLink();
+    showNumberOfLinksInList();
 });    
 
     
@@ -543,7 +569,7 @@ function makeExternalLink() {
             if($title.length > 0 && $url.length > 0) {
 
 
-            var $link = '<li class="my-list-item"><i class="fa fa-times-circle list-itme-icons remove-list-i"></i><i class="fa fa-paint-brush list-itme-icons change-color"></i><i class="fa fa-font list-itme-icons a-chage-text"></i><input type="text" maxlength="25" class="change-title-ln" size="70"><a href="' +$url + '" class="bc-bolor" target="_blank"><p class="color1"><i class="fa fa-share-square-o"></i><span class="l-title">' +$title+ '</span></p></a></li>';
+            var $link = '<li class="my-list-item"><i class="fa fa-times-circle list-itme-icons remove-list-i"></i><i class="fa fa-paint-brush list-itme-icons change-color"></i><i class="fa fa-font list-itme-icons a-chage-text"></i><input type="text" maxlength="25" class="change-title-ln"><a href="' +$url + '" class="bc-bolor" target="_blank"><p class="color1"><i class="fa fa-share-square-o"></i><span class="l-title">' +$title+ '</span></p></a></li>';
 
             $('.add-external-popup').fadeOut('300');
             }else {
@@ -570,6 +596,13 @@ function makeExternalLink() {
             checkListLength();    
     }    
 }    
+    
+// show number of links in my list
+function showNumberOfLinksInList() {
+    var $listLengthNumber = $('.items li').length;     
+    $('.list-counter').html($listLengthNumber + ' Links');
+}    
+showNumberOfLinksInList();    
     
     
 /************************************************************** SAVE MY LIST *****/
@@ -657,8 +690,6 @@ $('.bg-trans').on('click', function(e){
             $(this).fadeOut('300');
             
         }
-
-    
 });
     
     

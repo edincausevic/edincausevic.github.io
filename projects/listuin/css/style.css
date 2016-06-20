@@ -665,9 +665,10 @@ header[data-header="small"] {
 }
 
 .change-title-ln {
-    background: transparent;
-    left: 45px;
-    top: 15px;
+    left: 42px;
+    top: 16px;
+    height: 35px;
+    width: 60%;
     border: none;
     position: absolute;
     font-size: 150%;
@@ -712,8 +713,8 @@ header[data-header="small"] {
     width: 100%;
     height: 100%;
     border-radius: 3px;
-    background-color: #ebebeb;
-    border: 1px solid #f7f7f7;
+    background-color: #3e3e3e;
+    border: 1px solid #353434;
     z-index: 2;
 }
 
@@ -748,6 +749,11 @@ header[data-header="small"] {
     display: none;
 }
 #rig { right: 0; }
+
+.list-counter {
+    position: absolute;
+    right: 46%; 
+}
 
 /* CHANGE COLORS */
 
@@ -1218,6 +1224,7 @@ footer {
     .my-list-items-note { margin: 0 10px; }
     .color-palat ul { margin: -26px 0px 0 64px; }
     .close-color-palat { margin-top: 3px;}
+    .fa-paint-brush { top: 13px; }
     .pin-style {
         top: 25px;
         padding: 25px 15px;

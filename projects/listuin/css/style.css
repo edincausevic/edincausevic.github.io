@@ -1180,6 +1180,7 @@ footer {
     .color-palat div { width: 25px; height: 25px; }
     .h-on-s { display: none!important;}
     .ext-input { width: 370px; }
+    .change-title-ln { left: 38px; }
     .btn {
         padding: 12px 0px;
         width: 120px;
@@ -1220,6 +1221,7 @@ footer {
     .item img { width: 70px; }
     .m-small-p { padding: 0 10px; }
     .acc-pop { width: 100%; }
+    .change-title-ln { left: 38px; top: 36px; }
     .acc-pop img { width: 150px; }
     .my-list-items-note { margin: 0 10px; }
     .color-palat ul { margin: -26px 0px 0 64px; }

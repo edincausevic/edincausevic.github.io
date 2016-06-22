@@ -222,6 +222,9 @@ function createMyProfile() {
     $('#my-list-link').show();
     localStorage.myPageLinks = 'show';
     
+    // create local storage array
+    localStorage.listArray = '';
+    
 }
     
 // REMOVE MY LIST
@@ -252,9 +255,17 @@ $(window).on('resize', function() {
 /*************************************************************** ADD AND REMOVE ITEMS ****/ 
     
     
+    
+    
 // PIN ITEM
 $('.pin').on('click', function(e){
     var $this = $(this);
+    var $listEmpty = $(this).next();
+    
+    // store the title and href
+    var $url = $(this).next().next().attr('href');
+    var $title = $(this).closest('li').find('h4').html();
+    
     
     //check the size of the list
     for(var x in localStorage) {
@@ -263,7 +274,7 @@ $('.pin').on('click', function(e){
         }
     } 
     
-    var $listEmpty = $(this).next();
+    
     
     if(!localStorage.profileImage) {
         $listEmpty.html('Create a list first').fadeIn('200');
@@ -273,17 +284,14 @@ $('.pin').on('click', function(e){
         }, 1000);
         e.stopPropagation();
     }else if($myListSize == 1.25) {
-            $listEmpty.html('Your list is full!').fadeIn('200');
+        $listEmpty.html('Your list is full!').fadeIn('200');
 
-            setTimeout(function(){
-                $listEmpty.fadeOut('200');
-            }, 1000);
-            e.stopPropagation();
+        setTimeout(function(){
+            $listEmpty.fadeOut('200');
+        }, 1000);
+
+        e.stopPropagation();
         }else {
-
-            // store the title and href
-            var $url = $(this).next().next().attr('href');
-            var $title = $(this).closest('li').find('h4').html();
             
             // show the msg
             $('#pin-this-tem').find('#pin-msg').html($title + ' is added to your list!');
@@ -308,9 +316,14 @@ $('.pin').on('click', function(e){
     
 });
 
-// PIN THE GROUP ITEM
+// PIN THE GROUP ITEM 
 $('.pin-list').on('click', function(e){
      var $this = $(this);
+     var $listEmpty = $(this).next();
+
+     // store the title and href
+     var $url = $(this).next().next().attr('href');
+     var $title = $(this).closest('li').find('h4').html();
     
     //check the size of the list
     for(var x in localStorage) {
@@ -318,8 +331,6 @@ $('.pin-list').on('click', function(e){
             var $myListSize = (((localStorage[x].length * 2)/1024/1024).toFixed(2));
         }
     } 
-
-    var $listEmpty = $(this).next();
 
     if(!localStorage.profileImage) {
         $listEmpty.html('Create a list first').fadeIn('200');
@@ -336,11 +347,6 @@ $('.pin-list').on('click', function(e){
             }, 1000);
             e.stopPropagation();
         }else {
-
-            // store the title and href
-            var $url = $(this).next().next().attr('href');
-            console.log($url);
-            var $title = $(this).closest('li').find('h4').html();
             
             // show the msg
             $('#pin-this-tem').find('#pin-msg').html($title + ' is added to your list!');
@@ -364,6 +370,9 @@ $('.pin-list').on('click', function(e){
             
         }
 });    
+    
+
+    
 
 // REMOVE LIST ITEM 
 var $storeColor;
@@ -452,6 +461,7 @@ $(document).on('click', function(event) {
     }else {
         if ( $('.change-title-ln').is(':visible') ) {
            $('.change-title-ln').hide();
+            saveList();
         }
     }
 });
@@ -664,6 +674,7 @@ $('#close-mail').on('click', function(){
 
 // CANCLE CLOSE
 $('.cancle').on('click', function(e){
+    $('.items li').removeAttr('data-info');
     closePopup();
     e.preventDefault();
 });

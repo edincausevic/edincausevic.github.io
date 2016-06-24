@@ -1024,7 +1024,8 @@ footer {
 .acc-pop img,
 .acc-pop input {
     display: block;
-    margin: 0 auto;
+    margin: auto;
+    margin-top: 22px;
 }
 
 #external-url,
@@ -1058,7 +1059,7 @@ footer {
 }
 
 .btns {
-    margin-top: 35px;
+    margin-top: 28px;
 }
 
 .btns ul {
@@ -1221,7 +1222,7 @@ footer {
     .item img { width: 70px; }
     .m-small-p { padding: 0 10px; }
     .acc-pop { width: 100%; }
-    .change-title-ln { left: 38px; top: 36px; }
+    .change-title-ln { left: 35px; top: 10px; }
     .acc-pop img { width: 150px; }
     .my-list-items-note { margin: 0 10px; }
     .color-palat ul { margin: -26px 0px 0 64px; }

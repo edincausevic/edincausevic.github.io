@@ -111,6 +111,7 @@ checkListLength();
 $('#create-list').on('click', function(){
     resetCreateMenu();
     $(this).fadeOut('300');
+    showPopup('popups/create-my-list.html')
     $('#show-create-popup').fadeIn('300');
 });
     
@@ -150,14 +151,14 @@ $titleInput.keyup(function(){
 //CHOSE PHOTO
 var $photoNumber = 1;
 
-$('#create-img').on('click', function(){   
+$(document).on('click', '#create-img', function(){   
     $photoNumber++;
     if ($photoNumber === 12) {
         $photoNumber = 1;
     }
     $(this).attr('src', 'img/my-list/' + $photoNumber + '.png');
 });
-$('#create-img').contextmenu(function(e) {
+$(document).on('contextmenu', '#create-img', function(e) {
     e.preventDefault();
     if ($photoNumber == 1) {
         $photoNumber = 12;
@@ -168,7 +169,7 @@ $('#create-img').contextmenu(function(e) {
 
 
 // SAVE THE LIST BY CLICK
-$('#save-create-list').on('click', function(e){
+$(document).on('click', '#save-create-list', function(e){
     if ( localStorage.length !== 0 ) { localStorage.clear(); }
     var $title = $('#title-cr-list').val();
     if ($title === '') {
@@ -228,11 +229,12 @@ function createMyProfile() {
 }
     
 // REMOVE MY LIST
-$('#remove-my-list').on('click', function(){
+$(document).on('click', '#remove-my-list', function(){
+    showPopup('popups/remove-my-list.html');
     $('.close-create-popup').fadeIn('300');
 });
 
-$('#yes-remove-list').on('click', function(e){
+$(document).on('click', '#yes-remove-list', function(e){
     closePopup();  
     localStorage.clear();
     $("#create-list").show();
@@ -292,7 +294,6 @@ $('.pin').on('click', function(e){
 
         e.stopPropagation();
         }else {
-            
             // show the msg
             $('#pin-this-tem').find('#pin-msg').html($title + ' is added to your list!');
             // create the list
@@ -650,30 +651,44 @@ function countItems() {
 }    
 countItems();
 */    
+
+
+
 /*************************************************************** EMAIL ***********/    
     
 $('#email').on('click', function(e){
-    var $mail = $('#show-mail');
-    $mail.fadeIn('300');
+    showPopup('popups/mail.html');
+    $('#show-mail').fadeIn('300');
     e.preventDefault();
 });    
     
-    
+
+/*************************************************************** OPEN POPUPS *****/  
+
+var popups = $('#popups');
+
+function showPopup(url) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, false);
+    xhr.send(null);
+    popups.html(xhr.response);
+}
+
     
 /*************************************************************** CLOSE POUPS *****/
 
 // X CLOSE
-$('#close').on('click', function(){
+$(document).on('click', '#close', function(){
     closePopup();
 });
  
 // CLOSE MAIL    
-$('#close-mail').on('click', function(){
-    $(this).closest('#show-mail').fadeOut('300');
+$(document).on('click', '#close-mail', function(){
+    $('#show-mail').fadeOut('300');
 });    
 
 // CANCLE CLOSE
-$('.cancle').on('click', function(e){
+$(document).on('click', '.cancle', function(e){
     $('.items li').removeAttr('data-info');
     closePopup();
     e.preventDefault();
@@ -691,7 +706,7 @@ function closePopup() {
 }
 
 // CLOSE POPUPS WHEN CLICKED OUTSIDE THE DIV
-$('.bg-trans').on('click', function(e){
+$(document).on('click', '.bg-trans', function(e){
         if ( e.target !== this) {
             return;
         }else {

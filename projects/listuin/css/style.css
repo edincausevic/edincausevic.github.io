@@ -234,8 +234,8 @@ header video {
 /* icons header */
 
 .background-image-i {
-    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url(../css/img/icons/icons-back.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url(../css/img/icons/icons-back.jpg);
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.6)), url(../css/img/icons/icons-back.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.6)), url(../css/img/icons/icons-back.jpg);
 }
 
 

@@ -666,12 +666,23 @@ $('#email').on('click', function(e){
 /*************************************************************** OPEN POPUPS *****/  
 
 var popups = $('#popups');
+    
+var xhr;
+// check for IE    
+if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    }else {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
 
 function showPopup(url) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, false);
-    xhr.send(null);
-    popups.html(xhr.response);
+    xhr.open('GET', url);
+    xhr.onreadystatechange = function() {
+        if ( ( xhr.readyState == 4 ) && ( xhr.stauts == 200 ) ) {
+            popups.html(xhr.response);
+        }
+    }
+    xhr.send(null); 
 }
 
     

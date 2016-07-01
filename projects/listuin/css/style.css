@@ -830,7 +830,7 @@ header[data-header="small"] {
     cursor: pointer;
 }
 
-.side-menu .fa-link {
+.side-menu  {
     color: #d8d8d8;
 }
 
@@ -845,7 +845,9 @@ header[data-header="small"] {
     color: #fff;
     text-decoration: none;
 }
-
+.my-list-link:hover {
+    background-color: #f1523f;
+}
 .fa-link, .fa-times-circle {
     float: right;
     margin-top: 5px;
@@ -869,15 +871,46 @@ footer {
 /*             SIDE ADDS                */
 /*--------------------------------------*/
 
-.side-share {
+#side-menu-share {
     position: fixed;
     right: 0;
     top: 20%;
-    background-color: rgba(56, 56, 56, 0.8);
     z-index: 1;
     text-align: center;
     color: white;
     display: none;
+}
+
+.create-list-side-popup {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 12px;
+    padding-right: 8px;
+    margin-bottom: 20px;
+    background-color: #DD4B39;
+    border-bottom: 3px solid #B9483A;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 79%;
+    font-weight: bold;
+    cursor: pointer;
+}
+.create-list-side-popup:hover {
+    background-color: #f1523f;        
+}
+
+.create-list-side-popup h2 {
+    font-weight: bold;
+}
+
+.create-list-side-popup i {
+    margin-right: 6px;
+}
+
+.side-share {
+    background-color: rgba(56, 56, 56, 0.8);
+    width: 55px;
+    float: right;
 }
 
 .side-social-networks {

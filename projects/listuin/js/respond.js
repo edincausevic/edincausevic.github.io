@@ -745,12 +745,12 @@ $(window).on('scroll resize', function() {
     var $windowWidth = $(window).width();
     
      if ( $windowWidth <= 1200 ) {
-         $('.side-share').hide();
+         $('#side-menu-share').hide();
     } else {
         if ( $windowScroll >= $headerPosition) {
-        $('.side-share').fadeIn(300);
+        $('#side-menu-share').fadeIn(300);
         }else {
-            $('.side-share').fadeOut(100);
+            $('#side-menu-share').fadeOut(100);
         }
     }      
 });

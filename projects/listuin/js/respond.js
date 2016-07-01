@@ -674,12 +674,14 @@ if (window.XMLHttpRequest) {
     }else {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
-
+// show popups
 function showPopup(url) {
-    xhr.open('GET', url);
+    var $popups = $('#popups')[0];
+
+    xhr.open('GET', url, false);
     xhr.onreadystatechange = function() {
-        if ( ( xhr.readyState == 4 ) && ( xhr.stauts == 200 ) ) {
-            popups.html(xhr.response);
+        if ( (xhr.readyState == 4) && (xhr.status == 200) ) {
+            $popups.innerHTML = xhr.response;
         }
     }
     xhr.send(null); 

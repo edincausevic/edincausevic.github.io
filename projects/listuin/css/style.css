@@ -625,6 +625,10 @@ header[data-header="small"] {
     border-radius: 5px;
 }
 
+.name-of-my-list .fa-link {
+    color: white!important;
+}
+
 .fa-list-icone {
     margin-right: 7px;
 }
@@ -642,6 +646,7 @@ header[data-header="small"] {
     right: 7px;
     top: 9px;
     font-size: 142%;
+    color: #fff!important;
 }
 
 .fa-paint-brush {
@@ -851,6 +856,7 @@ header[data-header="small"] {
 .fa-link, .fa-times-circle {
     float: right;
     margin-top: 5px;
+    color: #d8d8d8;
 }
 
 
@@ -894,9 +900,12 @@ footer {
     font-size: 79%;
     font-weight: bold;
     cursor: pointer;
+    transition: all 0.2s ease-out;
 }
 .create-list-side-popup:hover {
-    background-color: #f1523f;        
+    background-color: #f1523f;    
+    padding-left: 17px;
+    padding-right: 12px;
 }
 
 .create-list-side-popup h2 {
@@ -1052,6 +1061,10 @@ footer {
 }
 .external-colors input {
     border: 2px solid #2A3B4C;
+}
+
+.external .fa-link {
+    color: white!important;
 }
 
 .acc-pop img,

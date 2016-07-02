@@ -87,13 +87,25 @@ var interval = setInterval(function() {
 /********************************************** LOAD LOCAL SOTRAGET AND ALL THE CHANGES ***/
 
 if(localStorage.redCover == 'hideRedCover'){ $('#create-list').hide(); }
-if(localStorage.myPageLinks == 'show') { $('#my-list-link').show(); }    
+if(localStorage.myPageLinks == 'show') { $('#my-list-link').show(); $('.create-list-side-popup').remove();}    
 if($(window).width() <= 1002 && localStorage.myPageLinks == 'show') { $('.my-list-mob-link').show(); }    
 $('#link-list').append(localStorage.myList);   
     
 $('#title-of-list').html(localStorage.createListName);
-$('#profile-photo').attr('src', localStorage.profileImage);
+//$('#profile-photo').attr('src', localStorage.profileImage);
 
+//check for the my list image profile if it has ../ -> remove it
+(function(){
+    var imgUrl = localStorage.profileImage;
+    if ( localStorage.myPageLinks == 'show' ) {
+        var newLink = imgUrl.slice(3);
+        var prefix = imgUrl.slice(0,3);
+    }    
+    if (prefix == '../') {
+        $('#profile-photo').attr('src', newLink);
+    }  
+   
+})();
    
 //check for the list length. show and hise yellow emty list link    
 function checkListLength() {
@@ -112,6 +124,12 @@ $('#create-list').on('click', function(){
     resetCreateMenu();
     $(this).fadeOut('300');
     showPopup('popups/create-my-list.html')
+    $('#show-create-popup').fadeIn('300');
+});
+
+// CREATE LIST SIDE LINK
+$('.create-list-side-popup').on('click', function(){
+    showPopup('../popups/create-my-list-side-link.html');
     $('#show-create-popup').fadeIn('300');
 });
     
@@ -156,7 +174,12 @@ $(document).on('click', '#create-img', function(){
     if ($photoNumber === 12) {
         $photoNumber = 1;
     }
-    $(this).attr('src', 'img/my-list/' + $photoNumber + '.png');
+    if ( $('body').is('#main-page') ) {
+        $(this).attr('src', 'img/my-list/' + $photoNumber + '.png'); 
+   }else {
+        $(this).attr('src', '../img/my-list/' + $photoNumber + '.png'); 
+   }
+    
 });
 $(document).on('contextmenu', '#create-img', function(e) {
     e.preventDefault();
@@ -164,7 +187,11 @@ $(document).on('contextmenu', '#create-img', function(e) {
         $photoNumber = 12;
     }
     $photoNumber--;
-    $(this).attr('src', 'img/my-list/' + $photoNumber + '.png');
+    if ( $('body').is('#main-page') ) {
+        $(this).attr('src', 'img/my-list/' + $photoNumber + '.png'); 
+   }else {
+        $(this).attr('src', '../img/my-list/' + $photoNumber + '.png'); 
+   }
 });
 
 
@@ -210,17 +237,19 @@ function createMyProfile() {
 
     //give list name
     $('#title-of-list').html($title);
-    localStorage.createListName = $('#title-of-list').text();
+    localStorage.createListName = $title;
 
     //change list photo
     var $img = $('#create-img').attr('src');
+
     $('#profile-photo').attr('src', $img);
-    localStorage.profileImage = $('#profile-photo').attr('src');
+    localStorage.profileImage = $img;
 
     $('.hide-popup').fadeOut('300');
 
     //show links for my page on other pages
     $('#my-list-link').show();
+    $('.create-list-side-popup').remove();
     localStorage.myPageLinks = 'show';
     
     // create local storage array

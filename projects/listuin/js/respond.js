@@ -122,9 +122,12 @@ checkListLength();
 // CREATE LIST - zamjeni s ajaxom kad skontas
 $('#create-list').on('click', function(){
     resetCreateMenu();
-    $(this).fadeOut('300');
-    showPopup('popups/create-my-list.html')
-    $('#show-create-popup').fadeIn('300');
+    if ( XMLHttpRequest.length == 0 ) return;
+    else {  
+        $(this).fadeOut('300');
+        showPopup('popups/create-my-list.html')
+        $('#show-create-popup').fadeIn('300');
+    }    
 });
 
 // CREATE LIST SIDE LINK
@@ -458,8 +461,7 @@ $(document).on('click', '.change-color', function(){
 // CHANGE THE COLOR
 $(document).on('click', '.color-palat div', function() {
     var $color = $(this).attr('class');
-    console.log($color);
-    console.log($(this).closest('.my-list-item').find('a').find('p').attr('class',$color));
+    $(this).closest('.my-list-item').find('a').find('p').attr('class',$color);
     $('.color-palat').remove();
   
 });    
@@ -761,7 +763,7 @@ $(document).on('click', '.bg-trans', function(e){
 });
     
     
-/************************************************************ SIDE SHARE ANIMATION *********/
+/*************************************************** SIDE SHARE ANIMATION AND ADDS*********/
     
 var $headerPosition = $('.sub-header').offset().top;       
 var $windowWidth = $(window).width();
@@ -782,6 +784,19 @@ $(window).on('scroll resize', function() {
             $('#side-menu-share').fadeOut(100);
         }
     }      
+});
+    
+// PUT ADDS ON THE TOP OF THE SCREEN ON SCROLL EVENT
+var sideAddHeight = $('.g-ads-rb').offset().top - 10;
+
+$(window).on('scroll', function() {
+    var scrollPosition = $(window).scrollTop();
+    
+    if ( scrollPosition >= sideAddHeight ) {
+        $('.g-ads-rb').addClass('fixt-add');
+    }else {
+        $('.g-ads-rb').removeClass('fixt-add');
+    }
 });
     
 /******************************************************** CALCULATE LOCAL STORAGE *********/    

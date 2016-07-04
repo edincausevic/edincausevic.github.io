@@ -467,7 +467,7 @@ header[data-header="small"] {
 }
 
 .main-items {
-    width: 714px;
+    width: 686px;
     float: left;
     position: relative;
 }
@@ -534,11 +534,15 @@ header[data-header="small"] {
 }
 
 .item img {
-    width: 90px;
+    width: 93px;
     height: auto;
     border-radius: 50%;
     float: left;
-    margin: 20px;
+    margin: 21px 20px 21px 20px;
+}
+
+#profile-photo {
+    margin: 21px 20px 21px 20px;
 }
 
 .item a p {
@@ -805,14 +809,13 @@ header[data-header="small"] {
 /*--------------------------------------*/
 
 .side-menu {
-    width: 27%;
+    width: 300px;
     float: right;
 }
 
 .side-menu ul {
     background-color: #ebebeb;
     padding: 10px;
-    border-radius: 5px;
 }
 
 .side-menu ul li {
@@ -837,6 +840,18 @@ header[data-header="small"] {
 
 .side-menu  {
     color: #d8d8d8;
+}
+
+.g-ads-rb {
+    width: 300px;
+    height: 250px;
+    margin-top: 15px;
+    background-color: #ebebeb;
+}
+
+.fixt-add {
+    position: fixed;
+    top: 0;
 }
 
 .my-list-link {
@@ -1219,7 +1234,8 @@ footer {
     .header-title { font-size: 622%; }
     .main-items { width: 100%; }
     .most-used-menu { width: 400px; }
-    .item img { width: 80px; }
+    .item img { width: 80px; margin: 20px;}
+    #profile-photo {margin: 21px 20px 30px 20px;}
     .m-small-p { padding: 0 25px; }
     .message { font-size: 150%; }
     .my-list-items-note { margin: 0 25px; } 
@@ -1265,7 +1281,8 @@ footer {
     }
     h3 { font-size: 140%; }
     .most-used-menu { width: 270px; }
-    .item img { width: 70px; }
+    .item img { width: 67px; margin: 15px;}
+    #profile-photo {margin: 21px 20px 30px 20px;}
     .m-small-p { padding: 0 10px; }
     .acc-pop { width: 100%; }
     .change-title-ln { left: 35px; top: 10px; }

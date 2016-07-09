@@ -122,17 +122,20 @@ checkListLength();
 // CREATE LIST - zamjeni s ajaxom kad skontas
 $('#create-list').on('click', function(){
     resetCreateMenu();
-    if ( XMLHttpRequest.length == 0 ) return;
+    if ( !XMLHttpRequest ) {
+        // error message
+        return;
+    } 
     else {  
         $(this).fadeOut('300');
-        showPopup('popups/create-my-list.html')
+        xhrFunc('popups/create-my-list.html', '#popups')
         $('#show-create-popup').fadeIn('300');
     }    
 });
 
 // CREATE LIST SIDE LINK
 $('.create-list-side-popup').on('click', function(){
-    showPopup('../popups/create-my-list-side-link.html');
+    xhrFunc('../popups/create-my-list-side-link.html', '#popups');
     $('#show-create-popup').fadeIn('300');
 });
     
@@ -262,7 +265,7 @@ function createMyProfile() {
     
 // REMOVE MY LIST
 $(document).on('click', '#remove-my-list', function(){
-    showPopup('popups/remove-my-list.html');
+    xhr('popups/remove-my-list.html', '#popups');
     $('.close-create-popup').fadeIn('300');
 });
 
@@ -688,7 +691,7 @@ countItems();
 /*************************************************************** EMAIL ***********/    
     
 $('#email').on('click', function(e){
-    showPopup('popups/mail.html');
+    xhrFunc('popups/mail.html', '#popups');
     $('#show-mail').fadeIn('300');
     e.preventDefault();
 });    
@@ -705,9 +708,10 @@ if (window.XMLHttpRequest) {
     }else {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
+    
 // show popups
-function showPopup(url) {
-    var $popups = $('#popups')[0];
+function xhrFunc(url, elem) {
+    var $popups = $(elem)[0];
 
     xhr.open('GET', url, false);
     xhr.onreadystatechange = function() {
@@ -718,6 +722,10 @@ function showPopup(url) {
     xhr.send(null); 
 }
 
+(function(){
+    xhrFunc('popups/footer-feature.html', '#foot-featured');
+})();
+    
     
 /*************************************************************** CLOSE POUPS *****/
 

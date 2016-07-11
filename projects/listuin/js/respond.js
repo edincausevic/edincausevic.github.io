@@ -92,7 +92,7 @@ if($(window).width() <= 1002 && localStorage.myPageLinks == 'show') { $('.my-lis
 $('#link-list').append(localStorage.myList);   
     
 $('#title-of-list').html(localStorage.createListName);
-//$('#profile-photo').attr('src', localStorage.profileImage);
+$('#profile-photo').attr('src', localStorage.profileImage);
 
 //check for the my list image profile if it has ../ -> remove it
 (function(){
@@ -216,7 +216,7 @@ $(document).on('click', '#save-create-list', function(e){
 
 //CHECK IF THE MAIN PAGE IS LOADEd AND SAVE THE LIST BY ENTER
 //(SO THIS CODE WILL WORK ONLY ON INDEX PAGE)
-if ($('body').is('#main-page')) {
+if ($('.acc-pop:visible')) {
     $(document).on('keypress', function(e){
         if ( $('#show-create-popup').is(':visible') ) {
             if (e.which == 13) {
@@ -265,7 +265,7 @@ function createMyProfile() {
     
 // REMOVE MY LIST
 $(document).on('click', '#remove-my-list', function(){
-    xhr('popups/remove-my-list.html', '#popups');
+    xhrFunc('popups/remove-my-list.html', '#popups');
     $('.close-create-popup').fadeIn('300');
 });
 
@@ -510,7 +510,7 @@ $(document).on('keypress', '.change-title-ln', function(e){
     var $input = $(this).closest('li').find('.change-title-ln').val();
     var $this = $(this);
     if (e.which == 13) {
-        if ($('.change-title-ln').is(':visible')){
+        if ($('.change-title-ln:visible')){
             $this.closest('li').find('.l-title').text($input);
             $this.closest('li').find('.change-title-ln').hide();
         }
@@ -722,8 +722,13 @@ function xhrFunc(url, elem) {
     xhr.send(null); 
 }
 
+// ADD FUTER LINKS    
 (function(){
-    xhrFunc('popups/footer-feature.html', '#foot-featured');
+    if( $('body').is('#main-page') ){
+        xhrFunc('popups/footer-feature.html', '#foot-featured');
+    }else {
+        xhrFunc('../popups/footer-feature.html', '#foot-featured');
+    }
 })();
     
     

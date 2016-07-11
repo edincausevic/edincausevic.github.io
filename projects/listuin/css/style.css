@@ -819,7 +819,6 @@ header[data-header="small"] {
 }
 
 .side-menu ul li {
-    padding: 5px;
     border-bottom: 1px solid #D8D8D8;
 }
 
@@ -831,6 +830,7 @@ header[data-header="small"] {
     display: block;
     color: #474747;
     text-decoration: none;
+    padding: 5px;
 }
 
 .side-menu ul li:hover {

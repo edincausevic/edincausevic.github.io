@@ -502,9 +502,7 @@ $(document).on('click', function(event) {
 });
 
 
-
-               
-               
+      
 //CHANGE THE TITLE ON BLUR AND ENTER
 $(document).on('keypress', '.change-title-ln', function(e){
     var $input = $(this).closest('li').find('.change-title-ln').val();

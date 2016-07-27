@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ltie8 ltie9" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 ltie8 ltie9" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 ltie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Edin Causevic">
+        
+		<title>My list</title>
+        
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+        <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="img/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="img/favicons/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="img/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="img/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="img/favicons/manifest.json">
+        <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="img/favicons/favicon.ico">
+        <meta name="apple-mobile-web-app-title" content="Listuin">
+        <meta name="application-name" content="Listuin">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="img/favicons/mstile-144x144.png">
+        <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+	</head>
+
+	<body id="my-list">
+		<header class="my-list-header" id="mob-header" data-header="small">
+                <div class="hero-text-box lists-text-box">
+                    <h1>My list</h1>
+                    <h2>Best website to find free stuff</h2> 
+                </div>
+		</header>
+        <section class="sub-header">
+            <div class="container clear-fix">
+                <nav class="most-used-menu"></nav>
+                <div class="coment-box clear-fix hide-on-small">
+                </div>
+            </div>
+        </section>
+        <section class="main-contant">
+            <div class="container clear-fix">
+                <div class="main-items">
+                    <p class="back-link"><a href="index.html">Home</a><span><a href="#"> / My List</a></span></p>
+                    <ul class="items m-small-p" id="empty-list-msg">
+                        <a href="#" class="my-list-item" id="link-off" onclick="return false">
+                            <p class="empty"><i class="fa fa-list"></i> Your list is empty</p>
+                        </a>
+                    </ul>
+                    <ul class="items m-small-p" id="link-list"></ul>    
+                    <ul class="items m-small-p" id="addExternal">
+                        <a href="#" class="my-list-item" id="add-external-link">
+                            <p class="external"><i class="fa fa-external-link-square"></i> Add external link <i class="fa fa-link" id="remove-item"></i></p>
+                        </a>
+                    </ul>
+                    <div class="my-list-items-note clear-fix">
+                        <div id="remove-all-links"><a href="#">Remove all links </a>
+                            <span class="color3 small-btn" id="yes"> Yes </span> 
+                            <span class="color1 small-btn" id="no"> No </span>
+                        </div>
+                        <div class="right"><span id="list-num-of-items">0.0 </span> / 1.25 MB</div>
+                        <div class="list-counter">0</div>
+                    </div>
+                </div>
+                <aside class="side-menu hide-on-small">
+                    <div id="side-menu-links"></div>
+                    <div class="g-ads-rb"></div>
+                </aside>
+            </div>
+            <div id="side-menu-share">
+                <div class="side-share">
+                    <span>share</span>
+                    <ul class="side-social-networks">
+                            <li><a href="http://www.facebook.com/share.php?u=http://edincausevic.github.io/projects/listuin/index.html&title=Listuin: Home of designers."><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="http://twitter.com/intent/tweet?status=Listuin: Home of designers.+http://edincausevic.github.io/projects/listuin/index.html"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://plus.google.com/share?url=http://edincausevic.github.io/projects/listuin/index.html"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://edincausevic.github.io/projects/listuin/index.html&title=Listuin: Home of designers.&source=http://edincausevic.github.io/"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="http://www.reddit.com/submit?url=http://edincausevic.github.io/projects/listuin/index.html&title=Listuin: Home of designers."><i class="fa fa-reddit-alien"></i></a></li>
+                            <li><a href="http://pinterest.com/pin/create/bookmarklet/?media=Resources&url=http://edincausevic.github.io/projects/listuin/index.html&is_video=false&description=Listuin: Home of designers."><i class="fa fa-pinterest-p"></i></a></li>
+                            <li><a href="http://www.tumblr.com/share?v=3&u=http://edincausevic.github.io/projects/listuin/index.html&t=Listuin: Home of designers."><i class="fa fa-tumblr"></i></a></li>
+                        </ul>
+                </div>
+            </div>
+        </section>
+<!--Footer-->
+        <footer>
+            <div class="container clear-fix foot-res">
+                <div class="section">
+                    <p class="foot-title">Contact Us</p>
+                    <p>Send us a <a href="#" id="email" style="text-decoration: underline">message</a>.</p>
+                    <p>Have suggestions for contact, <br><a href="#" id="email" style="text-decoration: underline">send us a message</a>.</p>
+                </div>
+                    <div class="section" id="foot-featured"></div>
+                <div class="section">
+                    <p class="foot-title">Languages</p>
+                    <p><a href="index.html" id="lang-english">English</a></p>
+                </div>
+            </div>
+            <div class="copy">
+                <div class="container">
+                    <h6>Copyright © - 2016 Listuin - All rights reserved.</h6>
+                </div>
+            </div>
+        </footer>         
+<!--POPUPS-->        
+        <div id="popups"></div>
+<!--jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery-3.1.0.min.js"><\/script>')</script>  
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="js/respond.js"></script>        
+	</body>
+</html>

@@ -1,0 +1,40 @@
+#contct {
+    .msg-container {
+        margin-top: 50px;
+        label { 
+            display: block; 
+            margin-bottom: 5px;
+        }
+        .msg-left {
+            float: left;
+            width: 50%;  
+            
+            input {
+                height: 47px;
+                border-radius: 5px;
+                @extend %inputs;
+            }
+        }
+        .msg-right {
+            float: left;
+            width: 50%;
+            
+            textarea {
+                height: 150px;
+                border-radius: 5px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                @extend %inputs;
+            }
+            input {
+                @include btn($green, $green);
+                transition: all 0.3s ease-in-out;
+                float: left;
+                &:hover {
+                    @include hoverBtn($green, $green, 7%, $white);
+                }
+            }
+        }
+        @include clearfix;
+    }
+}

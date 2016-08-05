@@ -1,0 +1,11 @@
+#call {
+    background: $dark-gray;
+    padding: 49px 0;
+    h2 {
+        color: $white;
+        &:after {
+            content: "";
+            height: 0;
+        }
+    }
+}

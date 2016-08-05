@@ -1,0 +1,21 @@
+{
+  "name": "Hofer",
+  "version": "0.0.1",
+  "description": "Dentist app for dr Hofer in Graz.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edin Causevic",
+  "license": "ISC",
+  "devDependencies": {
+    "font-awesome": "^4.6.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-compass": "^2.1.0",
+    "gulp-sass": "^2.3.2"
+  },
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
+}

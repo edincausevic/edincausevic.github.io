@@ -1,0 +1,66 @@
+
+header {
+    @include backgroundImage('../css/img/header-bc.jpg', rgba(0,0,0,0.4), rgba(0,0,0,0.4),582px);
+    position: relative;
+}
+
+.hero-text-box {
+    @extend %middle-box;
+    white-space: nowrap;
+    
+    h1 {
+        font-size: 451%;
+        text-align: center;
+        color: $white;
+        word-spacing: 8px;
+        letter-spacing: 1px;
+    }
+    ul {
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+        width: 357px;
+        
+        li {
+            display: inline-block;
+            
+            #offer-btn {
+                @include btn($trans, $white);
+                margin-right: 10px;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    background: $green;
+                    border: 2px solid $green;
+                }
+            }
+            #more-info {
+                @include btn($red, $red);
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    @include hoverBtn($red, $red, 7%, $white);
+                }
+            }
+        }
+    }
+}
+
+.header-bltPoints ul {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-48%);
+
+    li {
+        opacity: 0.5;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $white;
+        display: inline-block;
+        margin-left: 5px;
+        cursor: pointer;
+        border: 1px solid $white;
+    }
+}
+
+

@@ -108,7 +108,7 @@ window.onload = function() {
     animate(select('#the'), '0.7s', '88px', null, 700, '1');
     animate(select('#bomb'), '0.7s', '177px', null, 1000, '1');
     animate(select('#loading-bar'), '1s', null, '50px', 800, '1');
-    
+    save('sound', 'on'); // save music state so it can play on first load
     loading(); // start loadin bar animation
 }
 
@@ -122,7 +122,7 @@ function loading() {
     var interval = setInterval(function() {
         var $num = Math.floor((Math.random() * 90) + 1);
         $proc += $num;
-        if ( $proc > $barLength - 450 ) {   //  return this to 100 ------------------
+        if ( $proc > $barLength - 100 ) {   
             $loadBar.style.width = '100%';
             clearInterval(interval);
             
@@ -195,7 +195,6 @@ function makeProfile() {
             save('score', 0);
             save('levelScore', 5);
             save('countdown', 7);
-            save('sound', 'on');
             ajaxXHR('parts/bombAnimation.html', '#img-slide');
             //animate ( element, animeTime, topPosition, bottom, waitingTime, opacity)
             animate(select('#createProfile'), '1s', null, null, 100, '0');

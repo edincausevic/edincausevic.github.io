@@ -127,8 +127,8 @@ function loading() {
             clearInterval(interval);
             
             // loading done 
-            
-            if ( localStorage.length ) { 
+            sound('music');
+            if ( localStorage.name ) { 
                 ajaxXHR('parts/play.html', '#prfile-menu');
                 animate(select('#loading'), '0.3s', null, null, 100, '0');
                 animate(select('#profile'), '0.3s', null, null, 100, '1');
@@ -145,10 +145,7 @@ function loading() {
         }else {
             $loadBar.style.width = $proc + 'px';
         }
-    },1500);
-    setTimeout(function(){
-        sound('music');
-    }, 2000);  
+    },1500); 
 }
 
 

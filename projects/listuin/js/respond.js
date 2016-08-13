@@ -580,5 +580,18 @@ function saveLocalStorage(name, el) {
 }     
     
     
+
+// ******************************************  preload images ************************* 
+
+
+$.preloadImages = function() {
+    for (var i = 0; i < arguments.length; i++) {
+        $("<img />").attr("src", arguments[i]);
+    }
+}
+
+$.preloadImages("img/my-list/1.png", "img/my-list/2.png", "img/my-list/3.png", "img/my-list/4.png", "img/my-list/5.png", "img/my-list/6.png", "img/my-list/7.png", "img/my-list/8.png", "img/my-list/9.png", "img/my-list/10.png", "img/my-list/11.png", "img/my-list/12.png");
+
+
     
 })(jQuery);

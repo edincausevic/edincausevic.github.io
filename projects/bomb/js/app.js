@@ -65,37 +65,54 @@ function emptyPopupsCon(time) {
     },time);
 }
 
+// audio controler
 var audio = new Audio('music/beep-07.mp3');
 var music = new Audio('music/music.mp3');
 var explotion = new Audio('music/explotion.wav');
 
 function sound(input) {
 
-        var sound = localStorage.sound;
-    
-        if ( sound === 'on' ) {
-            
-            music.loop = true;
-            music.volume = 0.3;
-            music.play(); 
-            audio.volume = 1;
-            explotion.volume = 1;
-            
-            if ( input === 'beep' ) {
-                audio.play();   
-            }else if ( input === 'explotion') {
-                explotion.play();
-            }
-        }else if ( sound === 'off' ) {
-            music.pause();
-            audio.volume = 0;
-            explotion.volume = 0;
-        } 
-  
-        
-    
+    var sound = localStorage.sound;
+
+    if ( sound === 'on' ) {
+
+        music.loop = true;
+        music.volume = 0.3;
+        music.play(); 
+        audio.volume = 1;
+        explotion.volume = 1;
+
+        if ( input === 'beep' ) {
+            audio.play();
+        }else if ( input === 'explotion') {
+            explotion.play();
+        }
+    }else if ( sound === 'off' ) {
+        music.pause();
+        audio.volume = 0;
+        explotion.volume = 0;
+    } 
+
 }
 
+//preloader
+var images = new Array()
+function preload() {
+    for (i = 0; i < preload.arguments.length; i++) {
+        images[i] = new Image()
+        images[i].src = preload.arguments[i]
+    }
+}
+
+preload('css/img/main-back.jpg',
+        'img/atomic-bomb.png',
+        'img/bomb.png',
+        'img/bomb-zoom.jpg',
+        'img/explotion.jpg',
+        'img/success.jpg',
+        'img/1.png', 'img/2.png', 'img/3.png', 'img/4.png', 
+        'img/5.png', 'img/6.png', 'img/7.png', 'img/8.png', 
+        'img/9.png', 'img/10.png', 'img/11.png')
 
 /*************************************************** LOADING *************************/
 
@@ -108,7 +125,8 @@ window.onload = function() {
     animate(select('#the'), '0.7s', '88px', null, 700, '1');
     animate(select('#bomb'), '0.7s', '177px', null, 1000, '1');
     animate(select('#loading-bar'), '1s', null, '50px', 800, '1');
-    save('sound', 'on'); // save music state so it can play on first load
+    save('sound', 'on'); // save music status so it can play on first load
+    soundControl();
     loading(); // start loadin bar animation
 }
 
@@ -122,12 +140,12 @@ function loading() {
     var interval = setInterval(function() {
         var $num = Math.floor((Math.random() * 90) + 1);
         $proc += $num;
-        if ( $proc > $barLength - 100 ) {   
+        if ( $proc > $barLength - 250 ) {   
             $loadBar.style.width = '100%';
             clearInterval(interval);
             
             // loading done 
-            sound('music');
+            sound();
             if ( localStorage.name ) { 
                 ajaxXHR('parts/play.html', '#prfile-menu');
                 animate(select('#loading'), '0.3s', null, null, 100, '0');
@@ -265,6 +283,7 @@ function soundControl() {
 
     var icon = select('#sound-icon');
     
+    // load mucis icon base on music status in LS
     var music = localStorage.sound;
     if ( music == 'on' ) {
         icon.src = 'img/sound-on.png';
@@ -272,6 +291,7 @@ function soundControl() {
         icon.src = 'img/sound-off.png';
     }
     
+    // change icon and control sound on icon click
     icon.onclick = function() {
         var musicState = localStorage.sound;
         if ( musicState == 'on' ) {

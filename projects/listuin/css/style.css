@@ -461,6 +461,11 @@ header[data-header="small"] {
 .back-link a {
     color: #1480C1;
     text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link a i {
+    font-size: 89%;
 }
 
 .back-link span {
@@ -517,6 +522,8 @@ header[data-header="small"] {
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
     white-space: nowrap;
 }
@@ -533,6 +540,8 @@ header[data-header="small"] {
 
 .item h4 {
     padding-top: 15px;
+    position: relative;
+    left: -2px;
 }
 
 .item a {
@@ -554,6 +563,12 @@ header[data-header="small"] {
 
 .item a p {
     padding-right: 40px;
+}
+
+.fa-file-text-o {
+    font-size: 70%;
+    position: relative;
+    bottom: 2px;
 }
 
 .tags {
@@ -627,8 +642,6 @@ header[data-header="small"] {
 }
 
 .active-shadow {
-    -webkit-box-shadow: 6px 7px 5px 0px rgba(46,46,46,0.55);
-    -moz-box-shadow: 6px 7px 5px 0px rgba(46,46,46,0.55);
     box-shadow: 6px 7px 5px 0px rgba(46,46,46,0.55);
 }
 
@@ -855,7 +868,7 @@ header[data-header="small"] {
     color: #d8d8d8;
 }
 
-.g-ads-rb {
+#g-ads-rb {
     width: 300px;
     height: 250px;
     margin-top: 15px;
@@ -979,6 +992,7 @@ footer p a {
     font-size: 79%;
     font-weight: bold;
     cursor: pointer;
+    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
 }
 .create-list-side-popup:hover {
@@ -1150,7 +1164,6 @@ footer p a {
 .acc-pop input {
     display: block;
     margin: auto;
-    margin-top: 22px;
 }
 
 #external-url,
@@ -1178,7 +1191,7 @@ footer p a {
     padding-left: 7px;
     border-radius: 5px;
     border: 2px solid #b14436;
-    margin: 20px auto 0 auto;
+    margin: 0 auto;
     font-size: 150%;
     background-color: #e1dddd;
 }
@@ -1248,7 +1261,7 @@ footer p a {
     padding-left: 7px;
     border-radius: 5px;
     border: 2px solid #b14436;
-    margin: 15px auto 0 auto;
+    margin: 0 auto;
     font-size: 150%;
     background-color: #e1dddd;
     resize: none;
@@ -1265,7 +1278,18 @@ footer p a {
 }
 
 #email input:first-child {
-    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.success{ background-color: #2ecc71; }
+.error{ background-color: red; }
+
+#title-error,
+#email-error,
+#text-error {
+    width: 73%;
+    margin: 0 auto;
+    text-align: left;
 }
 
 
@@ -1282,7 +1306,7 @@ footer p a {
         width: 470px;
         margin: 0 auto;
     }
-    .g-ads-rb { display: none; }
+    #g-ads-rb { display: none; }
     .most-used-menu h3 { text-align: center; }
     .container { width: 100%; }
     .main-items {

@@ -21,9 +21,9 @@ function showTestimonials() {
     var $container = $('.coment-box');
     var $randomNumber = Math.floor( (Math.random() *3) +1);
 
-    if ( $randomNumber === 1 ) xhr('GET','data/testimonial1.html', addDataTo($container));
-    else if( $randomNumber === 2 ) xhr('GET','data/testimonial2.html', addDataTo($container));
-    else xhr('GET','data/testimonial3.html', addDataTo($container));
+    if ( $randomNumber === 1 ) {xhr('GET','data/testimonial1.html', addDataTo($container));}
+    else if( $randomNumber === 2 ) {xhr('GET','data/testimonial2.html', addDataTo($container));}
+    else {xhr('GET','data/testimonial3.html', addDataTo($container));}
        
 }showTestimonials();
 
@@ -35,8 +35,9 @@ xhr('GET','data/most-popular.html', addDataTo('.most-used-menu'));
 // LOAD SIDE MENU
 // xhr( ajax type, ajax url, callback( dom-el ), errorFunction)
 if ( $('body').is('#main-page') ) 
-    xhr('GET','data/side-menu.html', addDataTo('#side-menu-links') );
-    else xhr('GET','data/side-menu-mylinks.html', addDataTo('#side-menu-links'));
+{xhr('GET','data/side-menu.html', addDataTo('#side-menu-links') );}
+else 
+{xhr('GET','data/side-menu-mylinks.html', addDataTo('#side-menu-links'));}
 
 // LOAD FOOTER
 // xhr( ajax type, ajax url, callback( dom-el ), errorFunction)
@@ -212,7 +213,7 @@ $('.pin').on('click', function(){
         });      
     }
     // add new <li> item in local sotrage             
-    if ( $continue == true ){
+    if ( $continue === true ){
         checkListSize(); // check the list size
         localStorage.myListItems += createListItem( $title, $link  ); // put all items in same local storage
         localStorage.linksLits += $link +","; // store link and linksList array in localStorage
@@ -376,10 +377,10 @@ function checkAndAddNewLink() {
     var $titleError = $('#error-external-title');
     var $urlError = $('#error-external-url');
     
-    if ( $title.length === 0 ) { $titleError.html('Please enter a title'); return 'inputEmpty'}
+    if ( $title.length === 0 ) { $titleError.html('Please enter a title'); return 'inputEmpty'; }
     else { $titleError.html('&nbsp;'); }
     
-    if ($url.length === 0 )  {$urlError.html('Please enter a url'); return 'inputEmpty'}    
+    if ($url.length === 0 )  {$urlError.html('Please enter a url'); return 'inputEmpty'; }    
     else { $urlError.html('&nbsp;'); }
     
     // save <li> item and append it to list
@@ -420,10 +421,11 @@ $(document).on('mousedown mouseup', '.my-list-item p', function(e){
 // CALCULATE THE SIZE OF THE LOCAL STORAGE MY LIST
 // AND IF THE TORAGE IS FULL TERURN THE STRING 'FULL'    
 function checkListSize() {
+    var $myListSize;
     // check for the size of local storage
     for (var x in localStorage ) {
         if ( x == 'myListItems' ) {
-            var $myListSize = (((localStorage[x].length * 2)/1024/1024).toFixed(2));
+            $myListSize = (((localStorage[x].length * 2)/1024/1024).toFixed(2));
             $('#list-num-of-items').html($myListSize);
         }
     }
@@ -442,8 +444,36 @@ function saveList() {
     localStorage.setItem('myListItems', $links);
 }
     
+
     
-// ************************************ create list item *******************************     
+// ************************************ email *****************************************     
+// show email popup    
+$('#email').on('click', function(e){
+    e.preventDefault();
+    xhr("GET", "data/mail.html", addDataTo("#popups", '#show-mail', 300));
+});
+    
+$('#popups').on('submit', '#show-mail', function(e){
+
+    e.preventDefault();
+    var test;
+    
+    function formCheck( input, error, errorMsg ) {
+        
+        if ( input.length === 0 ) {
+            error.html(errorMsg);
+            test = false;
+        }else { error.html('&nbsp;'); test = true; }
+    }
+    
+    formCheck( $('#e-title').val(), $('#title-error'), 'Please enter a name.' );
+    formCheck( $('#e-email').val(), $('#email-error'), 'Please enter a email.' );
+    formCheck( $('#e-text').val(), $('#text-error'), 'Text box is empty.' );
+    
+    if ( test === false ) {return false;}
+});    
+    
+// ************************************ create list item *****************************     
     
  // CREATE LIST ITEM   
 function createListItem( title, url ) {
@@ -567,7 +597,7 @@ function addDataToUp(container, el, time, elHtml, title) {
     function add( data ) {
         container.html(data);
         $(elHtml).html(title);
-        $(el).slideDown(time, function(){ $(this).fadeOut(300) });
+        $(el).slideDown(time, function(){ $(this).fadeOut(300); });
     }
     return add;
 } 
@@ -590,7 +620,7 @@ $.preloadImages = function() {
     }
 }
 
-$.preloadImages("img/my-list/1.png", "img/my-list/2.png", "img/my-list/3.png", "img/my-list/4.png", "img/my-list/5.png", "img/my-list/6.png", "img/my-list/7.png", "img/my-list/8.png", "img/my-list/9.png", "img/my-list/10.png", "img/my-list/11.png", "img/my-list/12.png");
+$.preloadImages("img/my-list/1.png", "img/my-list/2.png", "img/my-list/3.png", "img/my-list/4.png", "img/my-list/5.png", "img/my-list/6.png", "img/my-list/7.png", "img/my-list/8.png", "img/my-list/9.png", "img/my-list/10.png", "img/my-list/11.png");
 
 
     

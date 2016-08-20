@@ -1,6 +1,14 @@
 
-header {
-    @include backgroundImage('../css/img/header-bc.jpg', rgba(0,0,0,0.4), rgba(0,0,0,0.4),582px);
+.background1 {
+    @include backgroundImage('../css/img/header-bc1.jpg', rgba(0,0,0,0.4), rgba(0,0,0,0.4),582px);
+    position: relative;
+}
+.background2 {
+    @include backgroundImage('../css/img/header-bc2.jpg', rgba(0,0,0,0.4), rgba(0,0,0,0.4),582px);
+    position: relative;
+}
+.background3 {
+    @include backgroundImage('../css/img/header-bc3.jpg', rgba(0,0,0,0.4), rgba(0,0,0,0.4),582px);
     position: relative;
 }
 
@@ -29,15 +37,15 @@ header {
                 margin-right: 10px;
                 transition: all 0.3s ease-in-out;
                 &:hover {
-                    background: $green;
-                    border: 2px solid $green;
+                    background: rgba(255,255,255,0.3);
+                    border: 2px solid rgba(255,255,255,0.3);
                 }
             }
             #more-info {
                 @include btn($red, $red);
                 transition: all 0.3s ease-in-out;
                 &:hover {
-                    @include hoverBtn($red, $red, 7%, $white);
+                    @include hoverBtn($red, $red, 5%, $white);
                 }
             }
         }

@@ -1,7 +1,7 @@
 
 // clear all
 @mixin clearfix {
-	*zoom: 1;
+
   	&:before, &:after {
 	    content: " ";
 	    display: table;
@@ -38,5 +38,13 @@
     background-color: darken($bcColor, $amount);
     border: 2px solid $borderColor; 
     color: $color;
+}
+
+// centar
+@mixin centar() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 

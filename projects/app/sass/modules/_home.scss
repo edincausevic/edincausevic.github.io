@@ -1,14 +1,14 @@
 
 .background1 {
-    @include backgroundImage('../css/img/header-bc1.jpg', rgba(0,0,0,0.4), rgba(0,0,0,0.4),582px);
+    @include backgroundImage('../css/img/header-bc1.jpg', rgba(0,0,0,0.61), rgba(0,0,0,0.61),582px);
     position: relative;
 }
 .background2 {
-    @include backgroundImage('../css/img/header-bc2.jpg', rgba(0,0,0,0.4), rgba(0,0,0,0.4),582px);
+    @include backgroundImage('../css/img/header-bc2.jpg', rgba(0,0,0,0.61), rgba(0,0,0,0.61),582px);
     position: relative;
 }
 .background3 {
-    @include backgroundImage('../css/img/header-bc3.jpg', rgba(0,0,0,0.4), rgba(0,0,0,0.4),582px);
+    @include backgroundImage('../css/img/header-bc3.jpg', rgba(0,0,0,0.61), rgba(0,0,0,0.61),582px);
     position: relative;
 }
 

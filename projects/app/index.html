@@ -14,7 +14,7 @@
         <header class="background1">
             <nav>
                 <div class="row">
-                    <h4 class="logo">Logo</h4>
+                    <img src="img/logo.png" class="logo" alt="Logo"/><span>Hofer</span>
                     <ul class="main-nav">
                         <li><a href="#" id="active">Home</a></li>
                         <li><a href="#team">Unser Team</a></li>
@@ -173,7 +173,7 @@
         <!-- Call us -->
         <section id="call">
             <div class="row">
-                <h2>Call us and get an appointment</h2>
+                <h2>Rufen Sie uns an und vereinbaren einen Termin bekommen</h2>
                 <h2><i class="fa fa-phone" aria-hidden="true"></i> 0043 3132 21212</h2>
             </div>
         </section>
@@ -199,31 +199,35 @@ porta mi. In hac habitasse platea dictumst vivamus feugiat enim.</p>
             <div class="map"></div>
             <div id="map-btn">
                 <i class="fa fa-map" aria-hidden="true"></i>
-                <div class="map-btn-text"> Use the map</div>
+                <div class="map-btn-text"> Verwenden Sie die Karte</div>
             </div> 
             <div class="map-cover"></div>
         </section>
         <!-- Contact form -->
         <section id="contct">
             <div class="row">
-                <h2>WE'RE HAPPY TO HEAR FROM YOU</h2>
+                <h2>Wir sind glücklich, VON IHNEN ZU HÖREN</h2>
             </div>
             <div class="row">
                 <div id="animate-form">
                     <div class="msg-container">
                         <form>
                             <div class="msg-left">
-                                <label for="name">Your Name*</label>
-                                <input type="text" id="name" required>
-                                <label for="email">Your E-mail*</label>
-                                <input type="text" id="email" required>
-                                <label for="subject">Your Subject*</label>
-                                <input type="text" id="subject" required>
+                                <label for="name">Dein Name*</label>
+                                <input type="text" id="name" autocomplete="off" />
+                                <p id="name-error">&nbsp;</p>
+                                <label for="email">Deine E-Mail*</label>
+                                <input type="text" id="email" autocomplete="off" />
+                                <p id="email-error">&nbsp;</p>
+                                <label for="subject">Dein Fach*</label>
+                                <input type="text" id="subject" autocomplete="off" />
+                                <p id="subject-error">&nbsp;</p>
                             </div>
                             <div class="msg-right">
-                                <label>Send Message</label>
-                                <textarea required></textarea>
-                                <input type="submit" value="Submit your message" id="submit">
+                                <label>Nachricht Senden*</label>
+                                <textarea></textarea>
+                                <p id="text-error">&nbsp;</p>
+                                <input type="submit" value="Senden sie ihre nachricht" id="submit">
                             </div>
                         </form>    
                     </div>

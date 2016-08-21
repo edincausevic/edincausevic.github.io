@@ -1,4 +1,11 @@
 #contct {
+    
+    p {
+        font-size: 85%;
+        color: $red;
+        margin-bottom: 5px;
+    }
+    
     .msg-container {
         margin-top: 50px;
         label { 
@@ -29,9 +36,10 @@
             input {
                 @include btn($green, $green);
                 transition: all 0.3s ease-in-out;
+                margin-top: 10px;
                 float: left;
                 &:hover {
-                    @include hoverBtn($green, $green, 7%, $white);
+                    @include hoverBtn($green, $green, 4%, $white);
                 }
             }
         }

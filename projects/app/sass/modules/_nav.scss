@@ -5,11 +5,20 @@ nav  {
 	border-bottom: 2px solid rgba($white, 0.2);
     z-index: 1;
     
-	h4.logo {
-		font-size: 167%;
-		color: $white;
-		float: left;
+    .logo {
+        width: 27px;
+        position: relative;
+        top: 4px;
+        color: $white;
 	}
+    
+    span {
+        color: white;
+        font-weight: bold;
+        padding: 0px 0px 0px 6px;
+        line-height: -4px;
+        font-size: 150%;
+    }
 
 	ul.main-nav {
 		float: right;

@@ -1,0 +1,50 @@
+
+// clear all
+@mixin clearfix {
+
+  	&:before, &:after {
+	    content: " ";
+	    display: table;
+	}
+		&:after {
+		clear: both;
+	}
+}
+
+// background photo
+@mixin backgroundImage($url, $lg1, $lg2, $height) {
+    background-image: linear-gradient($lg1, $lg2), url($url);
+    background-size: cover;
+    background-position: center;
+	background-attachment: fixed;
+	height: $height;
+}
+
+// btn
+@mixin btn($bcColor, $borderColor) {
+    text-decoration: none;
+    color: $white;
+    background: $bcColor;
+    padding: 11px 21px 13px 21px;
+    font-weight: 700;
+    border-radius: 3px;
+    border: 2px solid $borderColor;
+    display: block;
+    margin: 0 auto;
+}
+
+// hover effect
+@mixin hoverBtn($bcColor, $borderColor, $amount, $color) {
+    background-color: darken($bcColor, $amount);
+    border: 2px solid $borderColor; 
+    color: $color;
+}
+
+// centar
+@mixin centar() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+

@@ -4,7 +4,7 @@
 @import "base";
 @import "mixins";
 @import "interface";
-@import "responsive";
+
 
 @import "modules/nav";
 @import "modules/home";
@@ -17,3 +17,5 @@
 @import "modules/footer";
 @import "modules/callus";
 @import "modules/team";
+
+@import "responsive";

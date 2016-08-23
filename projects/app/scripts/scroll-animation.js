@@ -1,3 +1,4 @@
+/*
 // animate on scroll
 function animate(element, position, value, offsetBottom, animePos, animeVal, time) {
 
@@ -26,7 +27,6 @@ animate('#animate-info', 'top', '70px', 700, 'top', '0px', '1s');
 animate('#animate-team', 'top', '70px', 800, 'top', '0px', '1s');
 animate('#animate-video', 'right', '70px', 700, 'right', '0px', '1s');
 animate('#animate-list', 'left', '70px', 700, 'left', '0px', '1s');
-animate('#animate-gal1', 'top', '70px', 800, 'top', '0px', '1s');
-animate('#animate-gal2', 'top', '70px', 900, 'top', '0px', '1s');
+animate('#animate-gal', 'top', '70px', 800, 'top', '0px', '1s');
 animate('#animate-form', 'top', '70px', 700, 'top', '0px', '1s');
-
+*/

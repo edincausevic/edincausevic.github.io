@@ -1,0 +1,28 @@
+#offer {
+    background: $light-gray;
+    
+    .offer-container {
+        margin-top: 70px;
+        
+        .offer-img {
+            width: 65%;
+            float: left;
+            img { 
+                width: 87%; 
+                cursor: default;
+            
+            }
+            
+        }
+        .offer-list {
+            width: 34%;
+            float: left;
+            i { 
+                color: $green; 
+                margin-right: 7px;
+            }
+            h3 { margin-bottom: 8px; }
+        }
+    }
+    @include clearfix;
+}

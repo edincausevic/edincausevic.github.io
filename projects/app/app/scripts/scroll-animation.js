@@ -1,3 +1,4 @@
+
 // animate on scroll
 function animate(element, position, value, offsetBottom, animePos, animeVal, time) {
 
@@ -22,11 +23,24 @@ function animate(element, position, value, offsetBottom, animePos, animeVal, tim
         } 
     });
 }
-animate('#animate-info', 'top', '70px', 700, 'top', '0px', '1s');
-animate('#animate-team', 'top', '70px', 800, 'top', '0px', '1s');
-animate('#animate-video', 'right', '70px', 700, 'right', '0px', '1s');
-animate('#animate-list', 'left', '70px', 700, 'left', '0px', '1s');
-animate('#animate-gal1', 'top', '70px', 800, 'top', '0px', '1s');
-animate('#animate-gal2', 'top', '70px', 900, 'top', '0px', '1s');
-animate('#animate-form', 'top', '70px', 700, 'top', '0px', '1s');
 
+function responsiveAnimations() {
+
+    var windowWidth = $(window).width();
+
+    if ( windowWidth < 450 ) { runAnimations(-100, -150, -100, -100, -100, -50) }
+    if ( windowWidth < 767 ) { runAnimations(100, 50, 100, 100, 100, 50) }
+    if ( windowWidth < 1023 ) { runAnimations(300, 500, 200, 200, 200, 200) }
+    if ( windowWidth < 1200 ) { runAnimations(600, 600, 400, 400, 400, 500) }
+    if ( windowWidth > 1200 ) { runAnimations(800, 900, 600, 600, 400, 500) }
+}
+responsiveAnimations();
+
+function runAnimations(offS1, offS2, offS3, offS4, offS5, offS6) {
+    animate('#animate-info', 'top', '70px', offS1, 'top', '0px', '1s');
+    animate('#animate-team', 'top', '70px', offS2, 'top', '0px', '1s');
+    animate('#animate-video', 'right', '70px', offS3, 'right', '0px', '1s');
+    animate('#animate-list', 'left', '70px', offS4, 'left', '0px', '1s');
+    animate('#animate-gal', 'top', '70px', offS5, 'top', '0px', '1s');
+    animate('#animate-form', 'top', '70px', offS6, 'top', '0px', '1s');
+}

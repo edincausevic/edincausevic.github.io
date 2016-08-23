@@ -8,7 +8,7 @@
         <meta name="keywords" content="">
         <meta name="author" content="Edin Causevic">
         
-        <title>Zahnarzt Christoph Hofer</title>
+        <title>Zahnarzt Hofer Christoph</title>
 
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
@@ -18,6 +18,7 @@
             <nav>
                 <div class="row">
                     <img src="img/logo.png" class="logo" alt="Logo"/><span>Hofer</span>
+                    <i class="fa fa-bars" aria-hidden="true" id="btn-mobile-menu"></i>
                     <ul class="main-nav">
                         <li><a href="#" id="active">Home</a></li>
                         <li><a href="#team">Unser Team</a></li>
@@ -29,7 +30,7 @@
                 </div>
             </nav>
             <div class="hero-text-box">
-                <h1>Providing comprehensive<br> dental services</h1>
+                <h1>Umfassende Zahnärztliche <br>Leistungen</h1>
                 <ul>
                     <li><a href="#info" id="offer-btn">Weitere Infos</a></li>
                     <li><a href="#call" id="more-info">Einen Termin Machen</a></li>
@@ -43,7 +44,7 @@
                 </ul>
             </div>
         </header>
-        <!-- Section Info -->
+<!-- Section Info -->
         <section id="info">
             <div id="animate-info">
                 <div class="row">
@@ -66,7 +67,7 @@
                 </div>
             </div>    
         </section>
-        <!-- Team -->   
+<!-- Team -->   
         <section id="team">
             <div class="row">
                 <h2>Unser Team</h2>
@@ -94,7 +95,7 @@
                 </div>    
             </div>
         </section>
-        <!-- What we offer -->
+<!-- What we offer -->
         <section id="offer">
             <div class="row">
                 <h2>Neben der zagnmedizinischen <br>Besisversorgung biten wir Ihnen</h2>
@@ -121,40 +122,15 @@
             </div>
         </section>
 
-        <!-- Gallery -->
+<!-- Gallery -->
         <section id="gallery">
             <div class="row">
                 <h2>Unserer Ordination</h2>
             </div>
             <div class="row">
                 <div class="gal-images">
-                    <ul id="animate-gal1">
-                        <li>
-                            <img src="img/gal1.jpg" alt="Gallery Image"/>
-                            <div><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
-                        </li>
-                        <li>
-                            <img src="img/gal1.jpg" alt="Gallery Image"/>
-                            <div><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
-                        </li>
-                        <li>
-                            <img src="img/gal1.jpg" alt="Gallery Image"/>
-                            <div><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
-                        </li>
-                    </ul>
-                    <ul id="animate-gal2">
-                        <li>
-                            <img src="img/gal1.jpg" alt="Gallery Image"/>
-                            <div><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
-                        </li>
-                        <li>
-                            <img src="img/gal1.jpg" alt="Gallery Image"/>
-                            <div><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
-                        </li>
-                        <li>
-                            <img src="img/gal1.jpg" alt="Gallery Image"/>
-                            <div><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
-                        </li>
+                    <ul id="animate-gal" class="img-gallery">
+                        
                     </ul>
                 </div>    
             </div>
@@ -167,36 +143,20 @@
                         <div id="left-arrow"><img src="img/right.png" alt="Left arrow image"/></div>
                     </div>
                     <div id="image-info">Image inforamtion</div>
-                    <div id="image-number">1/6</div>
-
-                    <img src="css/img/header-bc1.jpg" alt="Image"/>
+                    <div id="image-number"></div>
+                    <i class="fa fa-times" id="close-image" aria-hidden="true"></i>
+                    <img src="" id="big-image" alt="Image"/>
                 </div>
             </div>
         </section>
-        <!-- Call us -->
+<!-- Call us -->
         <section id="call">
             <div class="row">
                 <h2>Rufen Sie uns an und vereinbaren einen Termin bekommen</h2>
                 <h2><i class="fa fa-phone" aria-hidden="true"></i> 0043 3132 21212</h2>
             </div>
         </section>
-        <!-- Gallery     
-<section id="testimonial">
-<div class="tes">
-<img src="img/tes-img-c.jpg" alt="Profile Photo" />
-<blockquote>
-<p class="quote">Epsum dolor sit amet, consectetur adipiscing elit. Phasellus 
-eget tristique ligula. Integer non arcu quam. Proin at ultrices diam, atiam vel 
-porta mi. In hac habitasse platea dictumst vivamus feugiat enim.</p>
-<cite>
-<span class="tes-name">Jon Doe</span>
-<span class="tes-company">Web developer</span>
-</cite>
-</blockquote>
-</div>
-</section>
--->
-        <!-- Map -->
+<!-- Map -->
         <section id="map-box">
             <h2 style="display:none">Map</h2>
             <div class="map"></div>
@@ -206,12 +166,12 @@ porta mi. In hac habitasse platea dictumst vivamus feugiat enim.</p>
             </div> 
             <div class="map-cover"></div>
         </section>
-        <!-- Contact form -->
+<!-- Contact form -->
         <section id="contct">
             <div class="row">
                 <h2>Wir sind glücklich, VON IHNEN ZU HÖREN</h2>
             </div>
-            <div class="row">
+            <div class="row con-left">
                 <div id="animate-form">
                     <div class="msg-container">
                         <form>
@@ -263,7 +223,7 @@ porta mi. In hac habitasse platea dictumst vivamus feugiat enim.</p>
         <!-- JS jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="node_modules/jQuery/dist/jquery.min.js"><\/script>')</script>  
-        <script src="http://maps.google.com/maps/api/js"></script>  
+        <script src="http://maps.google.com/maps/api/js"></script>
         <script src="js/app.min.js"></script>    
 
     </body>

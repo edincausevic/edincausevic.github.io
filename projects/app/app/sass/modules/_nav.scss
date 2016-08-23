@@ -19,6 +19,16 @@ nav  {
         line-height: -4px;
         font-size: 150%;
     }
+    
+    #btn-mobile-menu { 
+        display: none; 
+        float: right;
+        font-size: 175%;
+        margin-top: 3px;
+        margin-right: 5px;
+        color: #89c939;
+        cursor: pointer;
+    }
 
 	ul.main-nav {
 		float: right;
@@ -36,12 +46,12 @@ nav  {
                 padding-bottom: 5px;
                 border-bottom: 2px solid $white;
             }
-            a:after {
-                content: "\f0d7";
-                font-family: FontAwesome;
-                font-size: 90%;
-                margin-left: 7px;
-            }
+         //   a:after {
+         //        content: "\f0d7";
+         //        font-family: FontAwesome;
+         //        font-size: 90%;
+         //        margin-left: 7px;
+         //    }
 		}
 	}
 	@include clearfix;

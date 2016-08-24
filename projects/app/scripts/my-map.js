@@ -4,13 +4,13 @@ $(function(){
 // map
 var map = new GMaps({
     div: '.map',
-    lat: 47.0715048,
-    lng: 15.4388594
+    lat: 47.141531,
+    lng: 15.523934
 });
 
 map.addMarker({
-    lat: 47.0715048,
-    lng: 15.4388594,
+    lat: 47.141531,
+    lng: 15.523934,
     title: 'Graz',
     infoWindow: {
         content: '<p>Dr Hofer</p>'

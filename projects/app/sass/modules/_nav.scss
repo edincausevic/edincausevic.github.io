@@ -29,10 +29,9 @@ nav  {
         color: #89c939;
         cursor: pointer;
     }
-
+    // navigation
 	ul.main-nav {
 		float: right;
-        
 		li {
 			float: left;
             margin: 5px 17px 0 10px;
@@ -56,3 +55,5 @@ nav  {
 	}
 	@include clearfix;
 }
+
+// mobile nav

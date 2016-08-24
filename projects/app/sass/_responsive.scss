@@ -73,54 +73,54 @@
         padding: 4px 4px 4px 14px; 
         margin: 0;
     }
-    nav ul.main-nav li {
-        float: none;
-        margin: 0;
-        font-weight: 700;
-        text-align: center;
-        &:hover {
-            padding-bottom: 0px;
-            border-bottom: none;
-        }
-        &:nth-child(2) { background-color: #f9f9f9!important; }
-        &:nth-child(4) { background-color: #f9f9f9!important; }
-        &:nth-child(6) { background-color: #f9f9f9!important; }
-    }
-    nav ul.main-nav li a {
-        display: block;
-        padding: 19px 80px 20px 80px;
-        color: $dark-gray;
-
-    }
-    nav ul.main-nav { 
+    // mobile navigation
+    ul.main-nav { 
         display: none;
         z-index: 6;
         position: absolute;
         right: 6px;
-        top: 68px;
+        top: 73px;
         background-color: #f5f5f5;
         border: 3px solid #89c939;
-    }
-    .main-nav:after, .main-nav:before {
-        bottom: 100%;
-        left: 98%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-    }
-
-    .main-nav:after {
-        border-color: rgba(136, 183, 213, 0);
-        border-bottom-color: $green;
-        border-width: 12px;
-        margin-left: -30px;
-    }
-    #active {
-        padding-bottom: 14px;
-        border-bottom: none;
+        li {
+            float: none!important;
+            margin: 0!important;
+            font-weight: 700;
+            text-align: center;
+            &:hover {
+                padding-bottom: 0px!important;
+                border-bottom: none!important;
+            }
+            &:nth-child(2) { background-color: #f9f9f9!important; }
+            &:nth-child(4) { background-color: #f9f9f9!important; }
+            &:nth-child(6) { background-color: #f9f9f9!important; }
+            a {
+                display: block;
+                padding: 19px 80px 20px 80px;
+                color: $dark-gray!important;
+                text-decoration: none;
+            }
+        }
+        #active {
+            padding-bottom: 14px;
+            border-bottom: none;
+        }
+        &:after, &:before {
+            bottom: 100%;
+            left: 98%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }    
+        &:after {
+            border-color: rgba(136, 183, 213, 0);
+            border-bottom-color: $green;
+            border-width: 12px;
+            margin-left: -30px;
+        }
     }
     nav { padding: 12px; }
     .hero-text-box h1 { font-size: 402%; }

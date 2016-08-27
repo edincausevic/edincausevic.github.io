@@ -447,6 +447,7 @@ function saveList() {
 
     
 // ************************************ email *****************************************     
+    
 // show email popup    
 $('#email').on('click', function(e){
     e.preventDefault();

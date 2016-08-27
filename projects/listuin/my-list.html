@@ -32,7 +32,7 @@
         <link rel="icon" type="image/png" href="img/favicons/favicon-96x96.png" sizes="96x96">
         <link rel="icon" type="image/png" href="img/favicons/favicon-16x16.png" sizes="16x16">
         <link rel="manifest" href="img/favicons/manifest.json">
-        <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg">
         <link rel="shortcut icon" href="img/favicons/favicon.ico">
         <meta name="apple-mobile-web-app-title" content="Listuin">
         <meta name="application-name" content="Listuin">
@@ -50,6 +50,7 @@
                 </div>
 		</header>
         <section class="sub-header">
+            <h2 style="display: none">Menu</h2>
             <div class="container clear-fix">
                 <nav class="most-used-menu"></nav>
                 <div class="coment-box clear-fix hide-on-small">
@@ -57,19 +58,23 @@
             </div>
         </section>
         <section class="main-contant">
+            <h2 style="display: none">Main Content</h2>
             <div class="container clear-fix">
                 <div class="main-items">
                     <p class="back-link"><a href="index.html">Home</a><span><a href="#"> / My List</a></span></p>
                     <ul class="items m-small-p" id="empty-list-msg">
-                        <a href="#" class="my-list-item" id="link-off" onclick="return false">
+                        <li><a href="#" class="my-list-item" id="link-off" onclick="return false">
                             <p class="empty"><i class="fa fa-list"></i> Your list is empty</p>
-                        </a>
+                            </a>
+                        </li>
                     </ul>
                     <ul class="items m-small-p" id="link-list"></ul>    
                     <ul class="items m-small-p" id="addExternal">
-                        <a href="#" class="my-list-item" id="add-external-link">
-                            <p class="external"><i class="fa fa-external-link-square"></i> Add external link <i class="fa fa-link" id="remove-item"></i></p>
-                        </a>
+                        <li>
+                            <a href="#" class="my-list-item" id="add-external-link">
+                                <p class="external"><i class="fa fa-external-link-square"></i> Add external link <i class="fa fa-link" id="remove-item"></i></p>
+                            </a>
+                        </li>
                     </ul>
                     <div class="my-list-items-note clear-fix">
                         <div id="remove-all-links"><a href="#">Remove all links </a>
@@ -82,20 +87,20 @@
                 </div>
                 <aside class="side-menu hide-on-small">
                     <div id="side-menu-links"></div>
-                    <div class="g-ads-rb"></div>
+                    <div id="g-ads-rb"></div>
                 </aside>
             </div>
             <div id="side-menu-share">
                 <div class="side-share">
                     <span>share</span>
                     <ul class="side-social-networks">
-                            <li><a href="http://www.facebook.com/share.php?u=http://edincausevic.github.io/projects/listuin/index.html&title=Listuin: Home of designers."><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="http://twitter.com/intent/tweet?status=Listuin: Home of designers.+http://edincausevic.github.io/projects/listuin/index.html"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="http://www.facebook.com/share.php?u=http://edincausevic.github.io/projects/listuin/index.html&title=Listuin:&nbsp;Home&nbsp;of&nbsp;designers."><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="http://twitter.com/intent/tweet?status=Listuin:&nbsp;Home&nbsp;of&nbsp;designers.+http://edincausevic.github.io/projects/listuin/index.html"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="https://plus.google.com/share?url=http://edincausevic.github.io/projects/listuin/index.html"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://edincausevic.github.io/projects/listuin/index.html&title=Listuin: Home of designers.&source=http://edincausevic.github.io/"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="http://www.reddit.com/submit?url=http://edincausevic.github.io/projects/listuin/index.html&title=Listuin: Home of designers."><i class="fa fa-reddit-alien"></i></a></li>
-                            <li><a href="http://pinterest.com/pin/create/bookmarklet/?media=Resources&url=http://edincausevic.github.io/projects/listuin/index.html&is_video=false&description=Listuin: Home of designers."><i class="fa fa-pinterest-p"></i></a></li>
-                            <li><a href="http://www.tumblr.com/share?v=3&u=http://edincausevic.github.io/projects/listuin/index.html&t=Listuin: Home of designers."><i class="fa fa-tumblr"></i></a></li>
+                        <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://edincausevic.github.io/projects/listuin/index.html&title=Listuin:&nbsp;Home&nbsp;of&nbsp;designers.&source=http://edincausevic.github.io/"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="http://www.reddit.com/submit?url=http://edincausevic.github.io/projects/listuin/index.html&title=Listuin:&nbsp;Home&nbsp;of&nbsp;designers."><i class="fa fa-reddit-alien"></i></a></li>
+                        <li><a href="http://pinterest.com/pin/create/bookmarklet/?media=Resources&url=http://edincausevic.github.io/projects/listuin/index.html&is_video=false&description=Listuin:&nbsp;Home&nbsp;of&nbsp;designers."><i class="fa fa-pinterest-p"></i></a></li>
+                        <li><a href="http://www.tumblr.com/share?v=3&u=http://edincausevic.github.io/projects/listuin/index.html&t=Listuin:&nbsp;Home&nbsp;of&nbsp;designers."><i class="fa fa-tumblr"></i></a></li>
                         </ul>
                 </div>
             </div>
@@ -106,7 +111,7 @@
                 <div class="section">
                     <p class="foot-title">Contact Us</p>
                     <p>Send us a <a href="#" id="email" style="text-decoration: underline">message</a>.</p>
-                    <p>Have suggestions for contact, <br><a href="#" id="email" style="text-decoration: underline">send us a message</a>.</p>
+                    <p>Have suggestions for contact, <br><a href="#" id="email-suggenstion" style="text-decoration: underline">send us a message</a>.</p>
                 </div>
                     <div class="section" id="foot-featured"></div>
                 <div class="section">

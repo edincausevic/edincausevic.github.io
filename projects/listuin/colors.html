@@ -33,7 +33,7 @@
         <link rel="icon" type="image/png" href="img/favicons/favicon-96x96.png" sizes="96x96">
         <link rel="icon" type="image/png" href="img/favicons/favicon-16x16.png" sizes="16x16">
         <link rel="manifest" href="img/favicons/manifest.json">
-        <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg">
         <link rel="shortcut icon" href="img/favicons/favicon.ico">
         <meta name="apple-mobile-web-app-title" content="Listuin">
         <meta name="application-name" content="Listuin">
@@ -52,6 +52,7 @@
                 </div>
 		</header>
         <section class="sub-header">
+            <h2 style="display: none">Menu</h2>
             <div class="container clear-fix">
                 <nav class="most-used-menu"></nav>
                 <div class="coment-box clear-fix hide-on-small">
@@ -61,13 +62,13 @@
         <section class="main-contant">
             <div class="container clear-fix">
                 <div class="main-items">
-                    <p class="back-link"><a href="index.html">Home</a><span><a href="#"> / Colors</a></span></span></p>
+                    <p class="back-link"><a href="index.html">Home</a><span><a href="#"> / Colors</a></span></p>
             <p class="back-link" id="rig"><a href="my-list.html" class="my-list-mob-link"><i class="fa fa-list" aria-hidden="true"></i> My List</a></p>
                     <ul class="items m-small-p">
                         <li class="item clear-fix">
                             <i class="fa fa-thumb-tack pin pin-style"></i>
                             <a href="#" class="arrow-popup"></a> 
-                            <a href="http://flatuicolors.com/" target="_black">   
+                            <a href="http://flatuicolors.com/" target="_blank">   
                             <img src="img/colors/flat.jpg" alt="Flat Colors Logo"/>
                             <h4>Flat UI Colors</h4>
                             <p>Great colors for your project.</p>
@@ -83,7 +84,7 @@
                         <li class="item clear-fix">
                             <i class="fa fa-thumb-tack pin pin-style"></i>
                             <a href="#" class="arrow-popup"></a> 
-                            <a href="http://www.materialpalette.com/cyan/deep-purple" target="_black">   
+                            <a href="http://www.materialpalette.com/cyan/deep-purple" target="_blank">   
                             <img src="img/colors/material.jpg" alt="Matirial Pallete Logo"/>
                             <h4>Matirial Pallete</h4>
                             <p>Great colors for your project.</p>
@@ -99,7 +100,7 @@
                         <li class="item clear-fix">
                             <i class="fa fa-thumb-tack pin pin-style"></i>
                             <a href="#" class="arrow-popup"></a> 
-                            <a href="https://coolors.co/browser" target="_black">   
+                            <a href="https://coolors.co/browser" target="_blank">   
                             <img src="img/colors/coolors.jpg" alt="Coolors Logo"/>
                             <h4>Coolors</h4>
                             <p>Great colors for your project.</p>
@@ -115,7 +116,7 @@
                         <li class="item clear-fix">
                             <i class="fa fa-thumb-tack pin pin-style"></i>
                             <a href="#" class="arrow-popup"></a> 
-                            <a href="http://www.0to255.com/e3e3e3" target="_black">   
+                            <a href="http://www.0to255.com/e3e3e3" target="_blank">   
                             <img src="img/colors/255.jpg" alt="0 to 255 Logo"/>
                             <h4>0 to 255</h4>
                             <p>Great colors for your project.</p>
@@ -131,7 +132,7 @@
                         <li class="item clear-fix">
                             <i class="fa fa-thumb-tack pin pin-style"></i>
                             <a href="#" class="arrow-popup"></a> 
-                            <a href="https://coolors.co/browser" target="_black">   
+                            <a href="https://coolors.co/browser" target="_blank">   
                             <img src="img/colors/adobe.jpg" alt="Adobe Colors CC Logo"/>
                             <h4>Adobe Colors CC</h4>
                             <p>Great colors for your project.</p>
@@ -146,7 +147,7 @@
                         <li class="item clear-fix">
                             <i class="fa fa-thumb-tack pin pin-style"></i>
                             <a href="#" class="arrow-popup"></a> 
-                            <a href="https://color.adobe.com/create/color-wheel/?base=2&rule=Analogous&selected=3&name=My%20Color%20Theme&mode=rgb&rgbvalues=1,0.7122366822536936,0.46533248874557154,0.91,0.42345256475847004,0.7158217323109413,0.4307170783877762,0.4153324887455715,1,0.42345256475847004,0.91,0.8450197301854934,0.6963549679496519,1,0.44192579539973487&swatchOrder=0,1,2,3,4" target="_black">   
+                            <a href="https://color.adobe.com/create/color-wheel/?base=2&rule=Analogous&selected=3&name=My%20Color%20Theme&mode=rgb&rgbvalues=1,0.7122366822536936,0.46533248874557154,0.91,0.42345256475847004,0.7158217323109413,0.4307170783877762,0.4153324887455715,1,0.42345256475847004,0.91,0.8450197301854934,0.6963549679496519,1,0.44192579539973487&swatchOrder=0,1,2,3,4" target="_blank">   
                             <img src="img/colors/adobe.jpg" alt="Adobe Colors CC Logo"/>
                             <h4>Colors CC Create</h4>
                             <p>Great colors for your project.</p>
@@ -168,7 +169,7 @@
                         </a>
                     </div>
                     <div id="side-menu-links"></div>
-                    <div class="g-ads-rb"></div>
+                    <div id="g-ads-rb"></div>
                 </aside>
             </div>
             <div id="side-menu-share">
@@ -178,13 +179,13 @@
                 <div class="side-share">
                     <span>share</span>
                     <ul class="side-social-networks">
-                            <li><a href="http://www.facebook.com/share.php?u=http://edincausevic.github.io/projects/listuin/index.html&title=Listuin: Home of designers."><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="http://twitter.com/intent/tweet?status=Listuin: Home of designers.+http://edincausevic.github.io/projects/listuin/index.html"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="http://www.facebook.com/share.php?u=http://edincausevic.github.io/projects/listuin/index.html&title=Listuin:&nbsp;Home&nbsp;of&nbsp;designers."><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="http://twitter.com/intent/tweet?status=Listuin:&nbsp;Home&nbsp;of&nbsp;designers.+http://edincausevic.github.io/projects/listuin/index.html"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="https://plus.google.com/share?url=http://edincausevic.github.io/projects/listuin/index.html"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://edincausevic.github.io/projects/listuin/index.html&title=Listuin: Home of designers.&source=http://edincausevic.github.io/"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="http://www.reddit.com/submit?url=http://edincausevic.github.io/projects/listuin/index.html&title=Listuin: Home of designers."><i class="fa fa-reddit-alien"></i></a></li>
-                            <li><a href="http://pinterest.com/pin/create/bookmarklet/?media=Resources&url=http://edincausevic.github.io/projects/listuin/index.html&is_video=false&description=Listuin: Home of designers."><i class="fa fa-pinterest-p"></i></a></li>
-                            <li><a href="http://www.tumblr.com/share?v=3&u=http://edincausevic.github.io/projects/listuin/index.html&t=Listuin: Home of designers."><i class="fa fa-tumblr"></i></a></li>
+                        <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://edincausevic.github.io/projects/listuin/index.html&title=Listuin:&nbsp;Home&nbsp;of&nbsp;designers.&source=http://edincausevic.github.io/"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="http://www.reddit.com/submit?url=http://edincausevic.github.io/projects/listuin/index.html&title=Listuin:&nbsp;Home&nbsp;of&nbsp;designers."><i class="fa fa-reddit-alien"></i></a></li>
+                        <li><a href="http://pinterest.com/pin/create/bookmarklet/?media=Resources&url=http://edincausevic.github.io/projects/listuin/index.html&is_video=false&description=Listuin:&nbsp;Home&nbsp;of&nbsp;designers."><i class="fa fa-pinterest-p"></i></a></li>
+                        <li><a href="http://www.tumblr.com/share?v=3&u=http://edincausevic.github.io/projects/listuin/index.html&t=Listuin:&nbsp;Home&nbsp;of&nbsp;designers."><i class="fa fa-tumblr"></i></a></li>
                         </ul>
                 </div>
             </div>
@@ -195,7 +196,7 @@
                 <div class="section">
                     <p class="foot-title">Contact Us</p>
                     <p>Send us a <a href="#" id="email" style="text-decoration: underline">message</a>.</p>
-                    <p>Have suggestions for contact, <br><a href="#" id="email" style="text-decoration: underline">send us a message</a>.</p>
+                    <p>Have suggestions for contact, <br><a href="#" id="email-suggenstion" style="text-decoration: underline">send us a message</a>.</p>
                 </div>
                     <div class="section" id="foot-featured"></div>
                 <div class="section">

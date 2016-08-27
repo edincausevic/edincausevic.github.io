@@ -299,10 +299,13 @@ $(document).on('click', '.a-chage-text', function(){
     
 // CHANGE BC COLOR OF THE LINK
 $(document).on('click','.change-color', function(){
-        // add color palat in li item
-        var $colorPalat = createColorPalat();
-        var $li = $(this).closest('li');
-        $li.append($colorPalat);
+        
+    // remove color palat from all other list items
+    $('.color-palat').remove();
+    // add color palat in li item
+    var $colorPalat = createColorPalat();
+    var $li = $(this).closest('li');
+    $li.append($colorPalat);
     // change color on click
     $(document).on('click', '.color-palat li div', function(){
             
@@ -318,12 +321,15 @@ $(document).on('click','.change-color', function(){
     
 // REMOVE ONE LIST ITEM
 $(document).on('click', '.remove-list-i', function(){
-
+    
+    $('#link-list > li').attr('data-info', '');
+    
     var $url = $(this).closest('li').find('a').attr('href');
     $(this).closest('li').attr('data-info', 'remove');
     xhr('GET', 'data/remove-this-link.html', addDataTo('#popups', '.close-create-popup', 300)); 
     
     $('#popups').on('click', '#remove-li', function(e){
+        
         e.preventDefault();
         $('li[data-info="remove"').remove();
         $('#popups').empty();
@@ -340,6 +346,12 @@ $(document).on('click', '.remove-list-i', function(){
         if ( $('#link-list li').length === 0 ) $('#empty-list-msg').show();
     });
 });
+    
+// REMOVE COLOR PALAT
+$(document).on('click', '.close-color-palat', function(){
+    
+    $(this).closest('.color-palat').remove();
+});    
 
 
 // ADD EXTERNAL LINK
@@ -546,7 +558,8 @@ $('#popups').on('click', '.bg-trans', function(e){
 
     var $headerTop = $('.sub-header').offset().top;  // distance between subheader and top of the window
     var $share = $('#side-menu-share');
-
+    var $add = $('#g-ads-rb');
+    
     // show and hide shere isons on scroll and resize
     $(window).on('scroll resize', function(){
 
@@ -558,7 +571,11 @@ $('#popups').on('click', '.bg-trans', function(e){
         else {
             if ( $topPage >= $headerTop ) $share.fadeIn(300);
             else $share.hide();
-        }   
+        } 
+        
+        // add position fixed on ads
+        if ( $topPage >= 1015 ) {$add.css('position', 'fixed').css('top', '0'); }
+        else {$add.css('position', 'relative').css('top', '0'); }
     });    
 })();
 

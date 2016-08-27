@@ -763,7 +763,7 @@ header[data-header="small"] {
 
 .color-palat li {
     display: inline-block;
-    padding-right: 8px;
+    padding-right: 14px;
 }
 
 .color-palat div {
@@ -828,6 +828,9 @@ header[data-header="small"] {
     background-color: #e67e22;
 }
 
+.color10 {
+    background-color: #95a5a6;
+}
 
 
 /*--------------------------------------*/
@@ -964,10 +967,15 @@ footer p a {
     padding-top: 10px;
 }
 
+#e-email { margin-top: 0px; }
 
 /*--------------------------------------*/
 /*             SIDE ADDS                */
 /*--------------------------------------*/
+
+.side-menu {
+    position: relative;
+}
 
 #side-menu-share {
     position: fixed;
@@ -1183,7 +1191,7 @@ footer p a {
 
 
 .ext-input {width: 550px;}
-.acc-pop input {width: 73%;}
+.acc-pop input {width: 73%;margin-top: 20px;}
 .inputs {
     color: #474747;
     display: block;

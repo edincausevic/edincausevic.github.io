@@ -1,8 +1,9 @@
 
-// check for inputs
-$('#submit').on('click', function(e){
-    e.preventDefault();
+// send email
+$('#email-form').on('submit', function(e){
+    //e.preventDefault();
     
+    // check for inputs
     function checkForm(el, msg, err) {
 
         var input = $(el);
@@ -17,5 +18,30 @@ $('#submit').on('click', function(e){
     checkForm('#email', 'Bitte geben Sie eine E-Mail', '#email-error');
     checkForm('#subject', 'Bitte geben Sie einen Betreff', '#subject-error');
     checkForm('textarea', 'Textbox ist leer', '#text-error');
+    
+    // store data from inputs
+    var name = $('#name').val(),
+        email = $('#email').val(),
+        subject = $('#subject').val(),
+        text = $('textarea').val();
+    
+    // send data
+    $.ajax({
+        type: 'POST',
+        url: 'email.php',
+        data: "name=" + name + "&email=" + email + "&subject=" + subject + "&text=" + text,
+        success: function(response) {
+            if ( response == "success" ) {
+                // poslano
+                console.log('poslano');
+            }else {
+                // error
+                console.log('error');
+            }
+        }
+    });
+    
+    
+
     
 });

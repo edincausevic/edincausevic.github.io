@@ -1,5 +1,18 @@
 #contct {
     
+    .mail-not-send {
+        div {
+            background-color: #fa4641;
+            @extend %mail-msg;
+        }
+    }
+    .mail-send {
+        div {
+            background-color: #80bd34;
+            @extend %mail-msg;
+        }
+    }
+    
     p {
         font-size: 85%;
         color: $red;

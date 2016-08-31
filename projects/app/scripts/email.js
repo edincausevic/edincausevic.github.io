@@ -3,6 +3,7 @@
 $('#email-form').on('submit', function(e){
     //e.preventDefault();
     
+    var check = true;
     // check for inputs
     function checkForm(el, msg, err) {
 
@@ -12,6 +13,7 @@ $('#email-form').on('submit', function(e){
         if ( input.val().length === 0 ) {
             error.html(msg);
             input.select();
+            check = false;
         }else { error.html('&nbsp;'); }
     }
     checkForm('#name', 'Bitte geben Sie einen Namen', '#name-error');
@@ -19,29 +21,29 @@ $('#email-form').on('submit', function(e){
     checkForm('#subject', 'Bitte geben Sie einen Betreff', '#subject-error');
     checkForm('textarea', 'Textbox ist leer', '#text-error');
     
-    // store data from inputs
-    var name = $('#name').val(),
-        email = $('#email').val(),
-        subject = $('#subject').val(),
-        text = $('textarea').val();
-    
-    // send data
-    $.ajax({
-        type: 'POST',
-        url: 'email.php',
-        data: "name=" + name + "&email=" + email + "&subject=" + subject + "&text=" + text,
-        success: function(response) {
-            if ( response == "success" ) {
-                // poslano
-                console.log('poslano');
-            }else {
-                // error
-                console.log('error');
-            }
-        }
-    });
-    
-    
+    // stop the form
+    if ( check === true ) {
+        // store data from inputs
+        var name = $('#name').val(),
+            email = $('#email').val(),
+            subject = $('#subject').val(),
+            text = $('textarea').val();
 
-    
+        // send data
+        $.ajax({
+            type: 'POST',
+            url: 'email.php',
+            data: "name=" + name + "&email=" + email + "&subject=" + subject + "&text=" + text,
+            success: function(response) {
+                if ( response == "success" ) {
+                    // poslano
+                    alert('poslano');
+                }else {
+                    // error
+                    alert('error');
+                }
+            }
+        });
+        
+    }else { return false; } 
 });

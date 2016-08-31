@@ -33,7 +33,5 @@ session_start();
 	}else{
         $_SESSION['msg'] = '<p>GreskAAAAAA</p>';
 	}
-	
 
-header("Location: " . $_SERVER["HTTP_REFERER"]);
 ?>

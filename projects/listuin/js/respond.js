@@ -466,7 +466,7 @@ $('#email').on('click', function(e){
     xhr("GET", "data/mail.html", addDataTo("#popups", '#show-mail', 300));
 });
     
-$('#popups').on('submit', '#show-mail', function(e){
+$('#popups').on('submit', '#email', function(e){
 
     e.preventDefault();
     var test;
@@ -484,6 +484,21 @@ $('#popups').on('submit', '#show-mail', function(e){
     formCheck( $('#e-text').val(), $('#text-error'), 'Text box is empty.' );
     
     if ( test === false ) {return false;}
+    
+    // SEND DATA TO PHP
+    
+    var title = $('#e-title').val();
+    var email = $('#e-email').val();
+    var msg = $('#e-text').val();
+    
+    $.ajax({
+        type: 'POST',
+        url: 'mailer.php',
+        data: { title: title, email: email, msg: msg },
+        success: function( data ){
+            console.log(data);
+        }
+    });
 });    
     
 // ************************************ create list item *****************************     

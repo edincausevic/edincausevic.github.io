@@ -466,9 +466,10 @@ $('#email').on('click', function(e){
     xhr("GET", "data/mail.html", addDataTo("#popups", '#show-mail', 300));
 });
     
+// send email    
 $('#popups').on('submit', '#email', function(e){
-
     e.preventDefault();
+    
     var test;
     
     function formCheck( input, error, errorMsg ) {
@@ -485,6 +486,9 @@ $('#popups').on('submit', '#email', function(e){
     
     if ( test === false ) {return false;}
     
+    // HIDE MAIL FORM
+    $('#show-mail').fadeOut(300);
+    
     // SEND DATA TO PHP
     
     var title = $('#e-title').val();
@@ -496,10 +500,25 @@ $('#popups').on('submit', '#email', function(e){
         url: 'mailer.php',
         data: { title: title, email: email, msg: msg },
         success: function( data ){
-            console.log(data);
+            if ( data == 'success' ) {
+                makeMsg('Thank you! Your message has been sent.', 350, '#2ecc71');
+            }else { 
+                makeMsg('Oops! Something went wrong. Please try again!', 350, '#dd4b39');  
+            }
         }
     });
 });    
+
+// make msg after mail is send    
+function makeMsg( msg, time, color ) {
+
+    var message = '<div class="mail-msg">' +msg+ '</div>';
+    setTimeout(function(){
+        $('#popups').html( message );
+        $('.mail-msg').css('background-color', color);
+        $('#popups div').fadeIn(300).delay(2000).fadeOut(300);
+    },time);
+}    
     
 // ************************************ create list item *****************************     
     

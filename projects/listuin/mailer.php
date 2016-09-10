@@ -1,12 +1,12 @@
 <?php
 
     // save input values
-    $title = $_POST['title'];
-    $email = $_POST['email'];
-    $msg = $_POST['msg'];
+    $title = $_POST['var1'];
+    $email = $_POST['var2'];
+    $msg = $_POST['var3'];
     
     // setup email info
-    $to      = "causevicedinbih@gmail.com";
+    $to      = "wersastudio@gmail.com";
     $subject = $title;
     $txt     = $msg;
     $headers = 'From: webmaster@example.com' . "\r\n" .

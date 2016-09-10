@@ -274,7 +274,7 @@ setListLength();
 $(document).on('click', '.a-chage-text', function(){
     // take input value nad bc color of 
     var $input = $(this).next();
-    var $bcColor = $(this).next().next().css('background-color');
+    var $bcColor = $(this).closest('li').find('a').find('p').css('background-color');        
     // set input bc color to link bc color, show it and set focus
     $input.css('background-color', $bcColor);
     $input.show();
@@ -465,40 +465,76 @@ $('#email').on('click', function(e){
     e.preventDefault();
     xhr("GET", "data/mail.html", addDataTo("#popups", '#show-mail', 300));
 });
-    
-// send email    
+
+// show email suggestion popup    
+$('#email-suggenstion').on('click', function(e){
+    e.preventDefault();
+    xhr("GET", "data/mail-sugest.html", addDataTo("#popups", '#show-mail-suggest', 300));
+});     
+
+// SEND MAIL    
 $('#popups').on('submit', '#email', function(e){
     e.preventDefault();
-    
-    var test;
-    
-    function formCheck( input, error, errorMsg ) {
-        
-        if ( input.length === 0 ) {
-            error.html(errorMsg);
-            test = false;
-        }else { error.html('&nbsp;'); test = true; }
-    }
-    
+
+    // CHECK FOR FORM INPUTS - IF EMPTY
     formCheck( $('#e-title').val(), $('#title-error'), 'Please enter a name.' );
     formCheck( $('#e-email').val(), $('#email-error'), 'Please enter a email.' );
     formCheck( $('#e-text').val(), $('#text-error'), 'Text box is empty.' );
-    
+
+    // IF FORM INPUT EMPTY YUMP OUT OF THE FUNCTION
     if ( test === false ) {return false;}
-    
+
     // HIDE MAIL FORM
     $('#show-mail').fadeOut(300);
+
+    // SEND MAIL
+    sendData('title','email','msg','#e-title','#e-email','#e-text','mailer.php')
+});      
     
-    // SEND DATA TO PHP
+// send email suggestion   
+$('#popups').on('submit', '#email-suggest', function(e){
+    e.preventDefault();
+
+    // CHECK FOR FORM INPUTS - IF EMPTY
+    formCheck( $('#e-email-s').val(), $('#email-error-s'), 'Please enter a E-mail.' );
+    formCheck( $('#e-url-s').val(), $('#url-error-s'), 'Please enter a url.' );
+    formCheck( $('#e-text-s').val(), $('#text-error-s'), 'Text box is empty.' );
+
+    // IF FORM INPUT EMPTY YUMP OUT OF THE FUNCTION
+    if ( test === false ) {return false;}
+
+    // HIDE MAIL FORM
+    $('#show-mail').fadeOut(300);
+
+    // SEND MAIL
+    sendData('email','url','msg','#e-email-s','#e-url-s','#e-text-s','mailer-suggest.php')
+});      
     
-    var title = $('#e-title').val();
-    var email = $('#e-email').val();
-    var msg = $('#e-text').val();
     
+// check form inputs - if empty    
+function formCheck( input, error, errorMsg ) {
+
+    if ( input.length === 0 ) {
+        error.html(errorMsg);
+        test = false;
+    }else { 
+        error.html('&nbsp;'); 
+        test = true; 
+    }
+}    
+
+var test;     
+   
+// SEND DATA TO PHP
+function sendData(var1,var2,var3,e1,e2,e3,php) {    
+    var var1 = $(e1).val();
+    var var2 = $(e2).val();
+    var var3 = $(e3).val();
+
     $.ajax({
         type: 'POST',
-        url: 'mailer.php',
-        data: { title: title, email: email, msg: msg },
+        url: php,
+        data: { var1: var1, var2: var2, var3: var3 },
         success: function( data ){
             if ( data == 'success' ) {
                 makeMsg('Thank you! Your message has been sent.', 350, '#2ecc71');
@@ -506,8 +542,10 @@ $('#popups').on('submit', '#email', function(e){
                 makeMsg('Oops! Something went wrong. Please try again!', 350, '#dd4b39');  
             }
         }
-    });
-});    
+    });    
+} 
+    
+
 
 // make msg after mail is send    
 function makeMsg( msg, time, color ) {
@@ -553,8 +591,11 @@ function createColorPalat() {
                    '<li class="h-exx-s"><div class="color5"></div></li>' +
                    '<li class="h-exx-s"><div class="color6"></div></li>' +
                    '<li class="h-exx-s"><div class="color7"></div></li>' +
-                   '<li class="h-on-s"><div class="color8"></div></li>' +
-                   '<li class="h-on-s"><div class="color9"></div></li>' +
+                   '<li class="h-exx-s"><div class="color8"></div></li>' +
+                   '<li class="h-exx-s"><div class="color9"></div></li>' +
+                   '<li class="h-on-s"><div class="color10"></div></li>' +
+                   '<li class="h-on-s"><div class="color11"></div></li>' +
+                   '<li class="h-on-s"><div class="color12"></div></li>' +
                 '</ul>' +
              '</div>';
     return $el;   

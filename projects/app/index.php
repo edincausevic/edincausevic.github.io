@@ -203,18 +203,18 @@
                         <form id="email-form">
                             <div class="msg-left">
                                 <label for="name">Dein Name*</label>
-                                <input type="text" id="name" name="name" autocomplete="off"  required/>
+                                <input type="text" id="name" name="name" autocomplete="off"  />
                                 <p id="name-error">&nbsp;</p>
                                 <label for="email">Deine E-Mail*</label>
-                                <input type="text" id="email" name="email" autocomplete="off" required/>
+                                <input type="text" id="email" name="email" autocomplete="off" />
                                 <p id="email-error">&nbsp;</p>
                                 <label for="subject">Dein Fach*</label>
-                                <input type="text" id="subject" name="subject" autocomplete="off" required/>
+                                <input type="text" id="subject" name="subject" autocomplete="off" />
                                 <p id="subject-error">&nbsp;</p>
                             </div>
                             <div class="msg-right">
                                 <label>Nachricht Senden*</label>
-                                <textarea name="text" required></textarea>
+                                <textarea name="text"></textarea>
                                 <p id="text-error">&nbsp;</p>
                                 <input type="submit" value="Senden sie ihre nachricht" id="submit">
                             </div>

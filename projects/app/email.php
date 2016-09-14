@@ -1,37 +1,27 @@
 <?php
 
-session_start(); 
+// save input values
+$name = $_POST['name'];
+$email = $_POST['email'];
+$sub = $_POST['subject'];
+$msg = $_POST['text'];
 
-	$name = $_POST["name"];
-    $email = $_POST["email"];
-    $message = $_POST["text"];
-    $subject = $_POST["subject"];
-    $EmailTo = "mrcausevic@gmail.com";
-    $EmailFrom = "contact@zahnhofer.at";
-    
-    // prepare email body text
-	$Body = "";
-	$Body .= "Name: ";
-	$Body .= $name;
-	$Body .= "\n";
-	$Body .= "Email: ";
-	$Body .= $email;
-	$Body .= "\n";
-	$Body .= "Message: ";
-	$Body .= $message;
-	$Body .= "\n";
-	
-	
-	// send email
-	$success = mail($EmailTo, $subject, $Body, "From:".$EmailFrom);
-	unset ($EmailTo);
-	// redirect to success page
-	
-	if ($success){
-   		$_SESSION['msg'] = '<p>Poslao</p>';
-   		
-	}else{
-        $_SESSION['msg'] = '<p>GreskAAAAAA</p>';
-	}
+// setup email info
+$to      = "wersastudio@gmail.com";
+$subject = $sub;
+$txt     = $msg;
+$headers = 'From: webmaster@example.com' . "\r\n" .
+    'Reply-To: webmaster@example.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+// send email
+$send = mail($to,$subject,$txt,$headers);
+
+// check if email is send or not
+if ( $send ) {
+    echo 'success';
+}else {
+    echo 'error';
+}
 
 ?>

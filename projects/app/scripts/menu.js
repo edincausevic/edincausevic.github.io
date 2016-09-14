@@ -10,10 +10,14 @@ $('#btn-mobile-menu').on('click', function(){
 
 // hide menu on link click
 $('.main-nav a').on('click', function(){
-
-    var menu = $(this).closest('ul');
-    menu.fadeOut(300, function(){
-        $('.main-nav').css('display', '');
-    });
+    
+    var screenWidth = $(window).width();
+    
+    if ( screenWidth <= 767 ) {
+        var menu = $(this).closest('ul');
+        menu.fadeOut(300, function(){
+            $('.main-nav').css('display', '');
+        });
+    }    
 });
 

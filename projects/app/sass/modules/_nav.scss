@@ -1,9 +1,12 @@
 nav  {
+    position: fixed;
+    top: 0;
 	width: 100%;
     padding: 17px;
     background-color: rgba($white, 0.1);
 	border-bottom: 2px solid rgba($white, 0.2);
-    z-index: 1;
+    z-index: 7;
+    transition: all 0.3s ease-in-out;
     
     .logo {
         width: 27px;
@@ -56,4 +59,21 @@ nav  {
 	@include clearfix;
 }
 
-// mobile nav
+// scroll nav
+.fix-nav {
+    background: #fdfdfd;
+    border-bottom: 1px solid whitesmoke;
+    div { 
+        span { color: #333; } 
+        ul { li{
+                a {
+                    color: #333;
+                    &:hover { 
+                        border-bottom: 1px solid transparent!important; 
+                        color: $green;
+                    }
+                }
+            #active { border-bottom: none; }
+        } }
+    }
+}

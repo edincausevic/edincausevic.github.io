@@ -40,3 +40,13 @@ h2:after {
     margin: 0 auto;
     margin-top: 20px;
 }
+
+#scoll-info,
+#scoll-team,
+#scoll-offer,
+#scoll-gallery,
+#scoll-call,
+#scoll-contct {
+    position: absolute;
+    top: -50px;
+}

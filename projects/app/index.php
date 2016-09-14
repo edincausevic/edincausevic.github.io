@@ -1,43 +1,58 @@
-<?php 
-session_start();
-$msg = $_SESSION['msg'];
-?>
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta name="author" content="Edin Causevic">
-        
-        <title>Zahnarzt Hofer Christoph</title>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="Edin Causevic">
 
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    </head>
-    <body>
+<title>Zahnarzt Hofer Christoph</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+
+<link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="img/favicon/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="img/favicon/manifest.json">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+</head>
+    <body id="sroll-home">
         <header class="background1">
             <nav>
                 <div class="row">
                     <img src="img/logo.png" class="logo" alt="Logo"/><span>Hofer</span>
                     <i class="fa fa-bars" aria-hidden="true" id="btn-mobile-menu"></i>
                     <ul class="main-nav">
-                        <li><a href="#" id="active">Home</a></li>
-                        <li><a href="#team">Unser Team</a></li>
-                        <li><a href="#offer">Behandlugen</a></li>
-                        <li><a href="#gallery">Ordination</a></li>
-                        <li><a href="#call">Termin</a></li>
-                        <li><a href="#contct">Kontakt</a></li>
+                        <li><a href="#sroll-home" id="active">Home</a></li>
+                        <li><a href="#scoll-team">Unser Team</a></li>
+                        <li><a href="#scoll-offer">Behandlugen</a></li>
+                        <li><a href="#scoll-gallery">Ordination</a></li>
+                        <li><a href="#scoll-call">Termin</a></li>
+                        <li><a href="#scoll-contct">Kontakt</a></li>
                     </ul>
                 </div>
             </nav>
             <div class="hero-text-box">
                 <h1>Umfassende Zahnärztliche <br>Leistungen</h1>
                 <ul>
-                    <li><a href="#info" id="offer-btn">Weitere Infos</a></li>
-                    <li><a href="#call" id="more-info">Einen Termin Machen</a></li>
+                    <li><a href="#scoll-info" id="offer-btn">Weitere Infos</a></li>
+                    <li><a href="#scoll-call" id="more-info">Einen Termin Machen</a></li>
                 </ul>
             </div>
             <div class="header-bltPoints">
@@ -50,6 +65,7 @@ $msg = $_SESSION['msg'];
         </header>
 <!-- Section Info -->
         <section id="info">
+            <span id="scoll-info">&nbsp;</span>
             <div id="animate-info">
                 <div class="row">
                     <h2>Some title here</h2>
@@ -73,26 +89,27 @@ $msg = $_SESSION['msg'];
         </section>
 <!-- Team -->   
         <section id="team">
+            <span id="scoll-team">&nbsp;</span>
             <div class="row">
                 <h2>Unser Team</h2>
                 <div id="animate-team">
                     <div class="team-box">
-                        <img src="img/team1.jpg" alt="Image of ..">
+                        <img src="img/team1.jpg" alt="Image of Dr Hofer">
                         <p class="name">Christoph Hofer</p>
                         <p class="title"><em>Zahnarzt</em></p>
                     </div>
                     <div class="team-box">
-                        <img src="img/team1.jpg" alt="Image of ..">
+                        <img src="img/team2.jpg" alt="Image of ..">
                         <p class="name">Christoph Hofer</p>
                         <p class="title"><em>Zahnarzt</em></p>
                     </div>
                     <div class="team-box">
-                        <img src="img/team1.jpg" alt="Image of ..">
+                        <img src="img/team3.jpg" alt="Image of ..">
                         <p class="name">Christoph Hofer</p>
                         <p class="title"><em>Zahnarzt</em></p>
                     </div>
                     <div class="team-box">
-                        <img src="img/team1.jpg" alt="Image of ..">
+                        <img src="img/team4.jpg" alt="Image of ..">
                         <p class="name">Christoph Hofer</p>
                         <p class="title"><em>Zahnarzt</em></p>
                     </div>
@@ -101,6 +118,7 @@ $msg = $_SESSION['msg'];
         </section>
 <!-- What we offer -->
         <section id="offer">
+            <span id="scoll-offer">&nbsp;</span>
             <div class="row">
                 <h2>Neben der zagnmedizinischen <br>Besisversorgung biten wir Ihnen</h2>
                 <div class="offer-container">
@@ -128,6 +146,7 @@ $msg = $_SESSION['msg'];
 
 <!-- Gallery -->
         <section id="gallery">
+            <span id="scoll-gallery">&nbsp;</span>
             <div class="row">
                 <h2>Unserer Ordination</h2>
             </div>
@@ -155,6 +174,7 @@ $msg = $_SESSION['msg'];
         </section>
 <!-- Call us -->
         <section id="call">
+            <span id="scoll-call">&nbsp;</span>
             <div class="row">
                 <h2>Rufen Sie uns an und vereinbaren einen Termin bekommen</h2>
                 <h2><i class="fa fa-phone" aria-hidden="true"></i> 0043 3132 21212</h2>
@@ -172,35 +192,29 @@ $msg = $_SESSION['msg'];
         </section>
 <!-- Contact form -->
         <section id="contct">
+            <span id="scoll-contct">&nbsp;</span>
             <div class="row">
                 <h2>Wir sind glücklich, VON IHNEN ZU HÖREN</h2>
-            </div>
-            
-            <!-- POruka od php-a -->
-            <?php echo $msg; ?>
-            <!-- POruka od php-a -->
-            <div class="row"><div class="mail-not-send"><div>greska</div></div></div>
-            <div class="row"><div class="mail-send"><div>poslano</div></div></div>
-            
-            
+            </div>            
             <div class="row con-left">
                 <div id="animate-form">
                     <div class="msg-container">
-                        <form method="POST" action="" id="email-form">
+                        <div id="email-message"><div class="mail-msg">&nbsp;</div></div>
+                        <form id="email-form">
                             <div class="msg-left">
                                 <label for="name">Dein Name*</label>
-                                <input type="text" id="name" name="name" autocomplete="off" />
+                                <input type="text" id="name" name="name" autocomplete="off"  required/>
                                 <p id="name-error">&nbsp;</p>
                                 <label for="email">Deine E-Mail*</label>
-                                <input type="text" id="email" name="email" autocomplete="off" />
+                                <input type="text" id="email" name="email" autocomplete="off" required/>
                                 <p id="email-error">&nbsp;</p>
                                 <label for="subject">Dein Fach*</label>
-                                <input type="text" id="subject" name="subject" autocomplete="off" />
+                                <input type="text" id="subject" name="subject" autocomplete="off" required/>
                                 <p id="subject-error">&nbsp;</p>
                             </div>
                             <div class="msg-right">
                                 <label>Nachricht Senden*</label>
-                                <textarea name="text"></textarea>
+                                <textarea name="text" required></textarea>
                                 <p id="text-error">&nbsp;</p>
                                 <input type="submit" value="Senden sie ihre nachricht" id="submit">
                             </div>

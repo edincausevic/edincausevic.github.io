@@ -1,7 +1,7 @@
 
 // send email
 $('#email-form').on('submit', function(e){
-    //e.preventDefault();
+    e.preventDefault();
     
     var check = true;
     // check for inputs
@@ -28,22 +28,39 @@ $('#email-form').on('submit', function(e){
             email = $('#email').val(),
             subject = $('#subject').val(),
             text = $('textarea').val();
+        
+        function emptyInput() {
+            $('#name').val("");
+            $('#email').val("");
+            $('#subject').val("");
+            $('textarea').val("");
+        }
 
         // send data
         $.ajax({
             type: 'POST',
             url: 'email.php',
-            data: "name=" + name + "&email=" + email + "&subject=" + subject + "&text=" + text,
+            data: { name: name, email: email, subject: subject, text: text },
             success: function(response) {
                 if ( response == "success" ) {
-                    // poslano
-                    alert('poslano');
+                    emptyInput();
+                    makeMsg('Vielen Dank! Ihre Nachricht wurde gesendet.', '#80bd34');
                 }else {
-                    // error
-                    alert('error');
+                    emptyInput();
+                    makeMsg('Hoppla! Etwas ist schief gelaufen. Bitte versuche es erneut!', '#fa4641');
                 }
             }
         });
         
     }else { return false; } 
 });
+
+// make msg after mail is send    
+function makeMsg( msg, color ) {
+
+    var message = '<div class="mail-msg">' +msg+ '</div>';
+    $('#email-message').html( message );
+    $('.mail-msg').css('color', color);
+    $('.mail-msg').fadeIn(300);
+    setTimeout(function(){$('.mail-msg').html('&nbsp;');},2000);
+}    

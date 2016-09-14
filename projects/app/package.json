@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Edin Causevic",
+  "author": {
+      name: "Edin Causevic",
+      email: "causevicedin@live.com",
+      portfolio: "causevicedin.com"
+  },
   "license": "ISC",
   "devDependencies": {
     "font-awesome": "^4.6.3",

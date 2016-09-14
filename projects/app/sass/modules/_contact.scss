@@ -1,5 +1,5 @@
 #contct {
-    
+    position: relative;
     .mail-not-send {
         div {
             background-color: #fa4641;
@@ -18,9 +18,13 @@
         color: $red;
         margin-bottom: 5px;
     }
-    
+    .mail-msg { 
+        text-align: center;
+        padding: 19px 0;
+        font-size: 116%;
+    }
     .msg-container {
-        margin-top: 50px;
+        
         label { 
             display: block; 
             margin-bottom: 5px;

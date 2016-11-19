@@ -3,8 +3,13 @@
 $(window).on('scroll load', function(){
 
     var line = $(window).scrollTop(); 
-
-    if ( line >= 300 ) {
+    
+    // exsicute this code only on main page 
+    if ( $('body').is('#aktuelles') ) {
         $('nav').addClass('fix-nav');
-    }else { $('nav').removeClass('fix-nav'); } 
+    }else {
+        if ( line >= 300 ) {
+            $('nav').addClass('fix-nav');
+        }else { $('nav').removeClass('fix-nav'); }
+    }    
 });

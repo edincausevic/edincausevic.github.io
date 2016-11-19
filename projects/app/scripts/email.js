@@ -44,7 +44,7 @@ $('#email-form').on('submit', function(e){
             success: function(response) {
                 if ( response == "success" ) {
                     emptyInput();
-                    makeMsg('Vielen Dank! Ihre Nachricht wurde gesendet.', '#80bd34');
+                    makeMsg('Herzlichen Dank für Ihre Nachricht.', '#80bd34');
                 }else {
                     emptyInput();
                     makeMsg('Hoppla! Etwas ist schief gelaufen. Bitte versuche es erneut!', '#fa4641');
@@ -62,5 +62,5 @@ function makeMsg( msg, color ) {
     $('#email-message').html( message );
     $('.mail-msg').css('color', color);
     $('.mail-msg').fadeIn(300);
-    setTimeout(function(){$('.mail-msg').html('&nbsp;');},2000);
+    setTimeout(function(){$('.mail-msg').html('&nbsp;');},3000);
 }    

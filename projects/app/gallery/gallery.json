@@ -1,38 +1,38 @@
 [
     {
-        "id"        : 1,
-        "smallImg"  :"img/gal1.jpg",
-        "largeImg"  :"img/gal1-big.jpg",
-        "text"      :"Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "id"        : 4,
+        "smallImg"  :"img/gal4.jpg",
+        "largeImg"  :"img/gal4-big.jpg",
+        "text"      :""
     },
     {
         "id"        : 2,
         "smallImg"  :"img/gal2.jpg",
         "largeImg"  :"img/gal2-big.jpg",
-        "text"      :"Nam sit amet neque faucibus, placerat sem quis, rhoncus augue."
+        "text"      :""
     },
     {
         "id"        : 3,
         "smallImg"  :"img/gal3.jpg",
         "largeImg"  :"img/gal3-big.jpg",
-        "text"      :"Fusce facilisis mollis interdum. Suspendisse vel vulputate sem."
+        "text"      :""
     },
     {
-        "id"        : 4,
-        "smallImg"  :"img/gal4.jpg",
-        "largeImg"  :"img/gal4-big.jpg",
-        "text"      :"Ut blandit metus eu consequat fermentum."
+        "id"        : 1,
+        "smallImg"  :"img/gal1.jpg",
+        "largeImg"  :"img/gal1-big.jpg",
+        "text"      :""
     },
     {
         "id"        : 5,
         "smallImg"  :"img/gal5.jpg",
         "largeImg"  :"img/gal5-big.jpg",
-        "text"      :"Nam et enim tempor, consectetur elit ut, consectetur tellus."
+        "text"      :""
     },
     {
         "id"        : 6,
         "smallImg"  :"img/gal6.jpg",
         "largeImg"  :"img/gal6-big.jpg",
-        "text"      :"Fusce ut ullamcorper justo, sed rhoncus turpis."
+        "text"      :""
     }
 ]

@@ -1,5 +1,7 @@
 $(function(){
 
+// exsicute this code only on main page 
+if ( !$('body').is('#aktuelles') ) {
 // start slideshow - headerImgAnimation( change image every ); 
 headerImgAnimation(5000);     
     
@@ -63,4 +65,5 @@ function imagePreloader() {
     
 imagePreloader('css/img/header-bc2.jpg', 'css/img/header-bc3.jpg');    
     
+}    
 });

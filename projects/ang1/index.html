@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ngClassifieds</title>
+        <link rel="stylesheet" href="css/style.css">
+        <style type="text/css">
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+                display: none !important;
+            }
+        </style>
+    </head>
+    <body ng-app="myApp" ng-controller="myController">
+<!-- main menu -->
+    <nav class="main-nav clearFix">
+        <div class="row">
+            <ul>
+                <li class="logo"><strong>ngClassifieds</strong></li>
+                <li><input type="button" class="btn" id="menu-btn" value="+ New Classified" 
+                           ng-click="mainMenu=!mainMenu; transBack=!transBack; inputsValues={}"></li>
+                <li><input type="button" class="btn" value="+ Filters" ng-click="filterMenu=!filterMenu; selectSearch=''; search=''"></li>
+            </ul>
+        </div>
+<!-- menu -->
+        <div class="navigation" id="main-nav" ng-show="mainMenu" ng-cloak>
+            <h2>Add a Classified</h2>
+            <div class="nav-content">
+                <form novalidate>
+                    <input type="text" placeholder="Title*" id="title" class="main-menu-input" ng-model="inputsValues.title">
+                    <input type="text" placeholder="Price*" id="price" class="main-menu-input" ng-model="inputsValues.price">
+                    <input type="text" placeholder="Description*" id="description" class="main-menu-input" ng-model="inputsValues.description">
+                    <input type="text" placeholder="Image Link" id="image-link" class="main-menu-input" ng-model="inputsValues.image">
+                    <div>
+                        <input type="button" value="Save" id="save" class="btn"
+                               ng-click="createItem(inputsValues)" ng-hide="saveBtn">
+                        <input type="button" value="Save Edit" class="btn" id="save-edit"
+                               ng-show="editing" ng-click="saveEditItem()">
+                        <input type="button" value="Cancle" class="btn" id="cancle" 
+                               ng-click="transBack = false; mainMenu = false">     
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>   
+<!--filter menu -->
+    <div class="filters" class="filter" ng-show="filterMenu" ng-cloak>
+        <div class="row">
+            <input type="text" name="seach" placeholder="Search" class="filter-input" ng-model="search">
+            <select class="filter-input select" ng-model="selectSearch" >
+                <option value="a" selected="selected">All Categories</option>
+                <option ng-repeat="category in categories" value="{{category}}">{{category}}</option>
+            </select>
+            <input type="button" class="btn clearbtn" value="Clear" 
+                   ng-click="selectSearch=''; search=''">
+        </div>
+    </div>
+<!-- main content -->
+        <div class="main-content">
+            <div class="row">
+<!-- content -->            
+               <div id="preloader">
+                   <img src="img/preloader.gif" alt="">
+               </div> 
+                <div class="box-content" ng-repeat="item in data | filter: search |
+                                                    filter: selectSearch">
+                    <div class="box">
+                        <img ng-src="{{ item.image || 'img/image.jpg' }}" alt="Image of {{ item.title }}">
+<!-- item details info --> 
+                        <div class="box-info" ng-hide="infoBox">
+                            <h2 class="md-title">{{ item.title }}</h2>
+                            <h3>{{ item.price | currency:'$ '}}</h3>
+                            <h4>Posted on: {{ item.posted || dateToday }}</h4>
+                            <p style="word-wrap:break-word">{{ item.description | filterString }}</p>
+                        </div>
+<!-- contact info -->
+                        <div class="box-contact" ng-show="contactBox" ng-cloak>
+                            <p>{{ contact.name }}</p>
+                            <p>{{ contact.phone }}</p>
+                            <p>{{ contact.email }}</p>
+                        </div>
+<!-- admin info -->                        
+                        <div class="box-admin" ng-show="adminMenu" ng-cloak>
+                            <h3>Admin</h3>
+                            <input type="button" class="btn" value="Edit"
+                                   ng-click="editItem(item)">
+                            <input type="button" class="btn" value="Delete" ng-click="deleteItem(item)">
+                            <input type="button" class="btn" value="Cancle" ng-click="adminMenu=false">
+                        </div>
+
+                        <div class="box-buts">
+                            <input type="button" value="Contact" class="btn" ng-hide="contactBtn"
+                                   ng-click="contactBox=true; infoBox=true; detailsButton=true; contactBtn=true">
+                            <input type="button" value="Details" class="btn" ng-show="detailsButton"
+                                   ng-click="contactBox=false; infoBox=false; contactBtn=false; detailsButton=false" ng-cloak>
+                            <input type="button" value="Admin" class="btn" 
+                                   ng-click="adminMenu=!adminMenu">
+                        </div>
+
+                        
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        
+        <div class="trans-black-back fullscreen" ng-show="transBack" ng-click="transBack = false; mainMenu = false" ng-cloak></div>
+
+        
+        <script src="node_modules/angular/angular.js"></script>
+  <!--  <script src="node_modules/angular-animate/angular-animate.js"></script> -->
+  <!--  <script src="node_modules/angular-aria/angular-aria.js"></script> -->
+  <!--  <script src="node_modules/angular-material/angular-material.js"></script> -->
+        <script src="scripts/app.js"></script>
+        <script src="components/classifieds.fac.js"></script>
+        <script src="components/classifieds.ctr.js"></script>
+        <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyAhbklTcw12eMNh3uJRVScysImLBNi5PUQ",
+                authDomain: "ng-cls.firebaseapp.com",
+                databaseURL: "https://ng-cls.firebaseio.com",
+                storageBucket: "ng-cls.appspot.com",
+                messagingSenderId: "463071690523"
+            };
+            firebase.initializeApp(config);
+        </script>
+    </body>
+</html>

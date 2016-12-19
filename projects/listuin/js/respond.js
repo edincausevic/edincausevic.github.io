@@ -649,7 +649,7 @@ $('#popups').on('click', '.bg-trans', function(e){
         } 
         
         // add position fixed on ads
-        if ( $topPage >= 1015 ) {$add.css('position', 'fixed').css('top', '0'); }
+        if ( $topPage >= 1150 ) {$add.css('position', 'fixed').css('top', '0'); }
         else {$add.css('position', 'relative').css('top', '0'); }
     });    
 })();

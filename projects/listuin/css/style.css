@@ -118,6 +118,7 @@ header {
 	background-size: cover;
 	background-position: centar;
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 .fa-list-alt {
@@ -475,7 +476,6 @@ header[data-header="small"] {
 }
 
 .main-contant {
-    padding-top: 70px;
     background-color: #dadada;
     position: relative;
 }
@@ -887,6 +887,7 @@ header[data-header="small"] {
     margin-top: 15px;
     background-color: #ebebeb;
     position: relative;
+    display: none;               /* CHANGE WHEN ADS COME */
 }
 
 #fixt-add {
@@ -959,6 +960,10 @@ footer p a {
     margin-bottom: 25px;
 }
 
+.foot-res p:nth-child(2){
+    padding-bottom: 5px;
+}
+
 .f-left,
 .f-right{
     width: 40%;
@@ -981,8 +986,10 @@ footer p a {
 
 
 /*--------------------------------------*/
-/*             SIDE ADDS                */
+/*             SIDE-ADDS                */
 /*--------------------------------------*/
+
+
 
 .side-menu {
     position: relative;
@@ -1094,6 +1101,23 @@ footer p a {
 .side-social-networks li:nth-child(7) a:hover {
     background-color: #2d4761;
 }
+
+
+/* Ads */
+.add-container {
+    padding: 42px 0 70px 0;
+}
+
+.main-middle-add {
+    width: 728px;
+    height: 90px;
+    background-color: #ebebeb;
+    margin: 0 auto;
+    display: none;                       /* CHANGE WHEN ADS COME */
+}
+
+
+
 
 /*--------------------------------------*/
 /*                POPUPS                */
@@ -1421,6 +1445,8 @@ footer p a {
     .item img { width: 80px; margin: 20px;}
     #profile-photo {margin: 21px 20px 30px 20px;}
     .m-small-p { padding: 0 25px; }
+    .main-middle-add { display: none; }
+    .add-container { padding: 5px 0 70px 0; }
     .message { font-size: 150%; }
     .my-list-items-note { margin: 0 25px; } 
     .color-palat ul { margin: -27px 0px 0 64px; }

@@ -1,4 +1,212 @@
 
+
+
+// DOM SELECTION AND STRINGS
+var DOMcontroller = (function(){
+            
+
+
+    var domStrings = {
+        loadBombImg: '#load-bomb',
+        loadDisable: '#disable',
+        loadThe: '#the',
+        loadBomb: '#bomb',
+        loadLoadingBar: '#loading-bar',
+        loadLoadingBarInner: '#inner-loading'
+    }
+
+    // SELECT
+    var $ = function(el) {
+        return document.querySelector(el);
+    }
+
+    return {
+        // {} all DOM selection strings
+        domStrings: domStrings,
+        // {} get all intro loading el
+        introLoadingElms: function() {
+            return {
+                img: $(domStrings.loadBombImg),
+                disable: $(domStrings.loadDisable),
+                the: $(domStrings.loadThe),
+                bomb: $(domStrings.loadBomb),
+                loader: $(domStrings.loadLoadingBar)
+            } 
+        },
+        innerLoaders: function() {
+            return {
+                intro: $(domStrings.loadLoadingBarInner)
+            }
+        }
+    }
+
+}());
+
+
+
+
+// XHR CONTROLLER
+var XHRcontroller = (function(){
+
+
+
+
+}());
+
+
+
+
+
+// UI CONTROLLER
+var UIcontroller = (function(DOM){
+    
+
+
+    return {
+        // {} animation function
+        animate: function(el, top, bottom, opacity, time, offsetTime) {
+            
+            setTimeout(function(){
+                el.style.transition = 'all ' +time+ ' ease-in-out'; 
+                el.style.top = top;
+                el.style.bottom = bottom;
+                el.style.opacity = opacity;
+            }, offsetTime);
+        },
+        // {} intro loading animation
+        loadAnimation: function() {
+
+            var elms = DOM.introLoadingElms();
+            
+            //animate(el, top, bottom, opacity, time, offsetTime)
+            this.animate(elms.img, '155px', null, '1', '0.7s', 100);
+            this.animate(elms.disable, '-6px', null, '1', '0.7s', 500);
+            this.animate(elms.the, '88px', null, '1', '0.7s', 700);
+            this.animate(elms.bomb, '177px', null, '1', '0.7s', 1000);
+            this.animate(elms.loader, null, '50px', '1', '1s', 800);
+        }, 
+        introLoadingProgressBar: function(limit) {
+
+            var innerLoaders = DOM.innerLoaders(); 
+            var size = 0;
+
+            var interval = setInterval(function(){
+
+                var randomWidth = Math.floor( Math.random() * 100 );
+                size += randomWidth;
+                if (size > limit ) { clearInterval(interval); }
+                innerLoaders.intro.style.width = size + 'px';
+            },1000);
+            
+            //window.onload = function() { size = limit }
+        }
+    }
+}(DOMcontroller));
+
+
+
+
+
+
+
+
+
+
+// GAME CONTROLLER
+var GAMEcontroller = (function(){
+   
+
+
+
+    return {
+        // preload all images
+        preloadImages: function() {
+
+            var images = new Array();
+
+            function preload() {
+                for (i = 0; i < preload.arguments.length; i++) {
+                    images[i] = new Image()
+                    images[i].src = preload.arguments[i]
+                }
+            }
+            
+            preload('img/1.png', 'img/2.png', 'img/3.png', 'img/4.png', 'img/5.png',
+                         'img/1.png', 'img/7.png', 'img/8.png', 'img/9.png', 'img/10.png',
+                         'img/11.png', 'img/atomic-bomb.png', 'img/bomb-zoom.jpg', 'img/bomb.png',
+                         'img/explotion.jpg', 'img/sound-off.png', 'img/sound-on.png', 'img/success.jpg');
+        }
+    }
+}());
+
+
+
+
+
+
+
+
+
+
+
+// MAIN CONTROLLER
+var mainController = (function(DOM, UI, GAME, XHR){
+
+
+
+    var runApp = function() {
+
+        // INTRO AMINATION
+        UI.loadAnimation();
+
+        // INTRO ANIMATION LOADING BAR (max width on inner el)
+        UI.introLoadingProgressBar(415);
+
+        // PRELOAD IMAGES
+        GAME.preloadImages();
+        
+    }
+
+
+    return {
+        init: function() {
+            console.log('Application started!');
+            runApp();
+        }
+    }
+
+}(DOMcontroller, UIcontroller, GAMEcontroller, XHRcontroller));
+
+
+mainController.init();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 // select element
 function select( el ) {
     
@@ -114,7 +322,7 @@ preload('css/img/main-back.jpg',
         'img/5.png', 'img/6.png', 'img/7.png', 'img/8.png', 
         'img/9.png', 'img/10.png', 'img/11.png')
 
-/*************************************************** LOADING *************************/
+*************************************************** LOADING *************************
 
 // Loading screen - animate and start loading
 window.onload = function() {
@@ -167,7 +375,7 @@ function loading() {
 }
 
 
-/***************************************** CREATE A PROFILE *************************/
+***************************************** CREATE A PROFILE *************************
 
 // change image
 function changeImage() {
@@ -261,7 +469,7 @@ function loadGameAnimationAndSetupMenu() {
 }
 
 
-/************************************** MAIN MENU - GAME *************************/
+************************************** MAIN MENU - GAME *************************
 
 
 // remove the cover
@@ -494,7 +702,7 @@ function addScore(width) {
 }
 
 
-/*
+
 // setup level hardnes and save it
 function setLevel() {
 
@@ -503,19 +711,19 @@ function setLevel() {
     var level = maxVal - scoreZero;  
     save('level', level);        
 }
-*/
 
-/* stavi kad pobjedis
+
+ stavi kad pobjedis
 // load score in main menu
 var score = select('#mainMenuScore');
 score.innerHTML = localStorage.score;
+
+
+
+
+
+
 */
-
-
-
-
-
-
 
 
 

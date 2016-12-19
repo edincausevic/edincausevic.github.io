@@ -1,0 +1,12 @@
+footer {
+    background: $dark-gray;
+    color: $white;
+    padding: 25px 0;
+    .futter-btn {
+        @include btn($green, $green);
+    }
+    .footer-info {
+        display: none;
+    }
+    @include clearfix;
+}

@@ -1,0 +1,50 @@
+
+
+// BASIC SETUP
+// ********************************************************
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+}
+
+html,
+body {
+	background-color: $white;
+	color: $dark-gray;
+	font-family: $main-font;
+	font-weight: 400;
+	font-size: 16px;
+    height: 100%;
+}
+
+*:focus {outline: none;}
+
+p { font-size: 108%; }
+
+.row {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+#active {
+    padding-bottom: 5px;
+    border-bottom: 2px solid $green;
+}
+
+.bpActive {
+    opacity: 1!important;
+}
+
+section {
+    padding: 80px 0;
+}
+
+input[type="button"] {
+    padding: 3px 5px;
+}
+
+

@@ -1,0 +1,35 @@
+#info {
+    position: relative;
+    @include clearfix;
+    background: $light-gray;
+    
+    .info-box {
+        position: relative;
+        margin-top: 72px;
+        width: 25%;
+        margin-left: 9%;
+        float: left;
+        &:nth-child(2) { 
+            margin-left: 55px;
+        }
+        
+        .fa {
+            position: absolute;
+            position: absolute;
+            left: -43px;
+            top: -5px;
+            font-size: 162%;
+            color: $green;
+        }
+        
+        .img-icon {
+            position: absolute;
+            left: -39px;
+            top: -7px;
+        }
+        
+        h3 {
+            margin-bottom: 10px;
+        }
+    } 
+}

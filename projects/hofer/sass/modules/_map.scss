@@ -1,0 +1,50 @@
+#map-box {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    padding: 0;
+    .map-left-info {
+        width: 50%;
+        height: 100%;
+        float: left;
+        padding: 20px;
+    }
+    .map-right-info {
+        float: right;
+        width: 50%;
+        position: relative;
+        .map {
+            width: 100%;
+            height: 350px;
+        }
+        #map-btn {
+            background: $white;
+            position: absolute;
+            right: 20px;
+            top: 12px;
+            padding: 8px;
+            border-radius: 3px;
+            font-size: 80%;
+            color: $middle-gray;
+            box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.25);
+            cursor: pointer;
+            z-index: 6;
+            transition: all 0.3s ease-in-out;
+            .map-btn-text {
+                display: inline;
+            }
+            &:hover {
+                color: $dark-gray;  
+            }
+        }
+        .map-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    }
+    @include clearfix;
+}

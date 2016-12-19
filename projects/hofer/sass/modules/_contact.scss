@@ -1,0 +1,66 @@
+#contct {
+    position: relative;
+    .mail-not-send {
+        div {
+            background-color: #fa4641;
+            @extend %mail-msg;
+        }
+    }
+    .mail-send {
+        div {
+            background-color: #80bd34;
+            @extend %mail-msg;
+        }
+    }
+    
+    p {
+        font-size: 85%;
+        color: $red;
+        margin-bottom: 5px;
+    }
+    .mail-msg { 
+        text-align: center;
+        padding: 19px 0;
+        font-size: 116%;
+    }
+    .msg-container {
+        
+        label { 
+            display: block; 
+            margin-bottom: 5px;
+        }
+        .msg-left {
+            float: left;
+            width: 50%;  
+            
+            input {
+                height: 47px;
+                border-radius: 5px;
+                @extend %inputs;
+            }
+        }
+        .msg-right {
+            float: left;
+            width: 50%;
+            
+            textarea {
+                height: 150px;
+                border-radius: 5px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                @extend %inputs;
+            }
+            input {
+                @include btn($green, $green);
+                transition: all 0.3s ease-in-out;
+                margin-top: 10px;
+                float: left;
+                &:hover {
+                    @include hoverBtn($green, $green, 4%, $white);
+                }
+            }
+        }
+        @include clearfix;
+    }
+    @include clearfix;
+}

@@ -1,0 +1,24 @@
+
+%big-btn {
+	text-transform: uppercase;
+	border-radius: 5px;
+	background-color: $red;
+	border: none;
+    padding: 16px 39px;
+    color: white;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+.active-aside {
+    color: white!important;
+    background-color: $aciteMenu;
+}
+
+.filter-menu-active {
+    background-color: $mainFontColorLight;
+    border-radius: 15px;
+    color: white;
+}

@@ -1,0 +1,30 @@
+
+// BASIC SETUP
+// ********************************************************
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+
+
+*, *:before, *:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+}
+
+*:focus { outline: none; }
+
+html,
+body {
+	font-size: $fontSize;
+	font-family: $mainFont;
+	font-weight: 400;
+	color: $mainFontColor;
+	clear: both;
+	position: absolute;
+	width: 100%;
+}
+
+.row {
+	margin-left: 250px;
+}

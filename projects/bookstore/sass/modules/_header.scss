@@ -1,0 +1,62 @@
+
+header {
+	float: left;
+    background-color: $header-bc-color;
+    border-bottom: 1px solid darken($header-bc-color, 5%);
+    width: 100%;
+
+    h1 {
+    	padding: 35px 24px;
+    	margin: 0 0;
+    	font-weight: 400;
+    	border-bottom: 1px solid darken($header-bc-color, 5%);
+    }
+
+    nav {
+    	padding: 0 20px;
+    	border-top: 1px solid lighten($header-bc-color, 5%);
+
+    	ul {
+    		float: left;
+    		margin: 20px 0;
+    		li {
+    			display: inline-block;
+    			a {
+    				text-decoration: none;
+    				color: $mainFontColorLight;
+    				padding: 3px 17px;
+    				transition: all 0.2s ease-in-out;
+    				&:hover {
+    					color: darken($mainFontColorLight, 10%);
+    				}
+    			}
+    		}
+    	}
+
+    	.search-input {
+    		float: right;
+    		position: relative;
+
+    		input {
+    			width: 300px;
+			    padding: 7px 16px;
+			    margin-top: 13px;
+			    border-radius: 15px;
+    			border: 1px solid $mainFontColorLight;
+    			&::placeholder {
+    				color: $mainFontColorLight;
+    			}
+    			&:focus {
+    				color: $mainFontColor;
+    			}
+    		}
+
+    		i {
+			    position: absolute;
+			    right: 15px;
+			    top: 20px;
+			    color: $mainFontColorLight;
+    		}
+    	}
+    }
+}

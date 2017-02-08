@@ -1,0 +1,113 @@
+
+#aside-menu {
+	width: 250px;
+	position: absolute;
+	color: $menuColor;
+	background-color: $menuBackColor;
+	float: left;
+	padding-bottom: 70px;
+	min-height: 100%;
+
+	.aside-box {
+		padding: 20px;
+
+		&:nth-child(3) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		&:nth-child(7) {
+			color: darken($menuColor, 35%);
+		}
+
+		.btn-big {
+			@extend %big-btn;
+			&:hover {
+				background-color: $darkRed;
+			}
+			&:active {
+				background-color: $red;
+			}
+		}
+
+		i {
+			padding-right: 10px;
+		}
+
+		.side-menu {
+			a {
+				text-decoration: none;
+			    display: block;
+			    padding: 12px 0;
+			    color: $mainFontColorLight;
+			    padding-left: 20px;
+				padding-right: 20px;
+				transition: all 0.2s ease-in-out;
+				&:hover {
+					background-color: darken($aciteMenu, 35%); 
+					color: white;
+				}
+			}
+		}
+
+		.aside-submenu {
+			li {
+				padding: 12px 0;
+			}
+			i {
+			    font-size: 48%;
+				vertical-align: 3px;	
+			}		
+			.red { color: #e64c66; }
+			.yellow { color: #ffab00; }
+			.lightblue { color: #00bfdd; }
+			.darkblue { color: #7874cf; }
+		}
+
+		p {
+			margin: 20px;
+			position: relative;
+			line-height: 30px;
+
+			&:before {
+				content: "\f017";
+			    font-family: FontAwesome;
+			    font-style: normal;
+				position: absolute;
+    			left: -22px;
+    			line-height: 30px;
+			}
+
+			a {
+				color: $menuColor;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		span {
+			margin: 20px;
+		}
+	}
+
+
+	hr {
+		height: 6px;
+	    background-color: darken($menuBackColor, 5%);
+	    border-top: 1px solid darken($menuBackColor, 7%);
+	    border-bottom: 1px solid lighten($menuBackColor, 5%);
+	    border-right: 1px solid transparent;
+	    border-left: 1px solid transparent;
+	}
+
+}
+
+/*
+		height: 6px;
+	    background-color: #1b212f;
+	    border-top: 1px solid #191f2d;
+	    border-bottom: 1px solid #2a3248;
+	    border-right: 1px solid transparent;
+	    border-left: 1px solid transparent;
+*/

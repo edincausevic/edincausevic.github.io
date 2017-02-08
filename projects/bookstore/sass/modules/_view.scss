@@ -1,0 +1,80 @@
+
+.view {
+	float: left;
+	width: 100%;
+
+	.display-data {
+		padding: 20px;
+
+		.book {
+			width: 18.1%;
+			float: left;
+			margin-right: 20px;
+			margin-bottom: 30px;
+			position: relative;
+
+			.image-container {
+				position: relative;
+
+				> i:first-child {
+					position: absolute;
+					    color: $menuColor;
+					    font-size: 200%;
+					    right: 23px;
+					    top: 17px;
+					    z-index: 2;
+					    opacity: 0;
+					    transition: all 0.3s ease-in-out;
+					    &:hover { transform: scale(1.3); }
+				}
+
+				.trans-back {
+					background-color: rgba(31, 38, 55, 0.96);
+					position: absolute;
+					width: 100%;
+					height: 99%;
+					border-radius: 5px;
+					opacity: 0;
+					transition: all 0.3s ease-in-out;
+				}
+			}
+
+			a {
+				text-decoration: none;
+				color: $mainFontColor;
+				transition: all 0.2s ease-in-out;
+
+				&:hover {
+					.trans-back {
+						opacity: 1;
+					}
+
+					.image-container > i {
+						opacity: 1;
+					}
+				}
+
+				img {
+					width: 100%;
+				    border-radius: 5px;
+				}
+
+				h2 {
+					font-weight: 400;
+				    font-size: 135%;
+				    margin-bottom: 5px;
+				    margin-top: 10px;
+				}
+
+				span {
+					    margin-bottom: 10px;
+	    				display: block;
+				}
+
+				.stars {
+					color: $mainFontColorLight;
+				}
+			}
+		}
+	}
+}

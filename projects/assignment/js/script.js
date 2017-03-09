@@ -1,4 +1,4 @@
-document.getElementById('a').style.color = 'green';
+document.getElementById('a').style.color = 'red';
 
 
 
@@ -50,11 +50,11 @@ function xhr(link, container) {
 		xhr.open("get", link);
 		
 	    xhr.onload = function() {
-	    	container.innerHTML = xhr.responseText;
+	    	document.getElementById('a').innerHTML = xhr.responseText;
 	  	}
 	  
 		xhr.send();
-		alert('radi')
+		
 	}else {	
 	
 	    if ( XMLHttpRequest ) {

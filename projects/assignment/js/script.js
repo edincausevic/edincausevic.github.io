@@ -1,7 +1,7 @@
-document.getElementById('a').style.color = 'orange';
+document.getElementById('a').style.color = 'black';
 
 if (window.XDomainRequest) { // ie9
-		xhg = new XDomainRequest(); 
+		var xhg = new XDomainRequest(); 
 
 		xhg.open("get", 'data/acc-tab1.html');
 		

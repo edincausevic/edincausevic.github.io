@@ -4,7 +4,7 @@ if (msie < 9) {
     alert('radiii')
 }
 
-console.log(ie)
+
 
 // DETECT THE CLICK AND CHECK IF IT WAS CLICKED BEFORE
 // IF NOT ADD COTENT TO THAT TAB
@@ -39,29 +39,27 @@ window.onload = function() {
 			xhr('data/acc-tab1.html', textContainer)
 		}
 	}
-
-	// GET THE DATA AND PUT IT IN CAONTAINER
-	function xhr(link, container) {
+}
 
 
-		
+// GET THE DATA AND PUT IT IN CAONTAINER
+function xhr(link, container) {
 
-		var xhr;
+	var xhr;
 
-	    if ( XMLHttpRequest ) {
-	        xhr =  new XMLHttpRequest;
-	    }else {
-	        xhr = new ActiveXObject('Microsoft.XMLHTTP');
-	    }
+    if ( XMLHttpRequest ) {
+        xhr =  new XMLHttpRequest;
+    }else {
+        xhr = new ActiveXObject('Microsoft.XMLHTTP');
+    }
 
-		xhr.open('GET', link, true);
-		xhr.onreadystatechange = function() {
-	        if ( (xhr.readyState === 4) && (xhr.status === 200 ) ) {
-	            container.innerHTML = xhr.response;
-	        }
-	    }
-		xhr.send(null);
-	}
+	xhr.open('GET', link, true);
+	xhr.onreadystatechange = function() {
+        if ( (xhr.readyState === 4) && (xhr.status === 200 ) ) {
+            container.innerHTML = xhr.response;
+        }
+    }
+	xhr.send(null);
 }
 
 

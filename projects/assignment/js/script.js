@@ -1,6 +1,17 @@
-document.getElementById('a').style.color = 'purple';
+document.getElementById('a').style.color = 'red';
 
+if (window.XDomainRequest) { // ie9
+	var xhg = new XDomainRequest(); 
 
+	xhg.open("get", 'data/acc-tab1.html');
+	
+    xhg.onload = function() {
+    	document.getElementById('a').innerHTML = xhg.responseText;
+  	}
+  
+	xhg.send();
+	
+}
 
 
 // DETECT THE CLICK AND CHECK IF IT WAS CLICKED BEFORE
@@ -43,19 +54,8 @@ window.onload = function() {
 function xhr(link, container) {
 
 	var xhr;
-	alert(link)
-	if (window.XDomainRequest) { // ie9
-		var xhg = new XDomainRequest(); 
-
-		xhg.open("get", link);
-		
-	    xhg.onload = function() {
-	    	document.getElementById('a').innerHTML = xhg.responseText;
-	  	}
-	  
-		xhg.send();
-		
-	}else {	
+	
+	else {	
 		
 	    if ( XMLHttpRequest ) {
 	        xhr =  new XMLHttpRequest;

@@ -6,7 +6,7 @@ if (window.XDomainRequest) { // ie9
 		xhg.open("get", 'data/acc-tab1.html');
 		
 	    xdr.onload = function() {
-	    alert(xdr.responseText);
+	    document.getElementById('a').innerHTML = xdr.responseText;
 	  	}
 	  
 		xhg.send();

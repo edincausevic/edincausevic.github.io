@@ -1,6 +1,7 @@
-var msie = document.documentMode;
 
-if (msie < 9) {
+var xdr = new XDomainRequest(); 
+
+if (xdr) {
     alert('radi')
 }
 

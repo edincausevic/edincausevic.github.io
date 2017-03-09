@@ -34,29 +34,31 @@ window.onload = function() {
 			xhr('data/acc-tab1.html', textContainer)
 		}
 	}
+
+	// GET THE DATA AND PUT IT IN CAONTAINER
+	function xhr(link, container) {
+
+		var xhr;
+
+	    if ( XMLHttpRequest ) {
+	        xhr =  new XMLHttpRequest;
+	        console.log(xhr )
+	    }else {
+	        xhr = new ActiveXObject('Microsoft.XMLHTTP');
+	        console.log(xhr )
+	    }
+
+		xhr.open('GET', link, true);
+		xhr.onreadystatechange = function() {
+	        if ( (xhr.readyState === 4) && (xhr.status === 200 ) ) {
+	            container.innerHTML = xhr.response;
+	        }
+	    }
+		xhr.send(null);
+	}
 }
 
-// GET THE DATA AND PUT IT IN CAONTAINER
-function xhr(link, container) {
 
-	var xhr;
-
-    if ( XMLHttpRequest ) {
-        xhr =  new XMLHttpRequest;
-        console.log(xhr )
-    }else {
-        xhr = new ActiveXObject('Microsoft.XMLHTTP');
-        console.log(xhr )
-    }
-
-	xhr.open('GET', link, true);
-	xhr.onreadystatechange = function() {
-        if ( (xhr.readyState === 4) && (xhr.status === 200 ) ) {
-            container.innerHTML = xhr.response;
-        }
-    }
-	xhr.send(null);
-}
 
 
 

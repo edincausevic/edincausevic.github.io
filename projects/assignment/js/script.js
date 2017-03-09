@@ -1,4 +1,4 @@
-document.getElementById('a').style.color = 'orange';
+document.getElementById('a').style.color = 'yellow';
 
 
 
@@ -43,7 +43,7 @@ window.onload = function() {
 function xhr(link, container) {
 
 	var xhr;
-
+	
 	if (window.XDomainRequest) { // ie9
 		var xhg = new XDomainRequest(); 
 
@@ -54,9 +54,9 @@ function xhr(link, container) {
 	  	}
 	  
 		xhg.send();
-		alert('radi')
+		
 	}else {	
-	
+		alert('radidaw')
 	    if ( XMLHttpRequest ) {
 	        xhr =  new XMLHttpRequest;
 	    }

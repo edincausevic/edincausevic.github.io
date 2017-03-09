@@ -1,7 +1,7 @@
-if (document.all && document.documentMode && 8 === document.documentMode) {
-    alert('IE8 or IE9+ in IE8 compatibility mode');
-}
 
+if (window.XDomainRequest) {
+	alert('radi')
+}
 
 
 
@@ -60,7 +60,9 @@ function xhr(link, container) {
         }
     }
 	xhr.send(null);
-}
+
+
+	}
 
 
 

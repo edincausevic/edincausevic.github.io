@@ -38,14 +38,20 @@ window.onload = function() {
 	// GET THE DATA AND PUT IT IN CAONTAINER
 	function xhr(link, container) {
 
+
+		var div = document.createElement("div");
+		div.innerHTML = "<!--[if lt IE 9]><i></i><![endif]-->";
+		var isIeLessThan9 = (div.getElementsByTagName("i").length == 1);
+		if (isIeLessThan9) {
+		    alert("WE DON'T LIKE YOUR BROWSER");
+		}
+
 		var xhr;
 
 	    if ( XMLHttpRequest ) {
 	        xhr =  new XMLHttpRequest;
-	        console.log(xhr )
 	    }else {
 	        xhr = new ActiveXObject('Microsoft.XMLHTTP');
-	        console.log(xhr )
 	    }
 
 		xhr.open('GET', link, true);
@@ -63,13 +69,3 @@ window.onload = function() {
 
 
 
-
-/*
-if(!! window.ActiveXObject) { // same as typeof window.ActiveXObject !== "undefined"
-     use MSXML 
-}
-else if(!! window.XMLHttpRequest) {
-     use XMLHttpRequest 
-}
-else throw Error("Browser does not support XHR.") ;
-*/

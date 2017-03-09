@@ -1,5 +1,10 @@
+var msie = document.documentMode;
 
+if (msie < 9) {
+    alert('radiii')
+}
 
+console.log(ie)
 
 // DETECT THE CLICK AND CHECK IF IT WAS CLICKED BEFORE
 // IF NOT ADD COTENT TO THAT TAB
@@ -39,12 +44,7 @@ window.onload = function() {
 	function xhr(link, container) {
 
 
-		var div = document.createElement("div");
-		div.innerHTML = "<!--[if lt IE 9]><i></i><![endif]-->";
-		var isIeLessThan9 = (div.getElementsByTagName("i").length == 1);
-		if (isIeLessThan9) {
-		    alert("WE DON'T LIKE YOUR BROWSER");
-		}
+		
 
 		var xhr;
 
@@ -63,7 +63,6 @@ window.onload = function() {
 		xhr.send(null);
 	}
 }
-
 
 
 

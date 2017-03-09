@@ -1,8 +1,6 @@
-var msie = document.documentMode;
 
-if (msie < 9) {
-    alert('radiii')
-}
+
+alert('radi')
 
 
 

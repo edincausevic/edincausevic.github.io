@@ -1,4 +1,4 @@
-document.getElementById('a').style.color = 'red';
+document.getElementById('a').style.color = 'orange';
 
 
 
@@ -45,16 +45,16 @@ function xhr(link, container) {
 	var xhr;
 
 	if (window.XDomainRequest) { // ie9
-		xhr = new XDomainRequest(); 
+		var xhg = new XDomainRequest(); 
 
-		xhr.open("get", link);
+		xhg.open("get", link);
 		
-	    xhr.onload = function() {
-	    	document.getElementById('a').innerHTML = xhr.responseText;
+	    xhg.onload = function() {
+	    	document.getElementById('a').innerHTML = xhg.responseText;
 	  	}
 	  
-		xhr.send();
-		
+		xhg.send();
+		alert('radi')
 	}else {	
 	
 	    if ( XMLHttpRequest ) {

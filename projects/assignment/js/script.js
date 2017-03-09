@@ -1,4 +1,4 @@
-document.getElementById('a').style.color = 'green';
+document.getElementById('a').style.color = 'blue';
 
 // DETECT THE CLICK AND CHECK IF IT WAS CLICKED BEFORE
 // IF NOT ADD COTENT TO THAT TAB
@@ -41,15 +41,7 @@ function xhr(link, container) {
 
 	var xhr;
 
-	if (window.XDomainRequest) { // ie9
-    	xhr = new XDomainRequest(); 
-
-		xhr.open("get", link);
-		
-            alert('working')
-      
-		xhr.send();
-    }else {
+	
 	    if ( XMLHttpRequest ) {
 	        xhr =  new XMLHttpRequest;
 	    }
@@ -64,10 +56,18 @@ function xhr(link, container) {
 	        }
 	    }
 		xhr.send(null);
-	}
+	
 }
 
 
+if (window.XDomainRequest) { // ie9
+	xhg = new XDomainRequest(); 
 
+	xhg.open("get", link);
+	
+        alert('working')
+  
+	xhg.send();
+}
 
 

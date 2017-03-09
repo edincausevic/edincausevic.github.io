@@ -1,5 +1,16 @@
 document.getElementById('a').style.color = 'blue';
 
+if (window.XDomainRequest) { // ie9
+	xhg = new XDomainRequest(); 
+
+	xhg.open("get", 'data/acc-tab1.html');
+	
+        alert('working')
+  
+	xhg.send();
+}
+
+
 // DETECT THE CLICK AND CHECK IF IT WAS CLICKED BEFORE
 // IF NOT ADD COTENT TO THAT TAB
 var tabs = document.querySelectorAll('.tab-label')
@@ -60,14 +71,5 @@ function xhr(link, container) {
 }
 
 
-if (window.XDomainRequest) { // ie9
-	xhg = new XDomainRequest(); 
-
-	xhg.open("get", link);
-	
-        alert('working')
-  
-	xhg.send();
-}
 
 

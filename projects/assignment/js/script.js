@@ -1,10 +1,4 @@
 
-if (window.XDomainRequest) {
-	document.getElementById('a').style.color = 'red';
-}
-
-
-
 
 // DETECT THE CLICK AND CHECK IF IT WAS CLICKED BEFORE
 // IF NOT ADD COTENT TO THAT TAB
@@ -42,24 +36,35 @@ window.onload = function() {
 }
 
 
-// GET THE DATA AND PUT IT IN CAONTAINER
+// GET THE DATA AND PUT IT IN CONTAINER
 function xhr(link, container) {
 
 	var xhr;
 
-    if ( XMLHttpRequest ) {
-        xhr =  new XMLHttpRequest;
-    }else {
-        xhr = new ActiveXObject('Microsoft.XMLHTTP');
-    }
+	if (window.XDomainRequest) { // ie9
+    	xhr = new XDomainRequest(); 
 
-	xhr.open('GET', link, true);
-	xhr.onreadystatechange = function() {
-        if ( (xhr.readyState === 4) && (xhr.status === 200 ) ) {
-            container.innerHTML = xhr.response;
+		xdr.open("get", link);
+		if ( (xhr.readyState === 4) && (xhr.status === 200 ) ) {
+            alert('working')
         }
-    }
-	xhr.send(null);
+		xdr.send();
+    }else {
+	    if ( XMLHttpRequest ) {
+	        xhr =  new XMLHttpRequest;
+	    }
+	    else { // ie
+	        xhr = new ActiveXObject('Microsoft.XMLHTTP');
+	    }
+
+		xhr.open('GET', link, true);
+		xhr.onreadystatechange = function() {
+	        if ( (xhr.readyState === 4) && (xhr.status === 200 ) ) {
+	            container.innerHTML = xhr.response;
+	        }
+	    }
+		xhr.send(null);
+	}
 }
 
 

@@ -43,8 +43,10 @@ function xhr(link, container) {
 
     if ( XMLHttpRequest ) {
         xhr =  new XMLHttpRequest;
+        console.log(xhr )
     }else {
         xhr = new ActiveXObject('Microsoft.XMLHTTP');
+        console.log(xhr )
     }
 
 	xhr.open('GET', link, true);

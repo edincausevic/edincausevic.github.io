@@ -1,6 +1,6 @@
 
 if (window.XDomainRequest) {
-	alert('radi')
+	document.getElementById('a').style.color = 'red';
 }
 
 
@@ -60,9 +60,7 @@ function xhr(link, container) {
         }
     }
 	xhr.send(null);
-
-
-	}
+}
 
 
 

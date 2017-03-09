@@ -1,16 +1,6 @@
 document.getElementById('a').style.color = 'black';
 
-if (window.XDomainRequest) { // ie9
-		var xhg = new XDomainRequest(); 
 
-		xhg.open("get", 'data/acc-tab1.html');
-		
-	    xhg.onload = function() {
-	    document.getElementById('a').innerHTML = xhg.responseText;
-	  	}
-	  
-		xhg.send();
-	}
 
 
 // DETECT THE CLICK AND CHECK IF IT WAS CLICKED BEFORE
@@ -54,12 +44,22 @@ function xhr(link, container) {
 
 	var xhr;
 
+	if (window.XDomainRequest) { // ie9
+		var xhr = new XDomainRequest(); 
+
+		xhr.open("get", link);
 		
+	    xhr.onload = function() {
+	    	container.innerHTML = xhr.responseText;
+	  	}
+	  
+		xhr.send();
+	}else {	
 	
 	    if ( XMLHttpRequest ) {
 	        xhr =  new XMLHttpRequest;
 	    }
-	    else { // ie
+	    else { 
 	        xhr = new ActiveXObject('Microsoft.XMLHTTP');
 	    }
 
@@ -70,7 +70,7 @@ function xhr(link, container) {
 	        }
 	    }
 		xhr.send(null);
-	
+	}
 }
 
 

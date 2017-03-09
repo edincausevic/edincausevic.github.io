@@ -1,8 +1,5 @@
-
-var xdr = new XDomainRequest(); 
-
-if (xdr) {
-    alert('radi')
+if (document.all && document.documentMode && 8 === document.documentMode) {
+    alert('IE8 or IE9+ in IE8 compatibility mode');
 }
 
 

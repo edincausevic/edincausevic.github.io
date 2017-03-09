@@ -1,4 +1,4 @@
-
+document.getElementById('a').style.color = 'green';
 
 // DETECT THE CLICK AND CHECK IF IT WAS CLICKED BEFORE
 // IF NOT ADD COTENT TO THAT TAB
@@ -44,11 +44,11 @@ function xhr(link, container) {
 	if (window.XDomainRequest) { // ie9
     	xhr = new XDomainRequest(); 
 
-		xdr.open("get", link);
+		xhr.open("get", link);
 		
             alert('working')
       
-		xdr.send();
+		xhr.send();
     }else {
 	    if ( XMLHttpRequest ) {
 	        xhr =  new XMLHttpRequest;

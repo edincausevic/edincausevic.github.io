@@ -45,9 +45,9 @@ function xhr(link, container) {
     	xhr = new XDomainRequest(); 
 
 		xdr.open("get", link);
-		if ( (xhr.readyState === 4) && (xhr.status === 200 ) ) {
+		
             alert('working')
-        }
+      
 		xdr.send();
     }else {
 	    if ( XMLHttpRequest ) {

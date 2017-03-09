@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<!-- VALIDATE HTML DONT FORGET -->
+<div class="row">
+
+<div class="asigment">
+
+  <h2>Modify the previous tab component to load the content via js request:</h2>
+  <p><strong>Requirements:</strong></p>
+  <ul>
+    <li>duplicate the previous tab component and modify it so that only the initially active content is contained &#10004;</li>
+    <li>on tab activation load the needed content via javascript request (you can use
+static content files, we are only interested in the client side) &#10004;</li>
+    <li>request content only the first time a tab gets activated &#10004;</li>
+  </ul>
+
+  <div class="accordion">
+
+    <div class="tab">
+      <input type="radio" id="acc-tab1" class="acc-inputs" name="accordion2" checked>
+      <label for="acc-tab1" class="tab-label">Tab1</label>
+      <div class="tab-content">
+        <div class="content">
+         
+        </div>
+      </div>
+    </div>
+
+    <div class="tab">
+      <input type="radio" id="acc-tab2" class="acc-inputs" name="accordion2">
+      <label for="acc-tab2" class="tab-label">Tabler2</label>
+      <div class="tab-content">
+        <div class="content">
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="tab">
+      <input type="radio" id="acc-tab3" class="acc-inputs" name="accordion2">
+      <label for="acc-tab3" class="tab-label">Tab3</label>
+      <div class="tab-content">
+        <div class="content">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- .asigment end -->
+  
+<div class="asigment">
+
+  <h2>Implement an accordion component which transforms to tabs for wider screens:</h2>
+  <p><strong>Requirements:</strong></p>
+  <ul>
+    <li>wide screens >= 768 pixel width &#10004;</li>
+    <li>no fixed heights, content can grow naturally &#10004;</li>
+    <li>no absolute positioning for content &#10004;</li>
+    <li>support for variable number of tabs &#10004;</li>
+    <li>the tab width should not be fixed and grow with text length &#10004;</li>
+    <li>no toggle animation required &#10004;</li>
+    <li>bonus points: no JS &#10004;</li>
+    
+  </ul>
+
+  <div class="accordion">
+
+    <div class="tab">
+      <input type="radio" id="tab1" name="accordion1" checked>
+      <label for="tab1">Tab1</label>
+      <div class="tab-content">
+        <div class="content">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab">
+      <input type="radio" id="tab2" name="accordion1">
+      <label for="tab2">Tabler2</label>
+      <div class="tab-content">
+        <div class="content">
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab">
+      <input type="radio" id="tab3" name="accordion1">
+      <label for="tab3">Tab3</label>
+      <div class="tab-content">
+        <div class="content">
+          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- .asigment end -->
+
+
+
+</div><!-- .row end-->
+
+
+<script src="js/script.js"></script>
+</body>
+</html>

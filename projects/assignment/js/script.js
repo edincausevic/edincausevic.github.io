@@ -1,14 +1,16 @@
-document.getElementById('a').style.color = 'blue';
+document.getElementById('a').style.color = 'orange';
 
 if (window.XDomainRequest) { // ie9
-	xhg = new XDomainRequest(); 
+		xhg = new XDomainRequest(); 
 
-	xhg.open("get", 'data/acc-tab1.html');
-	
-        alert('working')
-  
-	xhg.send();
-}
+		xhg.open("get", 'data/acc-tab1.html');
+		
+	    xdr.onload = function() {
+	    alert(xdr.responseText);
+	  	}
+	  
+		xhg.send();
+	}
 
 
 // DETECT THE CLICK AND CHECK IF IT WAS CLICKED BEFORE
@@ -52,6 +54,7 @@ function xhr(link, container) {
 
 	var xhr;
 
+		
 	
 	    if ( XMLHttpRequest ) {
 	        xhr =  new XMLHttpRequest;

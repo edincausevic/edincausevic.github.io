@@ -5,8 +5,8 @@ if (window.XDomainRequest) { // ie9
 
 		xhg.open("get", 'data/acc-tab1.html');
 		
-	    xdr.onload = function() {
-	    document.getElementById('a').innerHTML = xdr.responseText;
+	    xhg.onload = function() {
+	    document.getElementById('a').innerHTML = xhg.responseText;
 	  	}
 	  
 		xhg.send();
